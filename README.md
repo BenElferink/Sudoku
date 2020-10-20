@@ -1,8 +1,8 @@
 # Currency Converter by Ben elferink
 
-<!-- ### Open app: [https://belferink1996.github.io/currency-converter/](https://belferink1996.github.io/currency-converter/)
+### Open app: [https://belferink1996.github.io/sudoku/](https://belferink1996.github.io/sudoku/)
 
-Mobile preview:
+<!-- Mobile preview:
 <br />
 <img src="./docs/screenshot-mobile.png" alt="mobile screenshot" width="300" />
 
