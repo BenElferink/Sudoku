@@ -1,4 +1,4 @@
-# Currency Converter by Ben elferink
+# Sudoku by Ben elferink
 
 ### Open app: [https://belferink1996.github.io/sudoku/](https://belferink1996.github.io/sudoku/)
 
