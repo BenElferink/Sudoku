@@ -1,7 +1,12 @@
 import React from 'react';
+import StartPage from './components/StartPage';
 
 function App() {
-  return <div className='app'>under construction</div>;
+  return (
+    <>
+      <StartPage />
+    </>
+  );
 }
 
 export default App;
