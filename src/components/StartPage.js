@@ -1,11 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Button from './Button';
 import Difficulty from './Difficulty';
 
-function StartPage() {
-  const [name, setName] = useState('');
-  const [difficulty, setDifficulty] = useState('normal');
-
+function StartPage({ name, nameChange, diff, diffChange, startGame }) {
   return (
     <header>
       <div className='heading'>
@@ -17,26 +14,9 @@ function StartPage() {
         onSubmit={(e) => {
           e.preventDefault();
         }}>
-        <input
-          className='name-inp'
-          placeholder='Nickname:'
-          value={name}
-          onChange={(e) => {
-            setName(e.target.value);
-          }}
-        />
-        <Difficulty
-          value={difficulty}
-          onChange={(e) => {
-            setDifficulty(e.target.value);
-          }}
-        />
-        <Button
-          text='Start Game!'
-          onClick={() => {
-            console.log('works');
-          }}
-        />
+        <input className='name-inp' placeholder='Nickname:' value={name} onChange={nameChange} />
+        <Difficulty value={diff} onChange={diffChange} />
+        <Button text='Start Game!' onClick={startGame} />
       </form>
     </header>
   );
