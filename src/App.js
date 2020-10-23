@@ -1,27 +1,35 @@
-import React, { useState } from 'react';
+import React, { Component } from 'react';
 import StartPage from './components/StartPage';
 
-function App() {
-  const [name, setName] = useState('');
-  const [difficulty, setDifficulty] = useState('normal');
+export class App extends Component {
+  constructor(props) {
+    super(props);
 
-  return (
-    <>
-      <StartPage
-        name={name}
-        nameChange={(e) => {
-          setName(e.target.value);
-        }}
-        diff={difficulty}
-        diffChange={(e) => {
-          setDifficulty(e.target.value);
-        }}
-        startGame={() => {
-          console.log('worksssss');
-        }}
-      />
-    </>
-  );
+    this.state = {
+      name: '',
+      difficulty: 'normal',
+    };
+  }
+
+  render() {
+    return (
+      <>
+        <StartPage
+          name={this.name}
+          nameChange={(e) => {
+            this.setState({ name: e.target.value });
+          }}
+          diff={this.difficulty}
+          diffChange={(e) => {
+            this.setState({ difficulty: e.target.value });
+          }}
+          startGame={() => {
+            console.log('worksssss');
+          }}
+        />
+      </>
+    );
+  }
 }
 
 export default App;
