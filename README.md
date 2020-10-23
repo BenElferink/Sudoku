@@ -8,6 +8,8 @@
 
 # UPDATES TO BE ADDED !
 
+<br><br><br><br><br><br>
+
 <!-- Mobile preview:
 <br />
 <img src="./docs/screenshot-mobile.png" alt="mobile screenshot" width="300" />
