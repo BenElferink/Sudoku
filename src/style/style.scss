@@ -26,59 +26,72 @@ footer {
   align-items: center;
 }
 
-.heading {
-  width: 100%;
-  margin: 2em;
-  display: grid;
-  place-items: center;
-
-  h2 {
-    font-size: 10vh;
-  }
-
-  h3 {
-    font-size: 4vh;
-  }
-
-  .line {
-    width: 80%;
-    height: 2px;
-    background-color: #000;
-  }
-}
-
-form {
-  height: 60vh;
-  width: 70%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-
-  .name-inp {
-    width: 100%;
-    padding: 10px;
-    border-radius: 1em;
-    font-size: 3vh;
-    cursor: pointer;
-  }
-
-  label {
-    display: block;
-    margin: 0.5em 0;
-    font-size: 3vh;
-    cursor: pointer;
-
-    .diff-inp {
-      margin-right: 1em;
-      cursor: pointer;
-    }
-  }
-}
-
 button {
   padding: 10px;
   border-radius: 0.5em;
   font-size: 4vh;
   cursor: pointer;
+}
+
+header {
+  .heading {
+    width: 100%;
+    margin: 2em;
+    display: grid;
+    place-items: center;
+
+    h2 {
+      font-size: 10vh;
+    }
+
+    h3 {
+      font-size: 4vh;
+    }
+
+    .line {
+      width: 80%;
+      height: 2px;
+      background-color: #000;
+    }
+  }
+
+  form {
+    height: 60vh;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
+    .name-inp {
+      width: 100%;
+      padding: 10px;
+      border-radius: 1em;
+      font-size: 3vh;
+      cursor: pointer;
+    }
+
+    label {
+      display: block;
+      margin: 0.5em 0;
+      font-size: 3vh;
+      cursor: pointer;
+
+      .diff-inp {
+        margin-right: 1em;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+main {
+  .timer {
+    font-size: 2rem;
+  }
+
+  .hints {
+    display: flex;
+    align-items: center;
+  }
 }

@@ -33,7 +33,14 @@ footer {
           align-items: center;
 }
 
-.heading {
+button {
+  padding: 10px;
+  border-radius: 0.5em;
+  font-size: 4vh;
+  cursor: pointer;
+}
+
+header .heading {
   width: 100%;
   margin: 2em;
   display: -ms-grid;
@@ -41,21 +48,21 @@ footer {
   place-items: center;
 }
 
-.heading h2 {
+header .heading h2 {
   font-size: 10vh;
 }
 
-.heading h3 {
+header .heading h3 {
   font-size: 4vh;
 }
 
-.heading .line {
+header .heading .line {
   width: 80%;
   height: 2px;
   background-color: #000;
 }
 
-form {
+header form {
   height: 60vh;
   width: 70%;
   display: -webkit-box;
@@ -73,7 +80,7 @@ form {
           justify-content: space-evenly;
 }
 
-form .name-inp {
+header form .name-inp {
   width: 100%;
   padding: 10px;
   border-radius: 1em;
@@ -81,22 +88,28 @@ form .name-inp {
   cursor: pointer;
 }
 
-form label {
+header form label {
   display: block;
   margin: 0.5em 0;
   font-size: 3vh;
   cursor: pointer;
 }
 
-form label .diff-inp {
+header form label .diff-inp {
   margin-right: 1em;
   cursor: pointer;
 }
 
-button {
-  padding: 10px;
-  border-radius: 0.5em;
-  font-size: 4vh;
-  cursor: pointer;
+main .timer {
+  font-size: 2rem;
+}
+
+main .hints {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 /*# sourceMappingURL=style.css.map */
