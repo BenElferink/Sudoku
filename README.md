@@ -2,6 +2,8 @@
 
 ### Open app: [https://belferink1996.github.io/sudoku/](https://belferink1996.github.io/sudoku/)
 
+<br><br><br><br><br><br>
+
 # UNDER CONSTRUCTION !
 
 # INCOMPLETE !
