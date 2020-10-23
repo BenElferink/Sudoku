@@ -2,9 +2,9 @@ import React from 'react';
 import Button from './Button';
 import Difficulty from './Difficulty';
 
-function StartPage({ name, nameChange, diff, diffChange, startGame }) {
+function StartPage({ name, nameChange, diff, diffChange, startGame, showHide }) {
   return (
-    <header>
+    <header className={showHide}>
       <div className='heading'>
         <h2>Sudoku</h2>
         <div className='line'></div>

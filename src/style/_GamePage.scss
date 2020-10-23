@@ -1,0 +1,25 @@
+main {
+  .timer {
+    font-size: 2rem;
+  }
+
+  .buttons {
+    display: flex;
+    align-items: center;
+  }
+
+  table,
+  td {
+    border: 1px solid #000;
+    border-collapse: collapse;
+  }
+
+  table {
+    tr {
+      td {
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+}

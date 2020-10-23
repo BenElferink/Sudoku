@@ -8,19 +8,23 @@ export class App extends Component {
     super(props);
 
     this.state = {
-      startPage: true,
+      startPage: false,
+      gamePage: true,
+      scorePage: false,
       name: '',
       difficulty: 'normal',
-      gamePage: false,
       timer: '00:00',
       hints: 3,
-      scorePage: false,
     };
   }
 
   handleStartGame = () => {
     if (this.state.name !== '') {
-      this.setState({ startPage: false, gamePage: true }, this.startTimer);
+      this.setState({ gamePage: true }, () => {
+        setTimeout(() => {
+          this.setState({ startPage: false }, this.startTimer);
+        }, 500);
+      });
     }
   };
 
@@ -35,6 +39,7 @@ export class App extends Component {
       <>
         {this.state.startPage ? (
           <StartPage
+            showHide={this.state.gamePage ? 'hide' : 'show'}
             name={this.state.name}
             nameChange={(e) => {
               this.setState({ name: e.target.value });
