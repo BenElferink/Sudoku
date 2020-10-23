@@ -31,6 +31,8 @@ footer {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 button {
