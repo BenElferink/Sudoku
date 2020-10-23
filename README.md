@@ -2,6 +2,12 @@
 
 ### Open app: [https://belferink1996.github.io/sudoku/](https://belferink1996.github.io/sudoku/)
 
+# UNDER CONSTRUCTION !
+
+# INCOMPLETE !
+
+# UPDATES TO BE ADDED !
+
 <!-- Mobile preview:
 <br />
 <img src="./docs/screenshot-mobile.png" alt="mobile screenshot" width="300" />
