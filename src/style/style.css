@@ -90,14 +90,14 @@ header form .name-inp {
   cursor: pointer;
 }
 
-header form label {
+header form .diff-box label {
   display: block;
   margin: 0.5em 0;
   font-size: 3vh;
   cursor: pointer;
 }
 
-header form label .diff-inp {
+header form .diff-box label .diff-inp {
   margin-right: 1em;
   cursor: pointer;
 }

@@ -1,101 +1,59 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
+import { SudokuCreate } from './components/js/matrixAlgorithm';
 import StartPage from './components/StartPage';
 import GamePage from './components/GamePage';
 import ScorePage from './components/ScorePage';
 
-export class App extends Component {
-  constructor(props) {
-    super(props);
+export function App() {
+  const [startPage, setStartPage] = useState(true);
+  const [gamePage, setGamePage] = useState(false);
+  const [scorePage, setScorePage] = useState(false);
+  const [matrix, setMatrix] = useState('');
+  const [name, setName] = useState('');
+  const [difficulty, setDifficulty] = useState('normal');
 
-    this.state = {
-      startPage: false,
-      gamePage: true,
-      scorePage: false,
-      name: '',
-      difficulty: 'normal',
-      timer: '00:00',
-      hints: 3,
-    };
-  }
-
-  handleStartGame = () => {
-    if (this.state.name !== '') {
-      this.setState({ gamePage: true }, () => {
-        setTimeout(() => {
-          this.setState({ startPage: false }, this.startTimer);
-        }, 500);
-      });
+  const startClick = () => {
+    if (name !== '') {
+      setMatrix(SudokuCreate(9));
+      setGamePage(true);
+      setStartPage(false);
     }
   };
 
-  handleHintClick = () => {
-    if (this.state.hints > 0) {
-      this.setState({ hints: this.state.hints - 1 });
-    }
+  const quitClick = () => {
+    setStartPage(true);
+    setGamePage(false);
   };
 
-  render() {
-    return (
-      <>
-        {this.state.startPage ? (
-          <StartPage
-            showHide={this.state.gamePage ? 'hide' : 'show'}
-            name={this.state.name}
-            nameChange={(e) => {
-              this.setState({ name: e.target.value });
-            }}
-            diff={this.state.difficulty}
-            diffChange={(e) => {
-              this.setState({ difficulty: e.target.value });
-            }}
-            startGame={this.handleStartGame}
-          />
-        ) : null}
-        {this.state.gamePage ? (
-          <GamePage
-            timer={this.state.timer}
-            hints={this.state.hints}
-            hintClick={this.handleHintClick}
-            resetClick={null}
-            abortClick={null}
-          />
-        ) : null}
-        {this.state.scorePage ? <ScorePage /> : null}
-      </>
-    );
-  }
+  const finishClick = () => {};
 
-  // ---------- //
-  // TIMER FUNCTIONS //
-  // ---------- //
-
-  timerInterval;
-
-  // START TIMER
-  startTimer = () => {
-    let minutes = '00';
-    let seconds = '00';
-    this.timerInterval = setInterval(() => {
-      if (seconds < 60) {
-        seconds++;
-        if (seconds < 10) {
-          seconds = '0' + seconds;
-        }
-        if (seconds === 60) {
-          minutes++;
-          if (minutes < 10) {
-            minutes = '0' + minutes;
-          }
-          seconds = '00';
-        }
-      }
-      this.setState({ timer: `${minutes}:${seconds}` });
-    }, 1000);
-  };
-
-  stopTimer = () => {
-    clearInterval(this.timerInterval);
-  };
+  return (
+    <>
+      {startPage ? (
+        <StartPage
+          className={gamePage ? 'hide' : 'show'}
+          nameValue={name}
+          nameChange={(e) => {
+            setName(e.target.value);
+          }}
+          difficultyValue={difficulty}
+          difficultyChange={(e) => {
+            setDifficulty(e.target.value);
+          }}
+          startClick={startClick}
+        />
+      ) : null}
+      {gamePage ? (
+        <GamePage
+          matrix={matrix}
+          difficulty={difficulty}
+          quitClick={quitClick}
+          finishClick={finishClick}
+        />
+      ) : null}
+      {scorePage ? <ScorePage /> : null}
+    </>
+  );
 }
 
 export default App;
