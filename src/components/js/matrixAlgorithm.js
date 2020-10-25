@@ -1,4 +1,4 @@
-export function SudokuCreate(maxNum) {
+function SudokuCreate(maxNum) {
   //generate number set
   let numSet = [];
   let sudokuArray = [];
@@ -111,4 +111,38 @@ export function SudokuCreate(maxNum) {
   // console.log(iterations);
   //    console.table(sudokuArray);
   return sudokuArray; //return our array to start to do some sudoku
+}
+
+function filterDifficulty(diff, matrix) {
+  // set number of tiles to clear, by difficulty
+  let tilesToClear = Math.pow(9, 2);
+  switch (diff) {
+    case 'easy':
+      tilesToClear = Math.floor(tilesToClear * 0.25);
+      break;
+    case 'normal':
+      tilesToClear = Math.floor(tilesToClear * 0.5);
+      break;
+    case 'hard':
+      tilesToClear = Math.floor(tilesToClear * 0.75);
+      break;
+    default:
+      break;
+  }
+  // clear tiles from matrix
+  while (tilesToClear !== 0) {
+    let i = Math.floor(Math.random() * 9);
+    let j = Math.floor(Math.random() * 9);
+    if (matrix[i][j] !== '') {
+      matrix[i][j] = '';
+      tilesToClear--;
+    }
+  }
+  return matrix;
+}
+
+export function RenderMatrix(difficulty) {
+  let matrix = SudokuCreate(9);
+  matrix = filterDifficulty(difficulty, matrix);
+  return matrix;
 }

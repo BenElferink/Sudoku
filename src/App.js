@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { SudokuCreate } from './components/js/matrixAlgorithm';
+import { RenderMatrix } from './components/js/matrixAlgorithm';
 import StartPage from './components/StartPage';
 import GamePage from './components/GamePage';
 import ScorePage from './components/ScorePage';
@@ -14,7 +14,7 @@ export function App() {
 
   const startClick = () => {
     if (name !== '') {
-      setMatrix(SudokuCreate(9));
+      setMatrix(RenderMatrix(difficulty));
       setGamePage(true);
       setStartPage(false);
     }

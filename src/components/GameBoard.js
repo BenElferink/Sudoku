@@ -7,7 +7,10 @@ function GameBoard({ matrix }) {
         {matrix.map((row, i) => (
           <tr key={i}>
             {row.map((column, i) => (
-              <td key={i}>{column}</td>
+              <td key={i}>
+                {/* <input maxLength='1' value={column} /> */}
+                {column}
+              </td>
             ))}
           </tr>
         ))}
