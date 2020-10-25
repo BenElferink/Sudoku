@@ -64,14 +64,14 @@ function checkCube(matrix, num, i, j) {
 
   if (row === 'first' && column === 'first') {
     if (
-      (matrix[i][j + 1] ||
-        matrix[i][j + 2] ||
-        matrix[i + 1][j] ||
-        matrix[i + 1][j + 1] ||
-        matrix[i + 1][j + 2] ||
-        matrix[i + 2][j] ||
-        matrix[i + 2][j + 1] ||
-        matrix[i + 2][j + 2]) === num
+      num === matrix[i][j + 1] ||
+      num === matrix[i][j + 2] ||
+      num === matrix[i + 1][j] ||
+      num === matrix[i + 1][j + 1] ||
+      num === matrix[i + 1][j + 2] ||
+      num === matrix[i + 2][j] ||
+      num === matrix[i + 2][j + 1] ||
+      num === matrix[i + 2][j + 2]
     ) {
       return false;
     } else {
@@ -79,14 +79,14 @@ function checkCube(matrix, num, i, j) {
     }
   } else if (row === 'first' && column === 'second') {
     if (
-      (matrix[i][j - 1] ||
-        matrix[i][j + 1] ||
-        matrix[i + 1][j] ||
-        matrix[i + 1][j + 1] ||
-        matrix[i + 1][j + 2] ||
-        matrix[i + 2][j] ||
-        matrix[i + 2][j + 1] ||
-        matrix[i + 2][j + 2]) === num
+      num === matrix[i][j - 1] ||
+      num === matrix[i][j + 1] ||
+      num === matrix[i + 1][j - 1] ||
+      num === matrix[i + 1][j] ||
+      num === matrix[i + 1][j + 1] ||
+      num === matrix[i + 2][j - 1] ||
+      num === matrix[i + 2][j] ||
+      num === matrix[i + 2][j + 1]
     ) {
       return false;
     } else {
@@ -94,14 +94,14 @@ function checkCube(matrix, num, i, j) {
     }
   } else if (row === 'first' && column === 'third') {
     if (
-      (matrix[i][j - 2] ||
-        matrix[i][j - 1] ||
-        matrix[i + 1][j] ||
-        matrix[i + 1][j + 1] ||
-        matrix[i + 1][j + 2] ||
-        matrix[i + 2][j] ||
-        matrix[i + 2][j + 1] ||
-        matrix[i + 2][j + 2]) === num
+      num === matrix[i][j - 2] ||
+      num === matrix[i][j - 1] ||
+      num === matrix[i + 1][j - 2] ||
+      num === matrix[i + 1][j - 1] ||
+      num === matrix[i + 1][j] ||
+      num === matrix[i + 2][j - 2] ||
+      num === matrix[i + 2][j - 1] ||
+      num === matrix[i + 2][j]
     ) {
       return false;
     } else {
@@ -109,14 +109,14 @@ function checkCube(matrix, num, i, j) {
     }
   } else if (row === 'second' && column === 'first') {
     if (
-      (matrix[i - 1][j] ||
-        matrix[i - 1][j + 1] ||
-        matrix[i - 1][j + 2] ||
-        matrix[i][j + 1] ||
-        matrix[i][j + 2] ||
-        matrix[i + 1][j] ||
-        matrix[i + 1][j + 1] ||
-        matrix[i + 1][j + 2]) === num
+      num === matrix[i - 1][j] ||
+      num === matrix[i - 1][j + 1] ||
+      num === matrix[i - 1][j + 2] ||
+      num === matrix[i][j + 1] ||
+      num === matrix[i][j + 2] ||
+      num === matrix[i + 1][j] ||
+      num === matrix[i + 1][j + 1] ||
+      num === matrix[i + 1][j + 2]
     ) {
       return false;
     } else {
@@ -124,14 +124,14 @@ function checkCube(matrix, num, i, j) {
     }
   } else if (row === 'second' && column === 'second') {
     if (
-      (matrix[i - 1][j] ||
-        matrix[i - 1][j + 1] ||
-        matrix[i - 1][j + 2] ||
-        matrix[i][j - 1] ||
-        matrix[i][j + 1] ||
-        matrix[i + 1][j] ||
-        matrix[i + 1][j + 1] ||
-        matrix[i + 1][j + 2]) === num
+      num === matrix[i - 1][j - 1] ||
+      num === matrix[i - 1][j] ||
+      num === matrix[i - 1][j + 1] ||
+      num === matrix[i][j - 1] ||
+      num === matrix[i][j + 1] ||
+      num === matrix[i + 1][j - 1] ||
+      num === matrix[i + 1][j] ||
+      num === matrix[i + 1][j + 1]
     ) {
       return false;
     } else {
@@ -139,14 +139,14 @@ function checkCube(matrix, num, i, j) {
     }
   } else if (row === 'second' && column === 'third') {
     if (
-      (matrix[i - 1][j] ||
-        matrix[i - 1][j + 1] ||
-        matrix[i - 1][j + 2] ||
-        matrix[i][j - 2] ||
-        matrix[i][j - 1] ||
-        matrix[i + 1][j] ||
-        matrix[i + 1][j + 1] ||
-        matrix[i + 1][j + 2]) === num
+      num === matrix[i - 1][j - 2] ||
+      num === matrix[i - 1][j - 1] ||
+      num === matrix[i - 1][j] ||
+      num === matrix[i][j - 2] ||
+      num === matrix[i][j - 1] ||
+      num === matrix[i + 1][j - 2] ||
+      num === matrix[i + 1][j - 1] ||
+      num === matrix[i + 1][j]
     ) {
       return false;
     } else {
@@ -154,14 +154,14 @@ function checkCube(matrix, num, i, j) {
     }
   } else if (row === 'third' && column === 'first') {
     if (
-      (matrix[i - 2][j] ||
-        matrix[i - 2][j + 1] ||
-        matrix[i - 2][j + 2] ||
-        matrix[i - 1][j] ||
-        matrix[i - 1][j + 1] ||
-        matrix[i - 1][j + 2] ||
-        matrix[i][j + 1] ||
-        matrix[i][j + 2]) === num
+      num === matrix[i - 2][j] ||
+      num === matrix[i - 2][j + 1] ||
+      num === matrix[i - 2][j + 2] ||
+      num === matrix[i - 1][j] ||
+      num === matrix[i - 1][j + 1] ||
+      num === matrix[i - 1][j + 2] ||
+      num === matrix[i][j + 1] ||
+      num === matrix[i][j + 2]
     ) {
       return false;
     } else {
@@ -169,14 +169,14 @@ function checkCube(matrix, num, i, j) {
     }
   } else if (row === 'third' && column === 'second') {
     if (
-      (matrix[i - 2][j] ||
-        matrix[i - 2][j + 1] ||
-        matrix[i - 2][j + 2] ||
-        matrix[i - 1][j] ||
-        matrix[i - 1][j + 1] ||
-        matrix[i - 1][j + 2] ||
-        matrix[i][j - 1] ||
-        matrix[i][j + 1]) === num
+      num === matrix[i - 2][j - 1] ||
+      num === matrix[i - 2][j] ||
+      num === matrix[i - 2][j + 1] ||
+      num === matrix[i - 1][j - 1] ||
+      num === matrix[i - 1][j] ||
+      num === matrix[i - 1][j + 1] ||
+      num === matrix[i][j - 1] ||
+      num === matrix[i][j + 1]
     ) {
       return false;
     } else {
@@ -184,14 +184,14 @@ function checkCube(matrix, num, i, j) {
     }
   } else if (row === 'third' && column === 'third') {
     if (
-      (matrix[i - 2][j] ||
-        matrix[i - 2][j + 1] ||
-        matrix[i - 2][j + 2] ||
-        matrix[i - 1][j] ||
-        matrix[i - 1][j + 1] ||
-        matrix[i - 1][j + 2] ||
-        matrix[i][j - 2] ||
-        matrix[i][j - 1]) === num
+      num === matrix[i - 2][j - 2] ||
+      num === matrix[i - 2][j - 1] ||
+      num === matrix[i - 2][j] ||
+      num === matrix[i - 1][j - 2] ||
+      num === matrix[i - 1][j - 1] ||
+      num === matrix[i - 1][j] ||
+      num === matrix[i][j - 2] ||
+      num === matrix[i][j - 1]
     ) {
       return false;
     } else {
@@ -236,3 +236,81 @@ let tempMatrix = [
   [5, 2, 9, 6, 4, 1, 3, 7, 8],
 ];
 console.log(checkAllCells(tempMatrix));
+
+function createMatrix() {
+  let reLoop = 100;
+
+  const create = () => {
+    let matrix = new Array(0);
+    for (let loop = 0; loop < chartSize; loop++) {
+      matrix.push(new Array(0));
+    }
+
+    for (let i = 0; i < chartSize; i++) {
+      for (let j = 0; j < chartSize; j++) {
+        let num = Math.floor(Math.random() * chartSize + 1);
+        if (checkCell(matrix, num, i, j)) {
+          matrix[i][j] = num;
+        } else {
+          matrix[i][j] = '';
+        }
+      }
+    }
+
+    matrix = solveSudoku(matrix);
+    if (!matrix) {
+      // createMatrix();
+      reLoop--;
+      if (reLoop > 0) {
+        create();
+      } else {
+        console.log('impossible');
+      }
+    } else {
+      return matrix;
+    }
+  };
+
+  create();
+}
+createMatrix();
+
+function solveSudoku(matrix) {
+  let reLoop = 100;
+
+  const solve = () => {
+    let filledCells = 0;
+
+    for (let i = 0; i < chartSize; i++) {
+      for (let j = 0; j < chartSize; j++) {
+        if (matrix[i][j] === '') {
+          let numSet = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+          let numPossible = [];
+          for (let loop = 0; loop < numSet.length; loop++) {
+            if (checkCell(matrix, numSet[loop], i, j)) {
+              numPossible.push(numSet[loop]);
+            }
+          }
+          if (numPossible.length === 1) {
+            matrix[i][j] = numPossible[0];
+          }
+        } else {
+          filledCells++;
+        }
+      }
+    }
+
+    if (filledCells === Math.pow(chartSize, 2)) {
+      return matrix;
+    } else {
+      reLoop--;
+      if (reLoop > 0) {
+        solve();
+      } else {
+        return false;
+      }
+    }
+  };
+
+  return solve();
+}
