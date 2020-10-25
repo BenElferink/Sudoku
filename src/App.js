@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { SudokuCreate } from './components/js/matrixAlgorithm';
 import StartPage from './components/StartPage';
 import GamePage from './components/GamePage';
@@ -25,8 +25,6 @@ export function App() {
     setGamePage(false);
   };
 
-  const finishClick = () => {};
-
   return (
     <>
       {startPage ? (
@@ -43,14 +41,7 @@ export function App() {
           startClick={startClick}
         />
       ) : null}
-      {gamePage ? (
-        <GamePage
-          matrix={matrix}
-          difficulty={difficulty}
-          quitClick={quitClick}
-          finishClick={finishClick}
-        />
-      ) : null}
+      {gamePage ? <GamePage matrix={matrix} difficulty={difficulty} quitClick={quitClick} /> : null}
       {scorePage ? <ScorePage /> : null}
     </>
   );

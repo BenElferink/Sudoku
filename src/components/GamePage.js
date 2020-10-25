@@ -3,7 +3,7 @@ import GameBoard from './GameBoard';
 import LightBulb from './icons/LightBulb-48px';
 import Button from './Button';
 
-function GamePage({ matrix, difficulty, quitClick, finishClick }) {
+function GamePage({ matrix, difficulty, quitClick }) {
   const [timer, setTimer] = useState('00:00');
   const [hints, setHints] = useState(
     difficulty === 'easy' ? 3 : difficulty === 'normal' ? 2 : difficulty === 'hard' ? 1 : 0
@@ -95,7 +95,6 @@ function GamePage({ matrix, difficulty, quitClick, finishClick }) {
       <div className='buttons'>
         <Button text='Reset' onClick={resetClick} />
         <Button text='Quit' onClick={quitClick} />
-        <Button text='Finish' onClick={finishClick} />
       </div>
     </main>
   );
