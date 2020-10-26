@@ -1,3 +1,22 @@
+$neonColors: linear-gradient(
+  264.51deg,
+  #ffe580 4.38%,
+  #ff7571 11.51%,
+  #ff7270 25.06%,
+  #ea5dad 36.04%,
+  #c2a0fd 47.63%,
+  #9867f0 59.03%,
+  #3bf0e4 69.96%,
+  #33ce43 83.74%,
+  #b2f4b6 95.62%
+);
+
+$bgColor: rgb(1, 8, 19);
+$textColor: rgb(128, 136, 152);
+$detailColor: rgb(36, 36, 62);
+$neonPurpleDark: #9867f0;
+$neonPurpleLight: #c2a0fd;
+
 * {
   margin: 0;
   padding: 0;
@@ -27,16 +46,23 @@ footer {
   transition: all 0.5s;
 }
 
+@import './StartPage';
+@import './GamePage';
+@import './ScorePage';
+
 button {
-  padding: 10px;
+  padding: 0.3em 1em;
   border-radius: 0.5em;
   font-size: 4vh;
   cursor: pointer;
 }
 
-@import './StartPage';
-@import './GamePage';
-@import './ScorePage';
+.interactive {
+  background-color: $detailColor;
+  color: $textColor;
+  border: 1px solid $textColor;
+  box-shadow: 0 0 5px $neonPurpleDark inset;
+}
 
 .hide {
   opacity: 0;

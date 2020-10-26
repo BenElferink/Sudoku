@@ -211,7 +211,7 @@ function checkCell(matrix, num, i, j) {
   }
 }
 
-export function checkAllCells(matrix) {
+function checkAllCells(matrix) {
   for (let i = 0; i < chartSize; i++) {
     for (let j = 0; j < chartSize; j++) {
       if (!checkCell(matrix, matrix[i][j], i, j)) {

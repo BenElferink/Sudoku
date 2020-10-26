@@ -28,7 +28,7 @@ function Hints({ hints, setHints, MATRIX }) {
   };
 
   return (
-    <div className='buttons'>
+    <div className='hints'>
       <Button text='HINT' onClick={hintClick} />
       {hints >= 1 ? <LightBulb opacity='100%' /> : <LightBulb opacity='25%' />}
       {hints >= 2 ? <LightBulb opacity='100%' /> : <LightBulb opacity='25%' />}

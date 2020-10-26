@@ -38,21 +38,15 @@ function GamePage({ difficulty, quitClick }) {
     setMatrixPlayed(duplicateMatrix(filtered));
   }, [matrixOrigin, difficulty]);
 
-  useEffect(() => {
-    if (checkAllCells(matrixPlayed)) {
-      //
-    }
-  }, [matrixPlayed]);
-
   return (
     <main>
-      <Timer time={time} setTime={setTime} />
-      <Hints hints={hints} setHints={setHints} MATRIX={MATRIX} />
-      {matrixPlayed !== '' ? <GameBoard MATRIX={MATRIX} /> : null}
       <div className='buttons'>
         <Button text='Reset' onClick={resetClick} />
         <Button text='Quit' onClick={quitClick} />
       </div>
+      {matrixPlayed !== '' ? <GameBoard MATRIX={MATRIX} /> : null}
+      <Hints hints={hints} setHints={setHints} MATRIX={MATRIX} />
+      <Timer time={time} setTime={setTime} />
     </main>
   );
 }

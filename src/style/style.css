@@ -35,11 +35,9 @@ footer {
   transition: all 0.5s;
 }
 
-button {
-  padding: 10px;
-  border-radius: 0.5em;
-  font-size: 4vh;
-  cursor: pointer;
+header {
+  background-color: #010813;
+  color: #808898;
 }
 
 header .heading {
@@ -52,16 +50,18 @@ header .heading {
 
 header .heading h2 {
   font-size: 10vh;
+  color: #9867f0;
 }
 
 header .heading h3 {
   font-size: 4vh;
+  color: #c2a0fd;
 }
 
 header .heading .line {
   width: 80%;
   height: 2px;
-  background-color: #000;
+  background-color: #9867f0;
 }
 
 header form {
@@ -90,6 +90,22 @@ header form .name-inp {
   cursor: pointer;
 }
 
+header form .name-inp::-webkit-input-placeholder {
+  color: #808898;
+}
+
+header form .name-inp:-ms-input-placeholder {
+  color: #808898;
+}
+
+header form .name-inp::-ms-input-placeholder {
+  color: #808898;
+}
+
+header form .name-inp::placeholder {
+  color: #808898;
+}
+
 header form .diff-box label {
   display: block;
   margin: 0.5em 0;
@@ -99,14 +115,31 @@ header form .diff-box label {
 
 header form .diff-box label .diff-inp {
   margin-right: 1em;
+  -webkit-filter: drop-shadow(0 0 5px #808898);
+          filter: drop-shadow(0 0 5px #808898);
   cursor: pointer;
+}
+
+main {
+  background-color: #010813;
+  color: #808898;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 
 main .timer {
   font-size: 2rem;
 }
 
-main .buttons {
+main .hints {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -115,19 +148,69 @@ main .buttons {
           align-items: center;
 }
 
+main .buttons {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
 main table {
-  border: 1px solid #000;
+  border: none;
   border-collapse: collapse;
+}
+
+main table tr:nth-child(3n) {
+  border-bottom: 3px solid #24243e;
+}
+
+main table tr:nth-last-child(3n) {
+  border-top: 3px solid #24243e;
 }
 
 main table tr td {
-  border: 1px solid #000;
+  border: none;
   border-collapse: collapse;
 }
 
+main table tr td:nth-child(3n) {
+  border-right: 3px solid #24243e;
+}
+
+main table tr td:nth-last-child(3n) {
+  border-left: 3px solid #24243e;
+}
+
 main table tr td .cell-inp {
-  width: 30px;
-  height: 30px;
+  width: 10vw;
+  height: 10vw;
+  background-color: transparent;
+  color: #808898;
+  border: 1px solid #24243e;
+  border-radius: 0%;
+  font-size: 2rem;
+  text-align: center;
+}
+
+button {
+  padding: 0.3em 1em;
+  border-radius: 0.5em;
+  font-size: 4vh;
+  cursor: pointer;
+}
+
+.interactive {
+  background-color: #24243e;
+  color: #808898;
+  border: 1px solid #808898;
+  -webkit-box-shadow: 0 0 5px #9867f0 inset;
+          box-shadow: 0 0 5px #9867f0 inset;
 }
 
 .hide {

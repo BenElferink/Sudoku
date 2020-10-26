@@ -15,7 +15,7 @@ function StartPage({ nameValue, nameChange, difficultyValue, difficultyChange, s
           e.preventDefault();
         }}>
         <input
-          className='name-inp'
+          className='name-inp interactive'
           placeholder='Nickname:'
           value={nameValue}
           onChange={nameChange}
