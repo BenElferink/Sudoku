@@ -1,20 +1,17 @@
 import React, { useState } from 'react';
-import { RenderMatrix } from './components/js/matrixAlgorithm';
-import StartPage from './components/StartPage';
-import GamePage from './components/GamePage';
-import ScorePage from './components/ScorePage';
+import StartPage from './components/StartPage/StartPage';
+import GamePage from './components/GamePage/GamePage';
+import ScorePage from './components/ScorePage/ScorePage';
 
 export function App() {
   const [startPage, setStartPage] = useState(true);
   const [gamePage, setGamePage] = useState(false);
   const [scorePage, setScorePage] = useState(false);
-  const [matrix, setMatrix] = useState('');
   const [name, setName] = useState('');
   const [difficulty, setDifficulty] = useState('normal');
 
   const startClick = () => {
     if (name !== '') {
-      setMatrix(RenderMatrix(difficulty));
       setGamePage(true);
       setStartPage(false);
     }
@@ -41,7 +38,7 @@ export function App() {
           startClick={startClick}
         />
       ) : null}
-      {gamePage ? <GamePage matrix={matrix} difficulty={difficulty} quitClick={quitClick} /> : null}
+      {gamePage ? <GamePage difficulty={difficulty} quitClick={quitClick} /> : null}
       {scorePage ? <ScorePage /> : null}
     </>
   );

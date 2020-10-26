@@ -1,4 +1,4 @@
-function SudokuCreate(maxNum) {
+export function SudokuCreate(maxNum) {
   //generate number set
   let numSet = [];
   let sudokuArray = [];
@@ -113,7 +113,18 @@ function SudokuCreate(maxNum) {
   return sudokuArray; //return our array to start to do some sudoku
 }
 
-function filterDifficulty(diff, matrix) {
+export function duplicateMatrix(matrix) {
+  let newMatrix = new Array(0);
+  for (let i = 0; i < 9; i++) {
+    newMatrix.push(new Array(0));
+    for (let j = 0; j < 9; j++) {
+      newMatrix[i][j] = matrix[i][j];
+    }
+  }
+  return newMatrix;
+}
+
+export function filterDifficulty(matrix, diff) {
   // set number of tiles to clear, by difficulty
   let tilesToClear = Math.pow(9, 2);
   switch (diff) {

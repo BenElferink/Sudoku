@@ -1,7 +1,7 @@
 import React from 'react';
 
 function ScorePage() {
-  return <fotter></fotter>;
+  return <footer></footer>;
 }
 
 export default ScorePage;

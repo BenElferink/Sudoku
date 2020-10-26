@@ -115,13 +115,17 @@ main .buttons {
           align-items: center;
 }
 
-main table,
-main td {
+main table {
   border: 1px solid #000;
   border-collapse: collapse;
 }
 
 main table tr td {
+  border: 1px solid #000;
+  border-collapse: collapse;
+}
+
+main table tr td .cell-inp {
   width: 30px;
   height: 30px;
 }

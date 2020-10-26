@@ -8,17 +8,17 @@ main {
     align-items: center;
   }
 
-  table,
-  td {
+  table {
     border: 1px solid #000;
     border-collapse: collapse;
-  }
-
-  table {
     tr {
       td {
-        width: 30px;
-        height: 30px;
+        border: 1px solid #000;
+        border-collapse: collapse;
+        .cell-inp {
+          width: 30px;
+          height: 30px;
+        }
       }
     }
   }
