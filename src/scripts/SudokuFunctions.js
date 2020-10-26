@@ -211,7 +211,7 @@ function checkCell(matrix, num, i, j) {
   }
 }
 
-function checkAllCells(matrix) {
+export function checkAllCells(matrix) {
   for (let i = 0; i < chartSize; i++) {
     for (let j = 0; j < chartSize; j++) {
       if (!checkCell(matrix, matrix[i][j], i, j)) {
@@ -234,7 +234,6 @@ export function duplicateMatrix(matrix) {
 }
 
 export function filterDifficulty(matrix, diff) {
-  // set number of tiles to clear, by difficulty
   let tilesToClear = Math.pow(9, 2);
   switch (diff) {
     case 'easy':
@@ -249,7 +248,6 @@ export function filterDifficulty(matrix, diff) {
     default:
       break;
   }
-  // clear tiles from matrix
   while (tilesToClear !== 0) {
     let i = Math.floor(Math.random() * 9);
     let j = Math.floor(Math.random() * 9);
@@ -259,97 +257,4 @@ export function filterDifficulty(matrix, diff) {
     }
   }
   return matrix;
-}
-
-let tempMatrix = [
-  [4, 3, 2, 9, 6, 7, 8, 5, 1],
-  [8, 7, 6, 3, 1, 5, 2, 4, 9],
-  [1, 9, 5, 8, 2, 4, 7, 3, 6],
-
-  [9, 1, 7, 2, 5, 6, 4, 8, 3],
-  [3, 6, 8, 4, 7, 9, 5, 1, 2],
-  [2, 5, 4, 1, 3, 8, 9, 6, 7],
-
-  [7, 8, 1, 5, 9, 3, 6, 2, 4],
-  [6, 4, 3, 7, 8, 2, 1, 9, 5],
-  [5, 2, 9, 6, 4, 1, 3, 7, 8],
-];
-console.log(checkAllCells(tempMatrix));
-
-function createMatrix() {
-  let reLoop = 100;
-
-  const create = () => {
-    let matrix = new Array(0);
-    for (let loop = 0; loop < chartSize; loop++) {
-      matrix.push(new Array(0));
-    }
-
-    for (let i = 0; i < chartSize; i++) {
-      for (let j = 0; j < chartSize; j++) {
-        let num = Math.floor(Math.random() * chartSize + 1);
-        if (checkCell(matrix, num, i, j)) {
-          matrix[i][j] = num;
-        } else {
-          matrix[i][j] = '';
-        }
-      }
-    }
-
-    matrix = solveSudoku(matrix);
-    if (!matrix) {
-      // createMatrix();
-      reLoop--;
-      if (reLoop > 0) {
-        create();
-      } else {
-        console.log('impossible');
-      }
-    } else {
-      return matrix;
-    }
-  };
-
-  create();
-}
-createMatrix();
-
-function solveSudoku(matrix) {
-  let reLoop = 100;
-
-  const solve = () => {
-    let filledCells = 0;
-
-    for (let i = 0; i < chartSize; i++) {
-      for (let j = 0; j < chartSize; j++) {
-        if (matrix[i][j] === '') {
-          let numSet = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-          let numPossible = [];
-          for (let loop = 0; loop < numSet.length; loop++) {
-            if (checkCell(matrix, numSet[loop], i, j)) {
-              numPossible.push(numSet[loop]);
-            }
-          }
-          if (numPossible.length === 1) {
-            matrix[i][j] = numPossible[0];
-          }
-        } else {
-          filledCells++;
-        }
-      }
-    }
-
-    if (filledCells === Math.pow(chartSize, 2)) {
-      return matrix;
-    } else {
-      reLoop--;
-      if (reLoop > 0) {
-        solve();
-      } else {
-        return false;
-      }
-    }
-  };
-
-  return solve();
 }

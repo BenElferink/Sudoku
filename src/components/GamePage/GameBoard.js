@@ -1,5 +1,5 @@
 import React from 'react';
-import { duplicateMatrix } from '../../logic/SudokuScripts';
+import { duplicateMatrix } from '../../scripts/SudokuFunctions';
 
 function GameBoard({ MATRIX }) {
   const handleCellChange = (e, i, j) => {

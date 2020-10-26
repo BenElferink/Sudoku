@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { SudokuCreate } from '../../logic/matrixAlgorithm';
-import { duplicateMatrix, filterDifficulty } from '../../logic/SudokuScripts';
+import { SudokuCreate } from '../../scripts/SudokuAlgorithm';
+import { duplicateMatrix, filterDifficulty, checkAllCells } from '../../scripts/SudokuFunctions';
 import Timer from './Timer';
 import Hints from './Hints';
 import GameBoard from './GameBoard';
@@ -37,6 +37,12 @@ function GamePage({ difficulty, quitClick }) {
     setMatrixFilter(filtered);
     setMatrixPlayed(duplicateMatrix(filtered));
   }, [matrixOrigin, difficulty]);
+
+  useEffect(() => {
+    if (checkAllCells(matrixPlayed)) {
+      //
+    }
+  }, [matrixPlayed]);
 
   return (
     <main>

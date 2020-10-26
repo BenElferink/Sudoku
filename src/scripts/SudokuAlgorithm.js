@@ -1,3 +1,10 @@
+// -------------------------------------------------- //
+// -------------------------------------------------- //
+// -------------- algorithm by Rakhan --------------- //
+// -------------------------------------------------- //
+// -------------------------------------------------- //
+// - code below isn't the work of Ben Elferink !!!
+
 export function SudokuCreate(maxNum) {
   //generate number set
   let numSet = [];
@@ -108,52 +115,5 @@ export function SudokuCreate(maxNum) {
     sudokuArray = workingArray;
   }
 
-  // console.log(iterations);
-  //    console.table(sudokuArray);
   return sudokuArray; //return our array to start to do some sudoku
-}
-
-export function duplicateMatrix(matrix) {
-  let newMatrix = new Array(0);
-  for (let i = 0; i < 9; i++) {
-    newMatrix.push(new Array(0));
-    for (let j = 0; j < 9; j++) {
-      newMatrix[i][j] = matrix[i][j];
-    }
-  }
-  return newMatrix;
-}
-
-export function filterDifficulty(matrix, diff) {
-  // set number of tiles to clear, by difficulty
-  let tilesToClear = Math.pow(9, 2);
-  switch (diff) {
-    case 'easy':
-      tilesToClear = Math.floor(tilesToClear * 0.25);
-      break;
-    case 'normal':
-      tilesToClear = Math.floor(tilesToClear * 0.5);
-      break;
-    case 'hard':
-      tilesToClear = Math.floor(tilesToClear * 0.75);
-      break;
-    default:
-      break;
-  }
-  // clear tiles from matrix
-  while (tilesToClear !== 0) {
-    let i = Math.floor(Math.random() * 9);
-    let j = Math.floor(Math.random() * 9);
-    if (matrix[i][j] !== '') {
-      matrix[i][j] = '';
-      tilesToClear--;
-    }
-  }
-  return matrix;
-}
-
-export function RenderMatrix(difficulty) {
-  let matrix = SudokuCreate(9);
-  matrix = filterDifficulty(difficulty, matrix);
-  return matrix;
 }

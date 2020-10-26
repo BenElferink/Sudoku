@@ -1,5 +1,5 @@
 import React from 'react';
-import { duplicateMatrix } from '../../logic/SudokuScripts';
+import { duplicateMatrix } from '../../scripts/SudokuFunctions';
 import Button from '../Button';
 import LightBulb from '../../icons/LightBulb-48px';
 
