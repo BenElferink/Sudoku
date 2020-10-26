@@ -1,10 +1,17 @@
 import React from 'react';
+import { duplicateMatrix } from '../../logic/SudokuScripts';
 
-function GameBoard({ matrix, onChange }) {
+function GameBoard({ MATRIX }) {
+  const handleCellChange = (e, i, j) => {
+    let newMatrix = duplicateMatrix(MATRIX.matrixPlayed);
+    newMatrix[i][j] = e.target.value;
+    MATRIX.setMatrixPlayed(newMatrix);
+  };
+
   return (
     <table>
       <tbody>
-        {matrix.map((row, i) => (
+        {MATRIX.matrixPlayed.map((row, i) => (
           <tr key={i}>
             {row.map((column, j) => (
               <td key={j}>
@@ -13,7 +20,7 @@ function GameBoard({ matrix, onChange }) {
                     className='cell-inp'
                     value={column}
                     onChange={(e) => {
-                      onChange(e, i, j);
+                      handleCellChange(e, i, j);
                     }}
                     maxLength='1'
                   />

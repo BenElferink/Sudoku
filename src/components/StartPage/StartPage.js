@@ -2,16 +2,9 @@ import React from 'react';
 import Button from './../Button';
 import Difficulty from './Difficulty';
 
-function StartPage({
-  className,
-  nameValue,
-  nameChange,
-  difficultyValue,
-  difficultyChange,
-  startClick,
-}) {
+function StartPage({ nameValue, nameChange, difficultyValue, difficultyChange, startClick }) {
   return (
-    <header className={className}>
+    <header>
       <div className='heading'>
         <h2>Sudoku</h2>
         <div className='line'></div>

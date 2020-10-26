@@ -26,7 +26,6 @@ export function App() {
     <>
       {startPage ? (
         <StartPage
-          className={gamePage ? 'hide' : 'show'}
           nameValue={name}
           nameChange={(e) => {
             setName(e.target.value);
