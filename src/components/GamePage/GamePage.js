@@ -25,6 +25,7 @@ function GamePage({ difficulty, quitClick }) {
 
   const resetClick = () => {
     setMatrixPlayed(matrixFilter);
+    setTime('00:00');
     setHints(
       difficulty === 'easy' ? 3 : difficulty === 'normal' ? 2 : difficulty === 'hard' ? 1 : 0
     );
