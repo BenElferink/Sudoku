@@ -3,152 +3,130 @@
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  outline: none;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #808898;
 }
 
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+main {
+  height: 100vh;
+  width: 300%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: url(./../img/sudoWall.jpg) no-repeat center;
+  background-size: cover;
+  position: fixed;
+  top: 0;
+  left: -0%;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
-}
-
-header,
-main,
-footer {
-  width: 100%;
-  min-height: 100vh;
+section {
+  height: 100vh;
+  width: 100vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 }
 
-header {
-  background-color: #010813;
-  color: #808898;
+button {
+  padding: 10px 25px;
+  background-color: #24243e;
+  border: 1px solid #808898;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 0 5px #9867f0 inset;
+          box-shadow: 0 0 5px #9867f0 inset;
+  font-size: 24px;
+  cursor: pointer;
 }
 
-header .heading {
+#start .heading {
   width: 100%;
-  margin: 2em;
   display: -ms-grid;
   display: grid;
   place-items: center;
 }
 
-header .heading h2 {
+#start .heading h2 {
   font-size: 10vh;
   color: #9867f0;
 }
 
-header .heading h3 {
-  font-size: 4vh;
-  color: #c2a0fd;
-}
-
-header .heading .line {
+#start .heading .line {
   width: 80%;
   height: 2px;
   background-color: #9867f0;
 }
 
-header form {
-  height: 60vh;
+#start .heading h3 {
+  font-size: 4vh;
+  color: #c2a0fd;
+}
+
+#start form {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+#start form .name-inp {
   width: 70%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-}
-
-header form .name-inp {
-  width: 100%;
   padding: 10px;
+  background-color: #24243e;
+  border: 1px solid #808898;
   border-radius: 1em;
-  font-size: 3vh;
+  -webkit-box-shadow: 0 0 5px #9867f0 inset;
+          box-shadow: 0 0 5px #9867f0 inset;
+  font-size: 16px;
   cursor: pointer;
 }
 
-header form .name-inp::-webkit-input-placeholder {
-  color: #808898;
-}
-
-header form .name-inp:-ms-input-placeholder {
-  color: #808898;
-}
-
-header form .name-inp::-ms-input-placeholder {
-  color: #808898;
-}
-
-header form .name-inp::placeholder {
-  color: #808898;
-}
-
-header form .diff-box label {
-  display: block;
+#start form .diff-box label {
   margin: 0.5em 0;
-  font-size: 3vh;
+  display: block;
+  font-size: 14px;
   cursor: pointer;
 }
 
-header form .diff-box label .diff-inp {
+#start form .diff-box label .diff-inp {
   margin-right: 1em;
-  -webkit-filter: drop-shadow(0 0 5px #808898);
-          filter: drop-shadow(0 0 5px #808898);
   cursor: pointer;
 }
 
-main {
-  background-color: #010813;
-  color: #808898;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+#game .timer {
+  font-size: 18px;
 }
 
-main .timer {
-  font-size: 2rem;
-}
-
-main .hints {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-main .buttons {
+#game .hints {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -161,65 +139,62 @@ main .buttons {
           justify-content: space-evenly;
 }
 
-main table {
+#game .hints svg {
+  height: 22px;
+}
+
+#game .buttons {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+#game .chart {
+  height: 95vw;
+  width: 95vw;
+}
+
+#game .chart table {
+  height: 100%;
+  width: 100%;
   border: none;
   border-collapse: collapse;
 }
 
-main table tr:nth-child(3n) {
+#game .chart table tr:nth-child(3n) {
   border-bottom: 3px solid #24243e;
 }
 
-main table tr:nth-last-child(3n) {
+#game .chart table tr:nth-last-child(3n) {
   border-top: 3px solid #24243e;
 }
 
-main table tr td {
-  border: none;
+#game .chart table tr td {
+  border: 1px solid #24243e;
   border-collapse: collapse;
 }
 
-main table tr td:nth-child(3n) {
+#game .chart table tr td:nth-child(3n) {
   border-right: 3px solid #24243e;
 }
 
-main table tr td:nth-last-child(3n) {
+#game .chart table tr td:nth-last-child(3n) {
   border-left: 3px solid #24243e;
 }
 
-main table tr td .cell-inp {
-  width: 10vw;
-  height: 10vw;
+#game .chart table tr td .cell-inp {
+  width: 35px;
   background-color: transparent;
   color: #808898;
-  border: 1px solid #24243e;
-  border-radius: 0%;
-  font-size: 2rem;
+  border: none;
+  font-size: 22px;
   text-align: center;
-}
-
-button {
-  padding: 0.3em 1em;
-  border-radius: 0.5em;
-  font-size: 4vh;
-  cursor: pointer;
-}
-
-.interactive {
-  background-color: #24243e;
-  color: #808898;
-  border: 1px solid #808898;
-  -webkit-box-shadow: 0 0 5px #9867f0 inset;
-          box-shadow: 0 0 5px #9867f0 inset;
-}
-
-.hide {
-  opacity: 0;
-  visibility: hidden;
-}
-
-.show {
-  opacity: 1;
-  visibility: visible;
 }
 /*# sourceMappingURL=style.css.map */

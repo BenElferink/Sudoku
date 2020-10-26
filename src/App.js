@@ -4,42 +4,36 @@ import GamePage from './components/GamePage/GamePage';
 import ScorePage from './components/ScorePage/ScorePage';
 
 export function App() {
-  const [startPage, setStartPage] = useState(true);
-  const [gamePage, setGamePage] = useState(false);
-  const [scorePage, setScorePage] = useState(false);
+  const [sideScroll, setSideScroll] = useState('-0%');
   const [name, setName] = useState('');
   const [difficulty, setDifficulty] = useState('normal');
 
   const startClick = () => {
     if (name !== '') {
-      setGamePage(true);
-      setStartPage(false);
+      setSideScroll('-100%');
     }
   };
 
   const quitClick = () => {
-    setStartPage(true);
-    setGamePage(false);
+    setSideScroll('-0%');
   };
 
   return (
-    <>
-      {startPage ? (
-        <StartPage
-          nameValue={name}
-          nameChange={(e) => {
-            setName(e.target.value);
-          }}
-          difficultyValue={difficulty}
-          difficultyChange={(e) => {
-            setDifficulty(e.target.value);
-          }}
-          startClick={startClick}
-        />
-      ) : null}
-      {gamePage ? <GamePage difficulty={difficulty} quitClick={quitClick} /> : null}
-      {scorePage ? <ScorePage /> : null}
-    </>
+    <main style={{ left: sideScroll }}>
+      <StartPage
+        nameValue={name}
+        nameChange={(e) => {
+          setName(e.target.value);
+        }}
+        difficultyValue={difficulty}
+        difficultyChange={(e) => {
+          setDifficulty(e.target.value);
+        }}
+        startClick={startClick}
+      />
+      <GamePage difficulty={difficulty} quitClick={quitClick} />
+      <ScorePage />
+    </main>
   );
 }
 

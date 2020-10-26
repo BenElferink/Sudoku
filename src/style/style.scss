@@ -1,75 +1,49 @@
-$neonColors: linear-gradient(
-  264.51deg,
-  #ffe580 4.38%,
-  #ff7571 11.51%,
-  #ff7270 25.06%,
-  #ea5dad 36.04%,
-  #c2a0fd 47.63%,
-  #9867f0 59.03%,
-  #3bf0e4 69.96%,
-  #33ce43 83.74%,
-  #b2f4b6 95.62%
-);
-
-$bgColor: rgb(1, 8, 19);
-$textColor: rgb(128, 136, 152);
-$detailColor: rgb(36, 36, 62);
-$neonPurpleDark: #9867f0;
-$neonPurpleLight: #c2a0fd;
+$defaultDark: rgb(36, 36, 62);
+$defaultLight: rgb(128, 136, 152);
+$purpleDark: #9867f0;
+$purpleLight: #c2a0fd;
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  outline: none;
+  font-family: Arial, Helvetica, sans-serif;
+  color: $defaultLight;
 }
 
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
-    'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
-}
-
-header,
-main,
-footer {
-  width: 100%;
-  min-height: 100vh;
+main {
+  height: 100vh;
+  width: 300%;
   display: flex;
-  flex-direction: column;
+  flex-flow: row nowrap;
   align-items: center;
-  transition: all 0.5s;
+  background: url(./../img/sudoWall.jpg) no-repeat center;
+  background-size: cover;
+  position: fixed;
+  top: 0;
+  left: -0%;
+  transition: all 0.3s;
+}
+
+section {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+button {
+  padding: 10px 25px;
+  background-color: $defaultDark;
+  border: 1px solid $defaultLight;
+  border-radius: 10px;
+  box-shadow: 0 0 5px $purpleDark inset;
+  font-size: 24px;
+  cursor: pointer;
 }
 
 @import './StartPage';
 @import './GamePage';
 @import './ScorePage';
-
-button {
-  padding: 0.3em 1em;
-  border-radius: 0.5em;
-  font-size: 4vh;
-  cursor: pointer;
-}
-
-.interactive {
-  background-color: $detailColor;
-  color: $textColor;
-  border: 1px solid $textColor;
-  box-shadow: 0 0 5px $neonPurpleDark inset;
-}
-
-.hide {
-  opacity: 0;
-  visibility: hidden;
-}
-
-.show {
-  opacity: 1;
-  visibility: visible;
-}

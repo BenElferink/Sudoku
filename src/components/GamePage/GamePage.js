@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { SudokuCreate } from '../../scripts/SudokuAlgorithm';
-import { duplicateMatrix, filterDifficulty, checkAllCells } from '../../scripts/SudokuFunctions';
+import { duplicateMatrix, filterDifficulty } from '../../scripts/SudokuFunctions';
 import Timer from './Timer';
 import Hints from './Hints';
 import GameBoard from './GameBoard';
@@ -39,15 +39,15 @@ function GamePage({ difficulty, quitClick }) {
   }, [matrixOrigin, difficulty]);
 
   return (
-    <main>
+    <section id='game'>
+      <Timer time={time} setTime={setTime} />
+      <Hints hints={hints} setHints={setHints} MATRIX={MATRIX} />
+      <div className='chart'>{matrixPlayed !== '' ? <GameBoard MATRIX={MATRIX} /> : null}</div>
       <div className='buttons'>
         <Button text='Reset' onClick={resetClick} />
         <Button text='Quit' onClick={quitClick} />
       </div>
-      {matrixPlayed !== '' ? <GameBoard MATRIX={MATRIX} /> : null}
-      <Hints hints={hints} setHints={setHints} MATRIX={MATRIX} />
-      <Timer time={time} setTime={setTime} />
-    </main>
+    </section>
   );
 }
 

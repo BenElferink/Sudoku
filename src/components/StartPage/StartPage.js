@@ -4,7 +4,7 @@ import Difficulty from './Difficulty';
 
 function StartPage({ nameValue, nameChange, difficultyValue, difficultyChange, startClick }) {
   return (
-    <header>
+    <section id='start'>
       <div className='heading'>
         <h2>Sudoku</h2>
         <div className='line'></div>
@@ -23,7 +23,7 @@ function StartPage({ nameValue, nameChange, difficultyValue, difficultyChange, s
         <Difficulty value={difficultyValue} onChange={difficultyChange} />
         <Button text='Start Game!' onClick={startClick} />
       </form>
-    </header>
+    </section>
   );
 }
 

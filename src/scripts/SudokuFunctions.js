@@ -222,6 +222,19 @@ function checkAllCells(matrix) {
   return true;
 }
 
+let tempMatrix = [
+  [2, 3, 7, 9, 5, 1, 4, 8, 6],
+  [1, 8, 9, 4, 3, 6, 2, 7, 5],
+  [4, 6, 5, 2, 8, 7, 1, 9, 3],
+  [9, 4, 2, 3, 6, 5, 8, 1, 7],
+  [7, 5, 3, 1, 4, 8, 9, 6, 2],
+  [8, 1, 6, 7, 9, 2, 3, 5, 4],
+  [5, 2, 8, 6, 1, 3, 7, 4, 9],
+  [6, 7, 4, 8, 2, 9, 5, 3, 1],
+  [3, 9, 1, 5, 7, 4, 6, 2, 8],
+];
+checkAllCells(tempMatrix);
+
 export function duplicateMatrix(matrix) {
   let newMatrix = new Array(0);
   for (let i = 0; i < 9; i++) {
