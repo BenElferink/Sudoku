@@ -1,7 +1,7 @@
 import React from 'react';
-import { duplicateMatrix } from '../../scripts/SudokuFunctions';
-import Button from '../Button';
-import LightBulb from '../../icons/LightBulb-48px';
+import { duplicateMatrix } from './../scripts/SudokuFunctions';
+import Button from './Button';
+import LightBulb from './LightBulb-48px';
 
 function Hints({ hints, setHints, MATRIX }) {
   const hintClick = () => {
@@ -28,7 +28,7 @@ function Hints({ hints, setHints, MATRIX }) {
   };
 
   return (
-    <div className='hints'>
+    <div className='col-12 hints'>
       <Button text='HINT' onClick={hintClick} />
       {hints >= 1 ? <LightBulb opacity='100%' /> : <LightBulb opacity='25%' />}
       {hints >= 2 ? <LightBulb opacity='100%' /> : <LightBulb opacity='25%' />}

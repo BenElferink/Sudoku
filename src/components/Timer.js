@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 
-function Timer({ time, setTime }) {
+function Timer({ timer, setTimer }) {
   useEffect(() => {
     const interval = setInterval(() => {
-      let minutes = parseInt(time.substring(0, 2));
-      let seconds = parseInt(time.substring(3, 5));
+      let minutes = parseInt(timer.substring(0, 2));
+      let seconds = parseInt(timer.substring(3, 5));
 
       if (seconds < 59) {
         seconds++;
@@ -15,14 +15,14 @@ function Timer({ time, setTime }) {
 
       seconds < 10 ? (seconds = `0${seconds}`) : (seconds = `${seconds}`);
       minutes < 10 ? (minutes = `0${minutes}`) : (minutes = `${minutes}`);
-      setTime(`${minutes}:${seconds}`);
+      setTimer(`${minutes}:${seconds}`);
     }, 1000);
 
     return () => clearInterval(interval);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [time]);
+  }, [timer]);
 
-  return <p className='timer'>Time elapsed: {time}</p>;
+  return <p className='col-12 timer'>Time elapsed: {timer}</p>;
 }
 
 export default Timer;

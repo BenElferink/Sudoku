@@ -1,63 +1,51 @@
 #start {
-  .heading {
-    // height: ;
-    width: 100%;
-    display: grid;
-    place-items: center;
+  .title {
+    margin: 5vh 0;
+    text-align: center;
 
-    h2 {
-      font-size: 10vh;
+    h3 {
       color: $purpleDark;
+      font-size: 10vh;
     }
 
     .line {
-      width: 80%;
       height: 2px;
+      width: 100%;
       background-color: $purpleDark;
     }
 
-    h3 {
-      font-size: 4vh;
+    h4 {
       color: $purpleLight;
+      font-size: 4vh;
     }
   }
 
   form {
-    // height: 60vh;
-    width: 100%;
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-    justify-content: space-evenly;
+    margin-top: 10vh;
+    height: 40vh;
+    display: grid;
+    place-items: center;
 
-    .name-inp {
-      width: 70%;
-      padding: 10px;
+    .name {
       background-color: $defaultDark;
-      // color: $defaultLight;
-      border: 1px solid $defaultLight;
-      border-radius: 1em;
-      box-shadow: 0 0 5px $purpleDark inset;
-      font-size: 16px;
-      cursor: pointer;
+      border: 1px solid $purpleDark;
+      border-radius: 0.5em;
+      box-shadow: 0 0 3px $purpleDark inset;
+      font-size: 3vh;
+      cursor: text;
+
       &::placeholder {
-        // color: $defaultLight;
+        color: $defaultLight;
       }
     }
 
-    .diff-box {
-      label {
-        margin: 0.5em 0;
-        display: block;
-        font-size: 14px;
-        cursor: pointer;
+    .diff {
+      margin-right: 1em;
+      cursor: pointer;
+    }
 
-        .diff-inp {
-          margin-right: 1em;
-          // filter: drop-shadow(0 0 5px $textColor);
-          cursor: pointer;
-        }
-      }
+    label {
+      font-size: 3vh;
     }
   }
 }
