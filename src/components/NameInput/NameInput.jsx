@@ -8,7 +8,8 @@ export default function NameInput({ pullData, hideShow }) {
     if (hideShow === 'hide') {
       pullData(value);
     }
-  });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [hideShow]);
 
   return (
     <input
