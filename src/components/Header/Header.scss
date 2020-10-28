@@ -1,0 +1,22 @@
+@import './../../style/colors';
+@import './../../style/flexbox';
+
+.header {
+  @include flex-col;
+
+  h2 {
+    color: $purpleDark;
+    user-select: none;
+  }
+
+  .line {
+    width: 100%;
+    height: 1px;
+    background-color: $purpleDark;
+  }
+
+  h3 {
+    color: $purpleLight;
+    user-select: none;
+  }
+}

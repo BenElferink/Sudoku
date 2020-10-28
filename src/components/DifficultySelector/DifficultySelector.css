@@ -1,0 +1,17 @@
+.difficulty-selector {
+  list-style-type: none;
+}
+
+.difficulty-selector li input {
+  margin: 15px 10px 0 0;
+  cursor: pointer;
+}
+
+.difficulty-selector li label {
+  color: #808898;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+/*# sourceMappingURL=DifficultySelector.css.map */

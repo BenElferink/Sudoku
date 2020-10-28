@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,UAAU,CAAC;ECOT,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,MAAM;EACtB,SAAS,EAAE,MAAM;EACjB,WAAW,EAAE,MAAM;EACnB,eAAe,EAAE,YAAY;EDT7B,MAAM,EAAE,KAAK;EACb,KAAK,EAAE,IAAI;EACX,UAAU,EAAE,oBAAoB,CAAC,SAAS;EAC1C,eAAe,EAAE,KAAK;CACvB",
+    "sources": [
+        "Wallpaper.scss",
+        "../../style/_flexbox.scss"
+    ],
+    "names": [],
+    "file": "Wallpaper.css"
+}

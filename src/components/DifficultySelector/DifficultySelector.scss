@@ -1,0 +1,17 @@
+@import './../../style/colors';
+
+.difficulty-selector {
+  list-style-type: none;
+
+  li {
+    input {
+      margin: 15px 10px 0 0;
+      cursor: pointer;
+    }
+
+    label {
+      color: $defaultLight;
+      user-select: none;
+    }
+  }
+}

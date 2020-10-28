@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,WAAW,CAAC;EACV,OAAO,EAAE,QAAQ;EACjB,gBAAgB,ECJJ,OAAe;EDK3B,KAAK,ECJQ,OAAkB;EDK/B,MAAM,EAAE,GAAG,CAAC,KAAK,CCJN,OAAO;EDKlB,aAAa,EAAE,IAAI;EACnB,MAAM,EAAE,IAAI;CACb",
+    "sources": [
+        "NameInput.scss",
+        "../../style/_colors.scss"
+    ],
+    "names": [],
+    "file": "NameInput.css"
+}

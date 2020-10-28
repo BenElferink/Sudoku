@@ -1,6 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+import './Timer.css';
 
-function Timer({ timer, setTimer }) {
+export default function Timer({ pullData, hideShow }) {
+  const [timer, setTimer] = useState('00:00');
+
   useEffect(() => {
     const interval = setInterval(() => {
       let minutes = parseInt(timer.substring(0, 2));
@@ -18,11 +21,17 @@ function Timer({ timer, setTimer }) {
       setTimer(`${minutes}:${seconds}`);
     }, 1000);
 
-    return () => clearInterval(interval);
+    return () => {
+      clearInterval(interval);
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [timer]);
 
-  return <p className='col-12 timer'>Time elapsed: {timer}</p>;
-}
+  useEffect(() => {
+    if (hideShow === 'hide') {
+      pullData(timer);
+    }
+  });
 
-export default Timer;
+  return <div className={`timer ${hideShow}`}>Time elapsed: {timer}</div>;
+}

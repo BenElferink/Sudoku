@@ -1,0 +1,11 @@
+@import './../../style/colors';
+@import './../../style/flexbox';
+
+.hints {
+  @include flex-row;
+
+  svg {
+    width: 50px;
+    fill: $purpleLight;
+  }
+}

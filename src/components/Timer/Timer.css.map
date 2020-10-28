@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,MAAM,CAAC;EACL,KAAK,ECAO,OAAO;EDCnB,WAAW,EAAG,IAAG,CAAC,GAAG,CCJT,OAAe;CDK5B",
+    "sources": [
+        "Timer.scss",
+        "../../style/_colors.scss"
+    ],
+    "names": [],
+    "file": "Timer.css"
+}

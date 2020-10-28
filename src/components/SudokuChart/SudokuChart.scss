@@ -1,0 +1,37 @@
+@import './../../style/colors';
+@import './../../style/flexbox';
+
+.sudoku-chart {
+  @include flex-col;
+
+  .chart-row {
+    @include flex-row;
+
+    &:nth-child(3n) {
+      border-bottom: 1px solid $defaultDark;
+    }
+
+    &:nth-last-child(3n) {
+      border-top: 1px solid $defaultDark;
+    }
+
+    .chart-col {
+      height: 11vw;
+      width: 11.111%;
+      background: linear-gradient(to bottom, $purpleLight, transparent 130%);
+      color: $defaultDark;
+      border: 1px solid $defaultDark;
+      border-radius: 0%;
+      font-size: 16px;
+      text-align: center;
+
+      &:nth-child(3n) {
+        border-right: 1px solid $defaultDark;
+      }
+
+      &:nth-last-child(3n) {
+        border-left: 1px solid $defaultDark;
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+.btn {
+  padding: 7px 15px;
+  background-color: #24243e;
+  color: #808898;
+  border: 1px solid #9867f0;
+  border-radius: 20px;
+  -webkit-box-shadow: 0 0 5px 1px #9867f0 inset;
+          box-shadow: 0 0 5px 1px #9867f0 inset;
+  outline: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  border: 1px solid #c2a0fd;
+  -webkit-box-shadow: 0 0 5px 1px #c2a0fd inset;
+          box-shadow: 0 0 5px 1px #c2a0fd inset;
+}
+/*# sourceMappingURL=Button.css.map */
