@@ -8,29 +8,29 @@
     @include flex-row;
 
     &:nth-child(3n) {
-      border-bottom: 1px solid $defaultDark;
+      border-bottom: 2px solid $defaultDark;
     }
 
     &:nth-last-child(3n) {
-      border-top: 1px solid $defaultDark;
+      border-top: 2px solid $defaultDark;
     }
 
     .chart-col {
-      height: 11vw;
-      width: 11.111%;
+      height: 40px;
+      width: 40px;
       background: linear-gradient(to bottom, $purpleLight, transparent 130%);
       color: $defaultDark;
-      border: 1px solid $defaultDark;
+      border: 0.5px solid $defaultDark;
       border-radius: 0%;
       font-size: 16px;
       text-align: center;
 
       &:nth-child(3n) {
-        border-right: 1px solid $defaultDark;
+        border-right: 2px solid $defaultDark;
       }
 
       &:nth-last-child(3n) {
-        border-left: 1px solid $defaultDark;
+        border-left: 2px solid $defaultDark;
       }
     }
   }
