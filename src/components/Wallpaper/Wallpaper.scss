@@ -1,9 +1,6 @@
-@import './../../style/flexbox';
-
 .wallpaper {
-  @include flex-col;
-  height: 100vh;
   width: 100%;
+  height: 100vh;
   background: url(./Wallpaper.jpg) no-repeat;
   background-size: cover;
 }

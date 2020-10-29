@@ -1,50 +1,37 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { updateMatrix, decrementHints } from './../../redux/actions';
 import Button from './../Button/Button';
 import Icon from './LightBulb-48px';
 import './Hints.css';
-import { duplicateMatrix } from './../../scripts/SudokuFunctions';
 
-export default function Hints({ difficulty, hideShow }) {
-  const [hints, setHints] = useState(
-    difficulty === 'easy'
-      ? 3
-      : difficulty === 'normal'
-      ? 2
-      : difficulty === 'hard'
-      ? 1
-      : 0
-  );
+export default function Hints() {
+  const matrixOriginal = useSelector((state) => state.matrix.original);
+  const matrixPlayed = useSelector((state) => state.matrix.played);
+  const hints = useSelector((state) => state.hints);
+  const dispatch = useDispatch();
 
-  const hintClick = () => {
+  const clickHint = () => {
     if (hints > 0) {
-      let newMatrix = duplicateMatrix({
-        /* matrixPlayer */
-      });
       let loop = true;
-
       while (loop) {
         let i = Math.floor(Math.random() * 9);
         let j = Math.floor(Math.random() * 9);
-        if (newMatrix[i][j] === '') {
-          newMatrix[i][j] = {
-            /* matrixOrigin[i][j] */
-          };
+        if (matrixPlayed[i][j] === '') {
+          let revealNumber = matrixOriginal[i][j];
+          dispatch(updateMatrix(revealNumber, i, j));
           loop = false;
-        } else {
-          loop = true;
         }
       }
-
-      /* setMatrixPlayer(newMatrix) */
-      setHints(hints - 1);
+      dispatch(decrementHints());
     } else {
       console.log('no hints left');
     }
   };
 
   return (
-    <div className={`hints ${hideShow}`}>
-      <Button text='HINT' onClick={hintClick} />
+    <div className='hints'>
+      <Button text='HINT' onClick={clickHint} />
       {hints >= 1 ? <Icon opacity='100%' /> : <Icon opacity='25%' />}
       {hints >= 2 ? <Icon opacity='100%' /> : <Icon opacity='25%' />}
       {hints >= 3 ? <Icon opacity='100%' /> : <Icon opacity='25%' />}

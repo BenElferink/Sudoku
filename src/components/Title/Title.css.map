@@ -1,0 +1,11 @@
+{
+    "version": 3,
+    "mappings": "AAGA,AAAA,MAAM,CAAC;EEML,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,MAAM;EACtB,SAAS,EAAE,MAAM;EACjB,WAAW,EAAE,MAAM;EACnB,eAAe,EAAE,YAAY;CFQ9B;;AAlBD,AAGE,MAHI,CAGJ,EAAE,CAAC;EACD,KAAK,ECLI,OAAO;EDMhB,WAAW,EAAE,IAAI;CAClB;;AANH,AAQE,MARI,CAQJ,KAAK,CAAC;EACJ,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,GAAG;EACX,gBAAgB,ECZP,OAAO;CDajB;;AAZH,AAcE,MAdI,CAcJ,EAAE,CAAC;EACD,KAAK,ECfK,OAAO;EDgBjB,WAAW,EAAE,IAAI;CAClB",
+    "sources": [
+        "Title.scss",
+        "../../style/_colors.scss",
+        "../../style/_flexbox.scss"
+    ],
+    "names": [],
+    "file": "Title.css"
+}

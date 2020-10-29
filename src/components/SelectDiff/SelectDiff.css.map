@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,YAAY,CAAC;EACX,eAAe,EAAE,IAAI;CAatB;;AAdD,AAII,YAJQ,CAGV,EAAE,CACA,KAAK,CAAC;EACJ,MAAM,EAAE,aAAa;EACrB,MAAM,EAAE,OAAO;CAChB;;AAPL,AASI,YATQ,CAGV,EAAE,CAMA,KAAK,CAAC;EACJ,KAAK,ECXI,OAAkB;EDY3B,WAAW,EAAE,IAAI;CAClB",
+    "sources": [
+        "SelectDiff.scss",
+        "../../style/_colors.scss"
+    ],
+    "names": [],
+    "file": "SelectDiff.css"
+}

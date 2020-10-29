@@ -1,36 +1,23 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { updateMatrix } from './../../redux/actions';
 import './SudokuChart.css';
-import { duplicateMatrix, filterDifficulty } from './../../scripts/SudokuFunctions';
 
-export default function SudokuChart({ originalMatrix, difficulty, hideShow }) {
-  const [filteredMatrix] = useState(
-    filterDifficulty(duplicateMatrix(originalMatrix), difficulty)
-  );
-
-  const [playerMatrix, setPlayerMatrix] = useState([]);
-
-  useEffect(() => {
-    setPlayerMatrix(duplicateMatrix(filteredMatrix));
-    return () => {};
-  }, [filteredMatrix]);
-
-  const handleSudokuCellChange = (e, i, j) => {
-    let newMatrix = duplicateMatrix(playerMatrix);
-    newMatrix[i][j] = e.target.value;
-    setPlayerMatrix(newMatrix);
-  };
+export default function SudokuChart() {
+  const matrix = useSelector((state) => state.matrix.played);
+  const dispatch = useDispatch();
 
   return (
-    <div className={`sudoku-chart ${hideShow}`}>
-      {playerMatrix.map((row, i) => (
+    <div className='sudoku-chart'>
+      {matrix.map((row, i) => (
         <div className='chart-row' key={i}>
           {row.map((col, j) => (
             <input
               className='chart-col'
-              key={`${i},${j}`}
+              key={`${i}, ${j}`}
               value={col}
               onChange={(e) => {
-                handleSudokuCellChange(e, i, j);
+                dispatch(updateMatrix(e.target.value, i, j));
               }}
             />
           ))}

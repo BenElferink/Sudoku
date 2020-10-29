@@ -1,25 +1,21 @@
-import React, { useState, useEffect } from 'react';
-import './DifficultySelector.css';
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { changeDiff } from './../../redux/actions';
+import './SelectDiff.css';
 
-export default function DifficultySelect({ pullData, hideShow }) {
-  const [difficulty, setDifficulty] = useState('normal');
-
-  useEffect(() => {
-    if (hideShow === 'hide') {
-      pullData(difficulty);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [hideShow]);
+export default function SelectDiff() {
+  const difficulty = useSelector((state) => state.difficulty);
+  const dispatch = useDispatch();
 
   return (
-    <ul className={`difficulty-selector ${hideShow}`}>
+    <ul className='select-diff'>
       <li>
         <input
           type='radio'
           name='difficulty'
           value='easy'
           onChange={(e) => {
-            setDifficulty(e.target.value);
+            dispatch(changeDiff(e.target.value));
           }}
           checked={difficulty === 'easy'}
         />
@@ -31,7 +27,7 @@ export default function DifficultySelect({ pullData, hideShow }) {
           name='difficulty'
           value='normal'
           onChange={(e) => {
-            setDifficulty(e.target.value);
+            dispatch(changeDiff(e.target.value));
           }}
           checked={difficulty === 'normal'}
         />
@@ -43,7 +39,7 @@ export default function DifficultySelect({ pullData, hideShow }) {
           name='difficulty'
           value='hard'
           onChange={(e) => {
-            setDifficulty(e.target.value);
+            dispatch(changeDiff(e.target.value));
           }}
           checked={difficulty === 'hard'}
         />

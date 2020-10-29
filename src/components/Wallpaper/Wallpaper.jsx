@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Wallpaper.css';
 
-export default function Wallpaper({ children, startGame, finishGame }) {
+export default function Wallpaper({ startGame, finishGame, children }) {
   const [wallPosition, setWallPosition] = useState('');
 
   useEffect(() => {

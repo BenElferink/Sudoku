@@ -1,17 +1,17 @@
-.difficulty-selector {
+.select-diff {
   list-style-type: none;
 }
 
-.difficulty-selector li input {
+.select-diff li input {
   margin: 15px 10px 0 0;
   cursor: pointer;
 }
 
-.difficulty-selector li label {
+.select-diff li label {
   color: #808898;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
 }
-/*# sourceMappingURL=DifficultySelector.css.map */
+/*# sourceMappingURL=SelectDiff.css.map */
