@@ -8,11 +8,14 @@ export default function Wallpaper({ startGame, finishGame, children }) {
     if (window.innerWidth > 600) {
       setWallPosition('center');
     } else {
-      startGame
+      // [STATE: startGame: true, finishGame: false]
+      startGame && !finishGame
         ? setWallPosition('center')
-        : finishGame
+        : // [STATE: startGame: true, finishGame: true |OR| STATE: startGame: false, finishGame: true]
+        (startGame && finishGame) || (!startGame && finishGame)
         ? setWallPosition('right')
-        : setWallPosition('left');
+        : // [STATE: startGame: false, finishGame: false]
+          setWallPosition('left');
     }
   }, [startGame, finishGame]);
 

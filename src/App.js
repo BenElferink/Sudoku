@@ -12,12 +12,15 @@ export default function App() {
 
   return (
     <Wallpaper startGame={startGame} finishGame={finishGame}>
-      {startGame ? (
+      {startGame && !finishGame ? (
         /* [STATE: startGame: true, finishGame: false] */
         <GamePage />
-      ) : finishGame ? (
+      ) : startGame && finishGame ? (
+        /* [STATE: startGame: true, finishGame: true] */
+        <ScorePage played={true} />
+      ) : !startGame && finishGame ? (
         /* [STATE: startGame: false, finishGame: true] */
-        <ScorePage />
+        <ScorePage played={false} />
       ) : (
         /* [STATE: startGame: false, finishGame: false] */
         <SetupPage />

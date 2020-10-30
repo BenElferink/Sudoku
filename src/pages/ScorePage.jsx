@@ -1,13 +1,25 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import { toggleStart, toggleFinish } from './../redux/actions';
+import ScoreBoard from './../components/ScoreBoard/ScoreBoard';
 import Button from '../components/Button/Button';
 import './page.css';
 
-export default function ScorePage() {
+export default function ScorePage({ played }) {
+  const dispatch = useDispatch();
+
+  const handleHome = () => {
+    dispatch(toggleStart());
+    dispatch(toggleFinish());
+  };
+
   return (
     <div className='page'>
-      <div className='page-content'></div>
+      <div className='page-content'>
+        <ScoreBoard />
+      </div>
       <div className='btn-bar'>
-        <Button text='Homepage' onClick={() => {}} />
+        <Button text='Home' onClick={handleHome} />
       </div>
     </div>
   );

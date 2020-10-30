@@ -1,6 +1,12 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { createMatrix, resetTime, resetHints, toggleStart } from './../redux/actions';
+import {
+  toggleStart,
+  createMatrix,
+  resetTime,
+  resetHints,
+  resetResets,
+} from './../redux/actions';
 import Title from '../components/Title/Title';
 import Username from '../components/Username/Username';
 import SelectDiff from '../components/SelectDiff/SelectDiff';
@@ -15,6 +21,7 @@ export default function SetupPage() {
     dispatch(createMatrix(difficulty));
     dispatch(resetTime());
     dispatch(resetHints(difficulty));
+    dispatch(resetResets());
     dispatch(toggleStart());
   };
 
@@ -26,8 +33,8 @@ export default function SetupPage() {
         <SelectDiff />
       </div>
       <div className='btn-bar'>
-        <Button text='Show Scores' onClick={() => {}} />
         <Button text='Start Game!' onClick={handleStartGame} />
+        <Button text='Show Scores' onClick={() => {}} />
       </div>
     </div>
   );

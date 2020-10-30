@@ -1,6 +1,12 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { toggleStart, resetTime, resetHints, resetMatrix } from './../redux/actions';
+import {
+  toggleStart,
+  resetTime,
+  resetHints,
+  resetMatrix,
+  incrementResets,
+} from './../redux/actions';
 import Hints from '../components/Hints/Hints';
 import SudokuChart from '../components/SudokuChart/SudokuChart';
 import Timer from '../components/Timer/Timer';
@@ -19,9 +25,10 @@ export default function GamePage() {
     dispatch(resetTime());
     dispatch(resetHints(difficulty));
     dispatch(resetMatrix());
+    dispatch(incrementResets());
   };
 
-  const handleFinish = () => {};
+  // const handleFinish = () => {};
 
   return (
     <div className='page'>
@@ -33,7 +40,7 @@ export default function GamePage() {
       <div className='btn-bar'>
         <Button text='Quit' onClick={handleQuit} />
         <Button text='Reset' onClick={handleReset} />
-        <Button text='Finish' onClick={handleFinish} />
+        {/* <Button text='Finish' onClick={handleFinish} /> */}
       </div>
     </div>
   );
