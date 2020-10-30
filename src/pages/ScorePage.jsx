@@ -9,8 +9,12 @@ export default function ScorePage({ played }) {
   const dispatch = useDispatch();
 
   const handleHome = () => {
-    dispatch(toggleStart());
-    dispatch(toggleFinish());
+    if (played) {
+      dispatch(toggleStart());
+      dispatch(toggleFinish());
+    } else {
+      dispatch(toggleFinish());
+    }
   };
 
   return (

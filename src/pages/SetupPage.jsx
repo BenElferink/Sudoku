@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {
   toggleStart,
+  toggleFinish,
   createMatrix,
   resetTime,
   resetHints,
@@ -25,6 +26,10 @@ export default function SetupPage() {
     dispatch(toggleStart());
   };
 
+  const handleShowScores = () => {
+    dispatch(toggleFinish());
+  };
+
   return (
     <div className='page'>
       <div className='page-content'>
@@ -34,7 +39,7 @@ export default function SetupPage() {
       </div>
       <div className='btn-bar'>
         <Button text='Start Game!' onClick={handleStartGame} />
-        <Button text='Show Scores' onClick={() => {}} />
+        <Button text='Show Scores' onClick={handleShowScores} />
       </div>
     </div>
   );
