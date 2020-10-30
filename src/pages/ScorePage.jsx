@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { toggleStart, toggleFinish } from './../redux/actions';
+import { startGameToggle } from './../redux/actions/startGameToggle';
+import { finishGameToggle } from './../redux/actions/finishGameToggle';
 import ScoreBoard from './../components/ScoreBoard/ScoreBoard';
 import Button from '../components/Button/Button';
 import './page.css';
@@ -10,10 +11,10 @@ export default function ScorePage({ played }) {
 
   const handleHome = () => {
     if (played) {
-      dispatch(toggleStart());
-      dispatch(toggleFinish());
+      dispatch(startGameToggle());
+      dispatch(finishGameToggle());
     } else {
-      dispatch(toggleFinish());
+      dispatch(finishGameToggle());
     }
   };
 

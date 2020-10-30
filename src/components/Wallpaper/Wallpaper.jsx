@@ -5,7 +5,7 @@ export default function Wallpaper({ startGame, finishGame, children }) {
   const [wallPosition, setWallPosition] = useState('');
 
   useEffect(() => {
-    if (window.innerWidth > 600) {
+    if (window.innerWidth > 768) {
       setWallPosition('center');
     } else {
       // [STATE: startGame: true, finishGame: false]

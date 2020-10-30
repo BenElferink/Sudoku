@@ -1,13 +1,13 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import {
-  toggleStart,
-  toggleFinish,
-  createMatrix,
-  timeReset,
-  resetHints,
-  resetResets,
-} from './../redux/actions';
+import { startGameToggle } from './../redux/actions/startGameToggle';
+import { finishGameToggle } from './../redux/actions/finishGameToggle';
+import { timeReset } from './../redux/actions/timeReset';
+import { hintsReset } from './../redux/actions/hintsReset';
+import { resetsReset } from './../redux/actions/resetsReset';
+
+import { createMatrix } from './../redux/actions';
+
 import Title from '../components/Title/Title';
 import Username from '../components/Username/Username';
 import SelectDiff from '../components/SelectDiff/SelectDiff';
@@ -21,18 +21,18 @@ export default function SetupPage() {
 
   const handleStartGame = () => {
     if (username !== '') {
-      dispatch(createMatrix(difficulty));
+      dispatch(startGameToggle());
       dispatch(timeReset());
-      dispatch(resetHints(difficulty));
-      dispatch(resetResets());
-      dispatch(toggleStart());
+      dispatch(hintsReset(difficulty));
+      dispatch(resetsReset());
+      dispatch(createMatrix(difficulty));
     } else {
       window.alert('error: create a username');
     }
   };
 
   const handleShowScores = () => {
-    dispatch(toggleFinish());
+    dispatch(finishGameToggle());
   };
 
   return (

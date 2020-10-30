@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { changeDiff } from './../../redux/actions';
+import { difficultyUpdate } from './../../redux/actions/difficultyUpdate';
 import './SelectDiff.css';
 
 export default function SelectDiff({ value }) {
@@ -14,7 +14,7 @@ export default function SelectDiff({ value }) {
           name='difficulty'
           value='easy'
           onChange={(e) => {
-            dispatch(changeDiff(e.target.value));
+            dispatch(difficultyUpdate(e.target.value));
           }}
           checked={value === 'easy'}
         />
@@ -26,7 +26,7 @@ export default function SelectDiff({ value }) {
           name='difficulty'
           value='normal'
           onChange={(e) => {
-            dispatch(changeDiff(e.target.value));
+            dispatch(difficultyUpdate(e.target.value));
           }}
           checked={value === 'normal'}
         />
@@ -38,7 +38,7 @@ export default function SelectDiff({ value }) {
           name='difficulty'
           value='hard'
           onChange={(e) => {
-            dispatch(changeDiff(e.target.value));
+            dispatch(difficultyUpdate(e.target.value));
           }}
           checked={value === 'hard'}
         />

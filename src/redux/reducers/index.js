@@ -5,93 +5,13 @@ import {
   filterDifficulty,
 } from '../../scripts/SudokuAlgorithm';
 
+import { startGameReducer } from './startGameReducer';
+import { finishGameReducer } from './finishGameReducer';
+import { usernameReducer } from './usernameReducer';
+import { difficultyReducer } from './difficultyReducer';
 import { timeReducer } from './timeReducer';
-
-const startGameReducer = (state = false, action) => {
-  switch (action.type) {
-    case 'startGame/toggle':
-      return !state;
-
-    default:
-      return state;
-  }
-};
-
-const finishGameReducer = (state = false, action) => {
-  switch (action.type) {
-    case 'finishGame/toggle':
-      return !state;
-
-    default:
-      return state;
-  }
-};
-
-const usernameReducer = (state = '', action) => {
-  switch (action.type) {
-    case 'username/updateValue':
-      return action.payload;
-
-    default:
-      return state;
-  }
-};
-
-const difficultyReducer = (state = 'normal', action) => {
-  switch (action.type) {
-    case 'difficulty/updateValue':
-      return action.payload;
-
-    default:
-      return state;
-  }
-};
-
-const hintsLeftReducer = (state = 0, action) => {
-  switch (action.type) {
-    case 'hints/decrement':
-      return state - 1;
-
-    case 'hints/reset':
-      let difficulty = action.payload;
-      return difficulty === 'easy'
-        ? 3
-        : difficulty === 'normal'
-        ? 2
-        : difficulty === 'hard'
-        ? 1
-        : 0;
-
-    default:
-      return state;
-  }
-};
-
-const hintsUsedReducer = (state = 0, action) => {
-  switch (action.type) {
-    case 'hints/increment':
-      return state + 1;
-
-    case 'hints/reset':
-      return 0;
-
-    default:
-      return state;
-  }
-};
-
-const resetCountReducer = (state = 0, action) => {
-  switch (action.type) {
-    case 'resets/increment':
-      return state + 1;
-
-    case 'resets/reset':
-      return 0;
-
-    default:
-      return state;
-  }
-};
+import { hintsReducer } from './hintsReducer';
+import { resetsReducer } from './resetsReducer';
 
 const matrixReducer = (state = { original: [], filtered: [], played: [] }, action) => {
   switch (action.type) {
@@ -134,9 +54,8 @@ const allReducers = combineReducers({
   username: usernameReducer,
   difficulty: difficultyReducer,
   time: timeReducer,
-  hintsLeft: hintsLeftReducer,
-  hintsUsed: hintsUsedReducer,
-  resetCount: resetCountReducer,
+  hints: hintsReducer,
+  resets: resetsReducer,
   matrix: matrixReducer,
 });
 

@@ -1,6 +1,9 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { updateMatrix, toggleFinish } from './../../redux/actions';
+
+import { updateMatrix } from './../../redux/actions';
+import { finishGameToggle } from './../../redux/actions/finishGameToggle';
+
 import './SudokuChart.css';
 
 export default function SudokuChart() {
@@ -20,7 +23,7 @@ export default function SudokuChart() {
     }
 
     if (trueCounter === Math.pow(9, 2)) {
-      dispatch(toggleFinish());
+      dispatch(finishGameToggle());
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [matrixPlayed]);

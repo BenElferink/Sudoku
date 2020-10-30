@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { timeIncrement } from './../../redux/actions';
+import { timeIncrement } from './../../redux/actions/timeIncrement';
 import './Timer.css';
 
 export default function Timer() {
