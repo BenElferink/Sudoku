@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { incrementTime } from './../../redux/actions';
+import { timeIncrement } from './../../redux/actions';
 import './Timer.css';
 
 export default function Timer() {
@@ -9,7 +9,7 @@ export default function Timer() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      dispatch(incrementTime());
+      dispatch(timeIncrement());
     }, 1000);
     return () => {
       clearInterval(interval);
@@ -17,5 +17,13 @@ export default function Timer() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [time]);
 
-  return <div className='timer'>Time elapsed: {time}</div>;
+  return <div className='timer'>Time elapsed: {timeToString(time)}</div>;
+}
+
+function timeToString(timeState) {
+  let minutes = timeState.minutes;
+  let seconds = timeState.seconds;
+  minutes < 10 ? (minutes = `0${minutes}`) : (minutes = `${minutes}`);
+  seconds < 10 ? (seconds = `0${seconds}`) : (seconds = `${seconds}`);
+  return `${minutes}:${seconds}`;
 }

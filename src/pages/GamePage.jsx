@@ -2,9 +2,9 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {
   toggleStart,
-  resetTime,
-  resetHints,
   resetMatrix,
+  timeReset,
+  resetHints,
   incrementResets,
 } from './../redux/actions';
 import Hints from '../components/Hints/Hints';
@@ -22,13 +22,11 @@ export default function GamePage() {
   };
 
   const handleReset = () => {
-    dispatch(resetTime());
-    dispatch(resetHints(difficulty));
     dispatch(resetMatrix());
+    dispatch(timeReset());
+    dispatch(resetHints(difficulty));
     dispatch(incrementResets());
   };
-
-  // const handleFinish = () => {};
 
   return (
     <div className='page'>
@@ -40,7 +38,6 @@ export default function GamePage() {
       <div className='btn-bar'>
         <Button text='Quit' onClick={handleQuit} />
         <Button text='Reset' onClick={handleReset} />
-        {/* <Button text='Finish' onClick={handleFinish} /> */}
       </div>
     </div>
   );

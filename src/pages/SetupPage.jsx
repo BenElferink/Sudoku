@@ -4,7 +4,7 @@ import {
   toggleStart,
   toggleFinish,
   createMatrix,
-  resetTime,
+  timeReset,
   resetHints,
   resetResets,
 } from './../redux/actions';
@@ -22,7 +22,7 @@ export default function SetupPage() {
   const handleStartGame = () => {
     if (username !== '') {
       dispatch(createMatrix(difficulty));
-      dispatch(resetTime());
+      dispatch(timeReset());
       dispatch(resetHints(difficulty));
       dispatch(resetResets());
       dispatch(toggleStart());

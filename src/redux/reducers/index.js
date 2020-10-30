@@ -5,6 +5,8 @@ import {
   filterDifficulty,
 } from '../../scripts/SudokuAlgorithm';
 
+import { timeReducer } from './timeReducer';
+
 const startGameReducer = (state = false, action) => {
   switch (action.type) {
     case 'startGame/toggle':
@@ -39,29 +41,6 @@ const difficultyReducer = (state = 'normal', action) => {
   switch (action.type) {
     case 'difficulty/updateValue':
       return action.payload;
-
-    default:
-      return state;
-  }
-};
-
-const timeReducer = (state = '00:00', action) => {
-  switch (action.type) {
-    case 'time/increment':
-      let minutes = Number(state.substring(0, 2));
-      let seconds = Number(state.substring(3, 5));
-      if (seconds < 59) {
-        seconds++;
-      } else {
-        seconds = 0;
-        minutes++;
-      }
-      seconds < 10 ? (seconds = `0${seconds}`) : (seconds = `${seconds}`);
-      minutes < 10 ? (minutes = `0${minutes}`) : (minutes = `${minutes}`);
-      return `${minutes}:${seconds}`;
-
-    case 'time/reset':
-      return '00:00';
 
     default:
       return state;

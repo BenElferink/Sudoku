@@ -24,13 +24,13 @@ export const changeDiff = (value) => {
   };
 };
 
-export const incrementTime = () => {
+export const timeIncrement = () => {
   return {
     type: 'time/increment',
   };
 };
 
-export const resetTime = (time) => {
+export const timeReset = (time) => {
   return {
     type: 'time/reset',
     payload: time,
