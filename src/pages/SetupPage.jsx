@@ -5,9 +5,7 @@ import { finishGameToggle } from './../redux/actions/finishGameToggle';
 import { timeReset } from './../redux/actions/timeReset';
 import { hintsReset } from './../redux/actions/hintsReset';
 import { resetsReset } from './../redux/actions/resetsReset';
-
-import { createMatrix } from './../redux/actions';
-
+import { matrixCreate } from './../redux/actions/matrixCreate';
 import Title from '../components/Title/Title';
 import Username from '../components/Username/Username';
 import SelectDiff from '../components/SelectDiff/SelectDiff';
@@ -25,7 +23,7 @@ export default function SetupPage() {
       dispatch(timeReset());
       dispatch(hintsReset(difficulty));
       dispatch(resetsReset());
-      dispatch(createMatrix(difficulty));
+      dispatch(matrixCreate(difficulty));
     } else {
       window.alert('error: create a username');
     }

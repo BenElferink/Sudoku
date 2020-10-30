@@ -1,12 +1,10 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-
-import { resetMatrix } from './../redux/actions';
 import { startGameToggle } from './../redux/actions/startGameToggle';
 import { timeReset } from './../redux/actions/timeReset';
 import { hintsReset } from './../redux/actions/hintsReset';
 import { resetsIncrement } from './../redux/actions/resetsIncrement';
-
+import { matrixReset } from './../redux/actions/matrixReset';
 import Hints from '../components/Hints/Hints';
 import SudokuChart from '../components/SudokuChart/SudokuChart';
 import Timer from '../components/Timer/Timer';
@@ -22,7 +20,7 @@ export default function GamePage() {
   };
 
   const handleReset = () => {
-    dispatch(resetMatrix());
+    dispatch(matrixReset());
     dispatch(timeReset());
     dispatch(hintsReset(difficulty));
     dispatch(resetsIncrement());

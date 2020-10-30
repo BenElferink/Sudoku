@@ -1,36 +1,31 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-
-import { updateMatrix } from './../../redux/actions';
 import { finishGameToggle } from './../../redux/actions/finishGameToggle';
-
+import { matrixUpdate } from './../../redux/actions/matrixUpdate';
 import './SudokuChart.css';
 
 export default function SudokuChart() {
-  const matrixOriginal = useSelector((state) => state.matrix.original);
-  const matrixPlayed = useSelector((state) => state.matrix.played);
+  const matrix = useSelector((state) => state.matrix);
   const dispatch = useDispatch();
 
   useEffect(() => {
     let trueCounter = 0;
-
-    for (let i = 0; i < matrixPlayed.length; i++) {
-      for (let j = 0; j < matrixPlayed[i].length; j++) {
-        if (matrixPlayed[i][j] === matrixOriginal[i][j]) {
+    for (let i = 0; i < matrix.played.length; i++) {
+      for (let j = 0; j < matrix.played[i].length; j++) {
+        if (matrix.played[i][j] === matrix.original[i][j]) {
           trueCounter++;
         }
       }
     }
-
     if (trueCounter === Math.pow(9, 2)) {
       dispatch(finishGameToggle());
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [matrixPlayed]);
+  }, [matrix.played]);
 
   return (
     <div className='sudoku-chart'>
-      {matrixPlayed.map((row, i) => (
+      {matrix.played.map((row, i) => (
         <div className='chart-row' key={i}>
           {row.map((col, j) => (
             <input
@@ -38,7 +33,7 @@ export default function SudokuChart() {
               key={`${i}, ${j}`}
               value={col}
               onChange={(e) => {
-                dispatch(updateMatrix(Number(e.target.value), i, j));
+                dispatch(matrixUpdate(Number(e.target.value), i, j));
               }}
             />
           ))}
