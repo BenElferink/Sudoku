@@ -15,15 +15,20 @@ import Button from '../components/Button/Button';
 import './page.css';
 
 export default function SetupPage() {
+  const username = useSelector((state) => state.username);
   const difficulty = useSelector((state) => state.difficulty);
   const dispatch = useDispatch();
 
   const handleStartGame = () => {
-    dispatch(createMatrix(difficulty));
-    dispatch(resetTime());
-    dispatch(resetHints(difficulty));
-    dispatch(resetResets());
-    dispatch(toggleStart());
+    if (username !== '') {
+      dispatch(createMatrix(difficulty));
+      dispatch(resetTime());
+      dispatch(resetHints(difficulty));
+      dispatch(resetResets());
+      dispatch(toggleStart());
+    } else {
+      window.alert('error: create a username');
+    }
   };
 
   const handleShowScores = () => {
@@ -34,8 +39,8 @@ export default function SetupPage() {
     <div className='page'>
       <div className='page-content'>
         <Title />
-        <Username />
-        <SelectDiff />
+        <Username value={username} />
+        <SelectDiff value={difficulty} />
       </div>
       <div className='btn-bar'>
         <Button text='Start Game!' onClick={handleStartGame} />
