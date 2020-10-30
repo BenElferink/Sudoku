@@ -1,10 +1,11 @@
+import { combineReducers, createStore } from 'redux';
 import {
   SudokuCreate,
   duplicateMatrix,
   filterDifficulty,
 } from '../../scripts/SudokuAlgorithm';
 
-export const startGameReducer = (state = false, action) => {
+const startGameReducer = (state = false, action) => {
   switch (action.type) {
     case 'startGame/toggle':
       return !state;
@@ -14,7 +15,7 @@ export const startGameReducer = (state = false, action) => {
   }
 };
 
-export const finishGameReducer = (state = false, action) => {
+const finishGameReducer = (state = false, action) => {
   switch (action.type) {
     case 'finishGame/toggle':
       return !state;
@@ -24,7 +25,7 @@ export const finishGameReducer = (state = false, action) => {
   }
 };
 
-export const usernameReducer = (state = '', action) => {
+const usernameReducer = (state = '', action) => {
   switch (action.type) {
     case 'username/updateValue':
       return action.payload;
@@ -34,7 +35,7 @@ export const usernameReducer = (state = '', action) => {
   }
 };
 
-export const difficultyReducer = (state = 'normal', action) => {
+const difficultyReducer = (state = 'normal', action) => {
   switch (action.type) {
     case 'difficulty/updateValue':
       return action.payload;
@@ -44,7 +45,7 @@ export const difficultyReducer = (state = 'normal', action) => {
   }
 };
 
-export const timeReducer = (state = '00:00', action) => {
+const timeReducer = (state = '00:00', action) => {
   switch (action.type) {
     case 'time/increment':
       let minutes = Number(state.substring(0, 2));
@@ -67,7 +68,7 @@ export const timeReducer = (state = '00:00', action) => {
   }
 };
 
-export const hintsReducer = (state = 0, action) => {
+const hintsLeftReducer = (state = 0, action) => {
   switch (action.type) {
     case 'hints/decrement':
       return state - 1;
@@ -87,10 +88,33 @@ export const hintsReducer = (state = 0, action) => {
   }
 };
 
-export const matrixReducer = (
-  state = { original: [], filtered: [], played: [] },
-  action
-) => {
+const hintsUsedReducer = (state = 0, action) => {
+  switch (action.type) {
+    case 'hints/increment':
+      return state + 1;
+
+    case 'hints/reset':
+      return 0;
+
+    default:
+      return state;
+  }
+};
+
+const resetCountReducer = (state = 0, action) => {
+  switch (action.type) {
+    case 'resets/increment':
+      return state + 1;
+
+    case 'resets/reset':
+      return 0;
+
+    default:
+      return state;
+  }
+};
+
+const matrixReducer = (state = { original: [], filtered: [], played: [] }, action) => {
   switch (action.type) {
     case 'matrix/create':
       let matrix = SudokuCreate(9);
@@ -124,3 +148,24 @@ export const matrixReducer = (
       return state;
   }
 };
+
+const allReducers = combineReducers({
+  startGame: startGameReducer,
+  finishGame: finishGameReducer,
+  username: usernameReducer,
+  difficulty: difficultyReducer,
+  time: timeReducer,
+  hintsLeft: hintsLeftReducer,
+  hintsUsed: hintsUsedReducer,
+  resetCount: resetCountReducer,
+  matrix: matrixReducer,
+});
+
+/* eslint-disable no-underscore-dangle */
+const store = createStore(
+  allReducers,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
+/* eslint-enable */
+
+export default store;

@@ -37,9 +37,15 @@ export const resetTime = (time) => {
   };
 };
 
-export const decrementHints = () => {
+export const decrementHintsLeft = () => {
   return {
     type: 'hints/decrement',
+  };
+};
+
+export const incrementHintsUsed = () => {
+  return {
+    type: 'hints/increment',
   };
 };
 
@@ -47,6 +53,18 @@ export const resetHints = (difficulty) => {
   return {
     type: 'hints/reset',
     payload: difficulty,
+  };
+};
+
+export const incrementResets = () => {
+  return {
+    type: 'resets/increment',
+  };
+};
+
+export const resetResets = () => {
+  return {
+    type: 'resets/reset',
   };
 };
 
