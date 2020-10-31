@@ -21,7 +21,7 @@ export default function ScorePage({ played }) {
   return (
     <div className='page'>
       <div className='page-content'>
-        <ScoreBoard />
+        <ScoreBoard played={played} />
       </div>
       <div className='btn-bar'>
         <Button text='Home' onClick={handleHome} />

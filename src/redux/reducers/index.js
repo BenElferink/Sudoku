@@ -7,6 +7,7 @@ import { timeReducer } from './timeReducer';
 import { hintsReducer } from './hintsReducer';
 import { resetsReducer } from './resetsReducer';
 import { matrixReducer } from './matrixReducer';
+import { scoresReducer } from './scoresReducer';
 
 const allReducers = combineReducers({
   startGame: startGameReducer,
@@ -17,6 +18,7 @@ const allReducers = combineReducers({
   hints: hintsReducer,
   resets: resetsReducer,
   matrix: matrixReducer,
+  scores: scoresReducer,
 });
 
 /* eslint-disable no-underscore-dangle */
