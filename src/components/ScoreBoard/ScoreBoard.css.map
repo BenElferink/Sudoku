@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,YAAY,CAAC;EACX,KAAK,EAAE,IAAI;ECMX,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,MAAM;EACtB,SAAS,EAAE,MAAM;EACjB,WAAW,EAAE,MAAM;EACnB,eAAe,EAAE,YAAY;CDR9B",
+    "sources": [
+        "ScoreBoard.scss",
+        "../../style/_flexbox.scss"
+    ],
+    "names": [],
+    "file": "ScoreBoard.css"
+}

@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,SAAS,CAAC;EACR,OAAO,EAAE,QAAQ;EACjB,KAAK,ECDO,OAAO;EDEnB,UAAU,EAAE,MAAM;EAClB,WAAW,EAAG,IAAG,CAAC,GAAG,CCNT,OAAe;EDO3B,aAAa,EAAE,IAAI;CAUpB;;AAfD,AAOE,SAPO,CAOP,EAAE,CAAC;EACD,SAAS,EAAE,IAAI;EACf,WAAW,EAAE,GAAG;CACjB;;AAVH,AAYE,SAZO,CAYP,CAAC,CAAC;EACA,SAAS,EAAE,IAAI;CAChB",
+    "sources": [
+        "Congrats.scss",
+        "../../style/_colors.scss"
+    ],
+    "names": [],
+    "file": "Congrats.css"
+}

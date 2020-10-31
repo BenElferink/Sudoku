@@ -1,0 +1,17 @@
+.congrats {
+  padding: 5px 15px;
+  color: #c2a0fd;
+  text-align: center;
+  text-shadow: -1px 1px #24243e;
+  border-radius: 20px;
+}
+
+.congrats h4 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.congrats p {
+  font-size: 12px;
+}
+/*# sourceMappingURL=Congrats.css.map */

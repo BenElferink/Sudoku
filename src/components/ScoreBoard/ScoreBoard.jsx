@@ -1,22 +1,35 @@
-import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { scoresUpdate } from './../../redux/actions/scoresUpdate';
+import React from 'react';
+import { useSelector } from 'react-redux';
+import Record from '../Record/Record';
+import './ScoreBoard.css';
 
-export default function ScoreBoard({ played }) {
+export default function ScoreBoard() {
   const scores = useSelector((state) => state.scores);
-  const username = useSelector((state) => state.username);
   const difficulty = useSelector((state) => state.difficulty);
-  const time = useSelector((state) => state.time);
-  const hints = useSelector((state) => state.hints);
-  const resets = useSelector((state) => state.resets);
-  const dispatch = useDispatch();
 
-  useEffect(() => {
-    if (played) {
-      dispatch(scoresUpdate(username, difficulty, time, hints, resets));
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  return <div>{console.log(scores)}</div>;
+  return (
+    <div className='score-board'>
+      {
+        // eslint-disable-next-line array-callback-return
+        scores[`${difficulty}`].map((record, i) => {
+          if (record.username !== '') {
+            return (
+              <Record
+                key={i}
+                position={i + 1}
+                username={record.username}
+                time={record.time}
+                hints={record.hints}
+                resets={record.resets}
+              />
+            );
+          } else {
+            return (
+              <Record key={i} position={i + 1} username='' time='' hints='' resets='' />
+            );
+          }
+        })
+      }
+    </div>
+  );
 }

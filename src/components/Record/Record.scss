@@ -1,0 +1,23 @@
+@import './../../style/colors';
+@import './../../style/flexbox';
+
+.record {
+  margin-bottom: 5px;
+  padding: 10px;
+  width: 95%;
+  @include flex-row;
+  background: linear-gradient(
+    to top,
+    $purpleDark -10%,
+    transparent 20%,
+    $purpleDark 110%
+  );
+  color: $purpleLight;
+  font-size: 14px;
+  text-shadow: -1px 1px $defaultDark;
+  border-radius: 2em;
+
+  span {
+    font-size: 26px;
+  }
+}
