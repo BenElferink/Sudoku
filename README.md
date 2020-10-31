@@ -4,15 +4,15 @@
 
 Mobile preview:
 <br />
-<img src="./docs/screenshot-mobile-setup.png" alt="mobile screenshot" width="300" />
-<img src="./docs/screenshot-mobile-game.png" alt="mobile screenshot" width="300" />
-<img src="./docs/screenshot-mobile-scores.png" alt="mobile screenshot" width="300" />
+<img src="./_docs/screenshot-mobile-setup.png" alt="mobile screenshot" width="250" />
+<img src="./_docs/screenshot-mobile-game.png" alt="mobile screenshot" width="250" />
+<img src="./_docs/screenshot-mobile-scores.png" alt="mobile screenshot" width="250" />
 
 Desktop preview:
 <br />
-<img src="./docs/screenshot-desktop-setup.png" alt="desktop screenshot" width="500" />
-<img src="./docs/screenshot-desktop-game.png" alt="desktop screenshot" width="500" />
-<img src="./docs/screenshot-desktop-scores.png" alt="desktop screenshot" width="500" />
+<img src="./_docs/screenshot-desktop-setup.png" alt="desktop screenshot" width="500" />
+<img src="./_docs/screenshot-desktop-game.png" alt="desktop screenshot" width="500" />
+<img src="./_docs/screenshot-desktop-scores.png" alt="desktop screenshot" width="500" />
 
 ## How To Download & Edit
 
