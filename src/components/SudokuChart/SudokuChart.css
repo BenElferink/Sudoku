@@ -45,8 +45,6 @@
 .sudoku-chart .chart-row .chart-col {
   width: 40px;
   height: 40px;
-  background: -webkit-gradient(linear, left top, left bottom, from(#c2a0fd), color-stop(130%, transparent));
-  background: linear-gradient(to bottom, #c2a0fd, transparent 130%);
   color: #24243e;
   border: 0.5px solid #24243e;
   border-radius: 0%;
@@ -60,6 +58,21 @@
 
 .sudoku-chart .chart-row .chart-col:nth-last-child(3n) {
   border-left: 2px solid #24243e;
+}
+
+.sudoku-chart .chart-row .computed {
+  background: -webkit-gradient(linear, left top, left bottom, from(#c2a0fd), color-stop(200%, transparent));
+  background: linear-gradient(to bottom, #c2a0fd, transparent 200%);
+}
+
+.sudoku-chart .chart-row .interact {
+  background: -webkit-gradient(linear, left top, left bottom, from(#9867f0), color-stop(200%, transparent));
+  background: linear-gradient(to bottom, #9867f0, transparent 200%);
+}
+
+.sudoku-chart .chart-row .error {
+  background: -webkit-gradient(linear, left top, left bottom, from(#ff0000), color-stop(200%, transparent));
+  background: linear-gradient(to bottom, #ff0000, transparent 200%);
 }
 
 @media only screen and (min-width: 768px) {

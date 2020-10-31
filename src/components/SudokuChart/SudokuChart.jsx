@@ -27,7 +27,7 @@ export default function SudokuChart() {
     <div className='sudoku-chart'>
       {matrix.played.map((row, i) => (
         <div className='chart-row' key={i}>
-          {row.map((col, j) => (
+          {/* {row.map((col, j) => (
             <input
               className='chart-col'
               key={`${i}, ${j}`}
@@ -36,7 +36,43 @@ export default function SudokuChart() {
                 dispatch(matrixUpdate(Number(e.target.value), i, j));
               }}
             />
-          ))}
+          ))} */}
+          {row.map((col, j) => {
+            if (col === '') {
+              return (
+                <input
+                  className='chart-col interact'
+                  key={`${i}, ${j}`}
+                  value={col}
+                  onChange={(e) => {
+                    dispatch(matrixUpdate(e.target.value, i, j));
+                  }}
+                  // maxLength='1'
+                />
+              );
+            } else if (col === matrix.original[i][j]) {
+              return (
+                <input
+                  className='chart-col computed'
+                  key={`${i}, ${j}`}
+                  defaultValue={col}
+                  readOnly
+                />
+              );
+            } else {
+              return (
+                <input
+                  className='chart-col error'
+                  key={`${i}, ${j}`}
+                  value={col}
+                  onChange={(e) => {
+                    dispatch(matrixUpdate(e.target.value, i, j));
+                  }}
+                  // maxLength='1'
+                />
+              );
+            }
+          })}
         </div>
       ))}
     </div>

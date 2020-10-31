@@ -21,11 +21,15 @@ export const matrixReducer = (
       };
 
     case 'matrix/update':
-      let value = action.payload.value;
+      let value = Number(action.payload.value);
       let i = action.payload.i;
       let j = action.payload.j;
       let newMatrix = duplicateMatrix(state.played);
-      newMatrix[i][j] = value;
+      if (value !== 0) {
+        newMatrix[i][j] = value;
+      } else {
+        newMatrix[i][j] = '';
+      }
       return {
         ...state,
         played: newMatrix,
