@@ -2,23 +2,17 @@
 
 ### Open app: [https://belferink1996.github.io/sudoku/](https://belferink1996.github.io/sudoku/)
 
-<br><br><br><br><br><br>
-
-# UNDER CONSTRUCTION !
-
-# INCOMPLETE !
-
-# UPDATES TO BE ADDED !
-
-<br><br><br><br><br><br>
-
-<!-- Mobile preview:
+Mobile preview:
 <br />
-<img src="./docs/screenshot-mobile.png" alt="mobile screenshot" width="300" />
+<img src="./docs/screenshot-mobile-setup.png" alt="mobile screenshot" width="300" />
+<img src="./docs/screenshot-mobile-game.png" alt="mobile screenshot" width="300" />
+<img src="./docs/screenshot-mobile-scores.png" alt="mobile screenshot" width="300" />
 
 Desktop preview:
 <br />
-<img src="./docs/screenshot-desktop.png" alt="desktop screenshot" width="500" /> -->
+<img src="./docs/screenshot-desktop-setup.png" alt="desktop screenshot" width="500" />
+<img src="./docs/screenshot-desktop-game.png" alt="desktop screenshot" width="500" />
+<img src="./docs/screenshot-desktop-scores.png" alt="desktop screenshot" width="500" />
 
 ## How To Download & Edit
 

@@ -16,8 +16,8 @@
     }
 
     .chart-col {
-      height: 40px;
       width: 40px;
+      height: 40px;
       background: linear-gradient(to bottom, $purpleLight, transparent 130%);
       color: $defaultDark;
       border: 0.5px solid $defaultDark;
@@ -31,6 +31,18 @@
 
       &:nth-last-child(3n) {
         border-left: 2px solid $defaultDark;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .sudoku-chart {
+    .chart-row {
+      .chart-col {
+        width: 50px;
+        height: 50px;
+        font-size: 18px;
       }
     }
   }

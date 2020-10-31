@@ -19,5 +19,7 @@
 .hints svg {
   width: 50px;
   fill: #c2a0fd;
+  -webkit-filter: drop-shadow(-1px 1px #24243e);
+          filter: drop-shadow(-1px 1px #24243e);
 }
 /*# sourceMappingURL=Hints.css.map */

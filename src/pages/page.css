@@ -60,4 +60,13 @@
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
 }
+
+@media only screen and (min-width: 768px) {
+  .page {
+    width: 75%;
+  }
+  .page .btn-bar {
+    width: 50%;
+  }
+}
 /*# sourceMappingURL=page.css.map */
