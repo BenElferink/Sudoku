@@ -1,37 +1,36 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import Wallpaper from './components/Wallpaper/Wallpaper';
-import SetupPage from './pages/SetupPage';
-import GamePage from './pages/GamePage';
-import ScorePage from './pages/ScorePage';
+import { useSpring, animated } from 'react-spring';
+import Pages from './components/Pages/Pages';
 import './style/style.css';
 
 export default function App() {
   const startGame = useSelector((state) => state.startGame);
   const finishGame = useSelector((state) => state.finishGame);
 
-  const pageToMount = () => {
-    // [STATE: startGame: true, finishGame: false]
-    if (startGame && !finishGame) {
-      console.log('Mount: ~GamePage');
-      return <GamePage />;
-    }
-    // [STATE: startGame: true, finishGame: true]
-    else if (startGame && finishGame) {
-      console.log('Mount: ~ScorePage');
-      return <ScorePage played={true} />;
-    }
-    // [STATE: startGame: false, finishGame: true]
-    else if (!startGame && finishGame) {
-      console.log('Mount: ~ScorePage');
-      return <ScorePage played={false} />;
-    }
-    // [STATE: startGame: false, finishGame: false]
-    else if (!startGame && !finishGame) {
-      console.log('Mount: ~SetupPage');
-      return <SetupPage />;
-    }
-  };
+  const spring = useSpring({
+    backgroundPosition: placeWallpaper(startGame, finishGame),
+  });
 
-  return <Wallpaper data={{ startGame, finishGame }}>{pageToMount()}</Wallpaper>;
+  return (
+    <animated.div className='wallpaper' style={spring}>
+      <Pages startGame={startGame} finishGame={finishGame} />
+    </animated.div>
+  );
 }
+
+const placeWallpaper = (start, finish) => {
+  if (window.innerWidth < 768) {
+    if (start && !finish) {
+      return '50%';
+    } else if (start && finish) {
+      return '100%';
+    } else if (!start && finish) {
+      return '100%';
+    } else if (!start && !finish) {
+      return '0%';
+    }
+  } else {
+    return '50%';
+  }
+};

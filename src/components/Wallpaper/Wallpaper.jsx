@@ -1,40 +1,38 @@
 import React from 'react';
+import { useSpring, animated } from 'react-spring';
 import './style/style.css';
 
 export default function Wallpaper({ data, children }) {
-  const placeWallpaper = (start, finish) => {
-    if (window.innerWidth < 768) {
-      // [STATE: startGame: true, finishGame: false]
-      if (start && !finish) {
-        console.log('Transition: ~Wallpaper');
-        return 'center';
-      }
-      // [STATE: startGame: true, finishGame: true]
-      else if (start && finish) {
-        console.log('Transition: ~Wallpaper');
-        return 'right';
-      }
-      // [STATE: startGame: false, finishGame: true]
-      else if (!start && finish) {
-        console.log('Transition: ~Wallpaper');
-        return 'right';
-      }
-      // [STATE: startGame: false, finishGame: false]
-      else if (!start && !finish) {
-        console.log('Transition: ~Wallpaper');
-        return 'left';
-      }
-    } else {
-      console.log('DISABLED/Transition: ~Wallpaper');
-      return 'center';
-    }
-  };
+  const spring = useSpring({
+    backgroundPosition: placeWallpaper(data.startGame, data.finishGame),
+  });
 
   return (
-    <div
-      className='wallpaper'
-      style={{ backgroundPosition: placeWallpaper(data.startGame, data.finishGame) }}>
+    <animated.div className='wallpaper' style={spring}>
       {children}
-    </div>
+    </animated.div>
   );
 }
+
+const placeWallpaper = (start, finish) => {
+  if (window.innerWidth < 768) {
+    // [STATE: startGame: true, finishGame: false]
+    if (start && !finish) {
+      return '50%';
+    }
+    // [STATE: startGame: true, finishGame: true]
+    else if (start && finish) {
+      return '100%';
+    }
+    // [STATE: startGame: false, finishGame: true]
+    else if (!start && finish) {
+      return '100%';
+    }
+    // [STATE: startGame: false, finishGame: false]
+    else if (!start && !finish) {
+      return '0%';
+    }
+  } else {
+    return '50%';
+  }
+};

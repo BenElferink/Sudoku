@@ -1,13 +1,13 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { clickQuit } from './../redux/actions/clickQuit';
-import { clickReset } from './../redux/actions/clickReset';
-import { gameComplete } from './../redux/actions/gameComplete';
-import { changeScores } from '../redux/actions/changeScores';
-import Hints from '../components/Hints/Hints';
-import GameBoard from '../components/GameBoard/GameBoard';
-import Timer from '../components/Timer/Timer';
-import Button from '../components/Button/Button';
+import { clickQuit } from '../../redux/actions/clickQuit';
+import { clickReset } from '../../redux/actions/clickReset';
+import { gameComplete } from '../../redux/actions/gameComplete';
+import { changeScores } from '../../redux/actions/changeScores';
+import Hints from '../Hints/Hints';
+import GameBoard from '../GameBoard/GameBoard';
+import Timer from '../Timer/Timer';
+import Button from '../Button/Button';
 import './style/style.css';
 
 export default function GamePage() {

@@ -1,11 +1,11 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { clickStart } from './../redux/actions/clickStart';
-import { clickScores } from './../redux/actions/clickScores';
-import Title from '../components/Title/Title';
-import Username from '../components/Username/Username';
-import SelectDifficulty from '../components/SelectDifficulty/SelectDifficulty';
-import Button from '../components/Button/Button';
+import { clickStart } from '../../redux/actions/clickStart';
+import { clickScores } from '../../redux/actions/clickScores';
+import Title from '../Title/Title';
+import Username from '../Username/Username';
+import SelectDifficulty from '../SelectDifficulty/SelectDifficulty';
+import Button from '../Button/Button';
 import './style/style.css';
 
 export default function SetupPage() {

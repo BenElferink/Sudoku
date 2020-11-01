@@ -1,9 +1,9 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { clickQuit } from './../redux/actions/clickQuit';
-import Congrats from './../components/Congrats/Congrats';
-import ScoreBoard from './../components/ScoreBoard/ScoreBoard';
-import Button from '../components/Button/Button';
+import { clickQuit } from '../../redux/actions/clickQuit';
+import Congrats from '../Congrats/Congrats';
+import ScoreBoard from '../ScoreBoard/ScoreBoard';
+import Button from '../Button/Button';
 import './style/style.css';
 
 export default function ScorePage({ played }) {
