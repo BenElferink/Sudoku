@@ -1,10 +1,9 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { finishGameToggle } from '../../redux/actions/finishGameToggle';
 import { matrixUpdate } from '../../redux/actions/matrixUpdate';
 import './style/style.css';
 
-export default function GameBoard({ matrix }) {
+export default function GameBoard({ matrix, handleFinish }) {
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -17,7 +16,7 @@ export default function GameBoard({ matrix }) {
       }
     }
     if (trueCounter === Math.pow(9, 2)) {
-      dispatch(finishGameToggle());
+      handleFinish();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [matrix.played]);
