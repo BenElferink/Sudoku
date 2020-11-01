@@ -5,7 +5,7 @@ import { finishGameToggle } from './../redux/actions/finishGameToggle';
 import Congrats from './../components/Congrats/Congrats';
 import ScoreBoard from './../components/ScoreBoard/ScoreBoard';
 import Button from '../components/Button/Button';
-import './page.css';
+import './style/page.css';
 
 export default function ScorePage({ played }) {
   const dispatch = useDispatch();

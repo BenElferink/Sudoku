@@ -10,7 +10,7 @@ import Title from '../components/Title/Title';
 import Username from '../components/Username/Username';
 import SelectDiff from '../components/SelectDiff/SelectDiff';
 import Button from '../components/Button/Button';
-import './page.css';
+import './style/page.css';
 
 export default function SetupPage() {
   const username = useSelector((state) => state.username);

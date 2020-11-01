@@ -9,7 +9,7 @@ import Hints from '../components/Hints/Hints';
 import SudokuChart from '../components/SudokuChart/SudokuChart';
 import Timer from '../components/Timer/Timer';
 import Button from '../components/Button/Button';
-import './page.css';
+import './style/page.css';
 
 export default function GamePage() {
   const difficulty = useSelector((state) => state.difficulty);
