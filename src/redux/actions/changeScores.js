@@ -1,6 +1,7 @@
-export const changeScores = (playerData) => {
+export const changeScores = (playerData, difficulty) => {
   return {
-    type: 'scores/update',
-    payload: playerData,
+    type: 'scores/change',
+    playerData: playerData,
+    difficulty: difficulty,
   };
 };

@@ -25,8 +25,8 @@ export default function GamePage() {
   };
 
   const handleFinish = () => {
-    dispatch(changeScores(playerData));
     dispatch(gameComplete());
+    dispatch(changeScores(playerData, difficulty));
   };
 
   return (

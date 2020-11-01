@@ -3,23 +3,23 @@ export const scoresDataReducer = (
   action
 ) => {
   switch (action.type) {
-    case 'scores/update':
+    case 'scores/change':
       let scoresStorage = { ...state };
-      let difficultyArray = scoresStorage[`${action.payload.difficulty}`].slice();
-      let isRecord = checkRecords(difficultyArray, action.payload.time);
+      let difficultyArray = scoresStorage[`${action.difficulty}`].slice();
+      let isRecord = checkRecords(difficultyArray, action.playerData.time);
       if (isRecord !== false) {
         difficultyArray.splice(
           isRecord,
           0,
           constructRecord(
-            action.payload.username,
-            action.payload.time,
-            action.payload.hints,
-            action.payload.resets
+            action.playerData.username,
+            action.playerData.time,
+            action.playerData.hints,
+            action.playerData.resets
           )
         );
         difficultyArray.pop();
-        scoresStorage[`${action.payload.difficulty}`] = difficultyArray;
+        scoresStorage[`${action.difficulty}`] = difficultyArray;
       }
       localStorage.setItem(
         'Sudoku_WebApp__dev_Ben_Elferink',
