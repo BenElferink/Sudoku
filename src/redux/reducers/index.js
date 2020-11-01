@@ -1,24 +1,18 @@
 import { combineReducers, createStore } from 'redux';
 import { startGameReducer } from './startGameReducer';
 import { finishGameReducer } from './finishGameReducer';
-import { usernameReducer } from './usernameReducer';
 import { difficultyReducer } from './difficultyReducer';
-import { timeReducer } from './timeReducer';
-import { hintsReducer } from './hintsReducer';
-import { resetsReducer } from './resetsReducer';
-import { matrixReducer } from './matrixReducer';
-import { scoresReducer } from './scoresReducer';
+import { matrixDataReducer } from './matrixDataReducer';
+import { scoresDataReducer } from './scoresDataReducer';
+import { playerDataReducer } from './playerDataReducer';
 
 const allReducers = combineReducers({
   startGame: startGameReducer,
   finishGame: finishGameReducer,
-  username: usernameReducer,
   difficulty: difficultyReducer,
-  time: timeReducer,
-  hints: hintsReducer,
-  resets: resetsReducer,
-  matrix: matrixReducer,
-  scores: scoresReducer,
+  playerData: playerDataReducer,
+  matrixData: matrixDataReducer,
+  scoresData: scoresDataReducer,
 });
 
 /* eslint-disable no-underscore-dangle */

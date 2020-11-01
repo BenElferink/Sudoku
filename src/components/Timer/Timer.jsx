@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { timeIncrement } from './../../redux/actions/timeIncrement';
+import { incrementTime } from '../../redux/actions/incrementTime';
 import { timeToString } from '../../scripts/timeFunctions';
 import './style/style.css';
 
@@ -9,7 +9,7 @@ export default function Timer({ time }) {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      dispatch(timeIncrement());
+      dispatch(incrementTime());
     }, 1000);
     return () => {
       clearInterval(interval);

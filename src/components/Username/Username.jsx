@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { usernameUpdate } from './../../redux/actions/usernameUpdate';
+import { changeName } from '../../redux/actions/changeName';
 import './style/style.css';
 
 export default function Username({ value }) {
@@ -12,7 +12,7 @@ export default function Username({ value }) {
       placeholder='nickname:'
       value={value}
       onChange={(e) => {
-        dispatch(usernameUpdate(e.target.value));
+        dispatch(changeName(e.target.value));
       }}
     />
   );

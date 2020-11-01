@@ -1,4 +1,4 @@
-export const hintsUse = () => {
+export const activateHint = () => {
   return {
     type: 'hints/use',
   };

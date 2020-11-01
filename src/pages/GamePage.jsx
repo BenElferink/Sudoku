@@ -1,11 +1,8 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { startGameToggle } from './../redux/actions/startGameToggle';
-import { finishGameToggle } from './../redux/actions/finishGameToggle';
-import { timeReset } from './../redux/actions/timeReset';
-import { hintsReset } from './../redux/actions/hintsReset';
-import { resetsIncrement } from './../redux/actions/resetsIncrement';
-import { matrixReset } from './../redux/actions/matrixReset';
+import { clickQuit } from './../redux/actions/clickQuit';
+import { clickReset } from './../redux/actions/clickReset';
+import { gameComplete } from './../redux/actions/gameComplete';
 import { scoresUpdate } from './../redux/actions/scoresUpdate';
 import Hints from '../components/Hints/Hints';
 import GameBoard from '../components/GameBoard/GameBoard';
@@ -14,28 +11,25 @@ import Button from '../components/Button/Button';
 import './style/style.css';
 
 export default function GamePage() {
-  const username = useSelector((state) => state.username);
   const difficulty = useSelector((state) => state.difficulty);
-  const time = useSelector((state) => state.time);
-  const hints = useSelector((state) => state.hints);
-  const resets = useSelector((state) => state.resets);
-  const matrix = useSelector((state) => state.matrix);
+  const username = useSelector((state) => state.playerData.username);
+  const time = useSelector((state) => state.playerData.time);
+  const hints = useSelector((state) => state.playerData.hints);
+  const resets = useSelector((state) => state.playerData.resets);
+  const matrix = useSelector((state) => state.matrixData);
   const dispatch = useDispatch();
 
   const handleQuit = () => {
-    dispatch(startGameToggle());
+    dispatch(clickQuit());
   };
 
   const handleReset = () => {
-    dispatch(matrixReset());
-    dispatch(timeReset());
-    dispatch(hintsReset(difficulty));
-    dispatch(resetsIncrement());
+    dispatch(clickReset(difficulty));
   };
 
   const handleFinish = () => {
     dispatch(scoresUpdate(username, difficulty, time, hints, resets));
-    dispatch(finishGameToggle());
+    dispatch(gameComplete());
   };
 
   return (

@@ -1,11 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { startGameToggle } from './../redux/actions/startGameToggle';
-import { finishGameToggle } from './../redux/actions/finishGameToggle';
-import { timeReset } from './../redux/actions/timeReset';
-import { hintsReset } from './../redux/actions/hintsReset';
-import { resetsReset } from './../redux/actions/resetsReset';
-import { matrixCreate } from './../redux/actions/matrixCreate';
+import { clickStart } from './../redux/actions/clickStart';
+import { clickScores } from './../redux/actions/clickScores';
 import Title from '../components/Title/Title';
 import Username from '../components/Username/Username';
 import SelectDifficulty from '../components/SelectDifficulty/SelectDifficulty';
@@ -13,24 +9,20 @@ import Button from '../components/Button/Button';
 import './style/style.css';
 
 export default function SetupPage() {
-  const username = useSelector((state) => state.username);
   const difficulty = useSelector((state) => state.difficulty);
+  const username = useSelector((state) => state.playerData.username);
   const dispatch = useDispatch();
 
   const handleStartGame = () => {
     if (username !== '') {
-      dispatch(startGameToggle());
-      dispatch(timeReset());
-      dispatch(hintsReset(difficulty));
-      dispatch(resetsReset());
-      dispatch(matrixCreate(difficulty));
+      dispatch(clickStart(difficulty));
     } else {
       window.alert('error: create a username');
     }
   };
 
   const handleShowScores = () => {
-    dispatch(finishGameToggle());
+    dispatch(clickScores());
   };
 
   return (

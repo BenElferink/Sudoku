@@ -1,26 +1,29 @@
-import {
-  SudokuCreate,
-  duplicateMatrix,
-  filterDifficulty,
-} from '../../scripts/SudokuAlgorithm';
+import { SudokuCreate } from '../../scripts/sudokuAlgorithm';
+import { duplicateMatrix, filterMatrixByDifficulty } from '../../scripts/matrixFunctions';
 
-export const matrixReducer = (
+export const matrixDataReducer = (
   state = { original: [], filtered: [], played: [] },
   action
 ) => {
   switch (action.type) {
-    case 'matrix/create':
-      let matrix = SudokuCreate(9);
-      let filtered = filterDifficulty(duplicateMatrix(matrix), action.payload);
+    case 'click/start':
+      let original = SudokuCreate(9);
+      let filtered = filterMatrixByDifficulty(duplicateMatrix(original), action.payload);
       let played = duplicateMatrix(filtered);
       return {
         ...state,
-        original: matrix,
+        original: original,
         filtered: filtered,
         played: played,
       };
 
-    case 'matrix/update':
+    case 'click/reset':
+      return {
+        ...state,
+        played: duplicateMatrix(state.filtered),
+      };
+
+    case 'matrix/change':
       let value = Number(action.payload.value);
       let i = action.payload.i;
       let j = action.payload.j;
@@ -33,12 +36,6 @@ export const matrixReducer = (
       return {
         ...state,
         played: newMatrix,
-      };
-
-    case 'matrix/reset':
-      return {
-        ...state,
-        played: duplicateMatrix(state.filtered),
       };
 
     default:

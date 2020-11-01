@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { matrixUpdate } from '../../redux/actions/matrixUpdate';
+import { changeMatrix } from '../../redux/actions/changeMatrix';
 import './style/style.css';
 
 export default function GameBoard({ matrix, handleFinish }) {
@@ -37,7 +37,7 @@ export default function GameBoard({ matrix, handleFinish }) {
             key={`${i}, ${j}`}
             value={col}
             onChange={(e) => {
-              dispatch(matrixUpdate(e.target.value, i, j));
+              dispatch(changeMatrix(e.target.value, i, j));
             }}
           />
         ) : (
@@ -46,7 +46,7 @@ export default function GameBoard({ matrix, handleFinish }) {
             key={`${i}, ${j}`}
             value={col}
             onChange={(e) => {
-              dispatch(matrixUpdate(e.target.value, i, j));
+              dispatch(changeMatrix(e.target.value, i, j));
             }}
           />
         )

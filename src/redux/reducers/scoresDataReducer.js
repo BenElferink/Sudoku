@@ -1,4 +1,4 @@
-export const scoresReducer = (
+export const scoresDataReducer = (
   state = checkLocalStorage('Sudoku_WebApp__dev_Ben_Elferink'),
   action
 ) => {

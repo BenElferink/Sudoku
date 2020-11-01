@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { hintsUse } from './../../redux/actions/hintsUse';
-import { matrixUpdate } from './../../redux/actions/matrixUpdate';
+import { activateHint } from '../../redux/actions/activateHint';
+import { changeMatrix } from './../../redux/actions/changeMatrix';
 import Button from './../Button/Button';
 import Icon from './icon/LightBulb-48px';
 import './style/style.css';
@@ -16,11 +16,11 @@ export default function Hints({ hints, matrix }) {
         let j = Math.floor(Math.random() * 9);
         if (matrix.played[i][j] === '') {
           let revealNumber = matrix.original[i][j];
-          dispatch(matrixUpdate(revealNumber, i, j));
+          dispatch(changeMatrix(revealNumber, i, j));
           break;
         }
       }
-      dispatch(hintsUse());
+      dispatch(activateHint());
     }
   };
 

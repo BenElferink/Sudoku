@@ -3,10 +3,10 @@ import { useSelector } from 'react-redux';
 import './style/style.css';
 
 export default function Congrats() {
-  const username = useSelector((state) => state.username);
-  const time = useSelector((state) => state.time);
-  const hints = useSelector((state) => state.hints);
-  const resets = useSelector((state) => state.resets);
+  const username = useSelector((state) => state.playerData.username);
+  const time = useSelector((state) => state.playerData.time);
+  const hints = useSelector((state) => state.playerData.hints);
+  const resets = useSelector((state) => state.playerData.resets);
 
   return (
     <div className='congrats'>

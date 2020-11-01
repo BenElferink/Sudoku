@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { difficultyUpdate } from '../../redux/actions/difficultyUpdate';
+import { changeDifficulty } from '../../redux/actions/changeDifficulty';
 import './style/style.css';
 
 export default function SelectDifficulty({ value }) {
@@ -15,7 +15,7 @@ export default function SelectDifficulty({ value }) {
           name='difficulty'
           value={setting}
           onChange={(e) => {
-            dispatch(difficultyUpdate(e.target.value));
+            dispatch(changeDifficulty(e.target.value));
           }}
           checked={value === setting}
         />

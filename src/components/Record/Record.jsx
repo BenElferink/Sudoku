@@ -1,4 +1,5 @@
 import React from 'react';
+import { timeToString } from './../../scripts/timeFunctions';
 import './style/style.css';
 
 export default function Record({ position, username, time, hints, resets }) {
@@ -27,12 +28,4 @@ export default function Record({ position, username, time, hints, resets }) {
       </div>
     </div>
   );
-}
-
-function timeToString(timeState) {
-  let minutes = timeState.minutes;
-  let seconds = timeState.seconds;
-  minutes < 10 ? (minutes = `0${minutes}`) : (minutes = `${minutes}`);
-  seconds < 10 ? (seconds = `0${seconds}`) : (seconds = `${seconds}`);
-  return `${minutes}:${seconds}`;
 }

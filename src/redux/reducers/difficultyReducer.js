@@ -1,6 +1,6 @@
 export const difficultyReducer = (state = 'normal', action) => {
   switch (action.type) {
-    case 'difficulty/update':
+    case 'difficulty/change':
       return action.payload;
 
     default:
