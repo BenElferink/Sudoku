@@ -8,9 +8,9 @@ import { resetsReset } from './../redux/actions/resetsReset';
 import { matrixCreate } from './../redux/actions/matrixCreate';
 import Title from '../components/Title/Title';
 import Username from '../components/Username/Username';
-import SelectDiff from '../components/SelectDiff/SelectDiff';
+import SelectDifficulty from '../components/SelectDifficulty/SelectDifficulty';
 import Button from '../components/Button/Button';
-import './style/page.css';
+import './style/style.css';
 
 export default function SetupPage() {
   const username = useSelector((state) => state.username);
@@ -38,7 +38,7 @@ export default function SetupPage() {
       <div className='page-content'>
         <Title />
         <Username value={username} />
-        <SelectDiff value={difficulty} />
+        <SelectDifficulty value={difficulty} />
       </div>
       <div className='btn-bar'>
         <Button text='Start Game!' onClick={handleStartGame} />

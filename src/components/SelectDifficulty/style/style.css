@@ -1,0 +1,28 @@
+.difficulty-list {
+  list-style-type: none;
+}
+
+.difficulty-list li input {
+  margin: 7px 14px 7px 0;
+  cursor: pointer;
+}
+
+.difficulty-list li label {
+  color: #808898;
+  font-size: 16px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 768px) {
+  .difficulty-list {
+    padding: 30px;
+    background-color: #24243e;
+    border: 1px solid #9867f0;
+    border-radius: 1em;
+  }
+}
+/*# sourceMappingURL=style.css.map */

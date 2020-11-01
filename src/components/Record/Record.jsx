@@ -1,5 +1,5 @@
 import React from 'react';
-import './Record.css';
+import './style/style.css';
 
 export default function Record({ position, username, time, hints, resets }) {
   return (

@@ -10,21 +10,28 @@ export default function App() {
   const startGame = useSelector((state) => state.startGame);
   const finishGame = useSelector((state) => state.finishGame);
 
-  return (
-    <Wallpaper startGame={startGame} finishGame={finishGame}>
-      {startGame && !finishGame ? (
-        /* [STATE: startGame: true, finishGame: false] */
-        <GamePage />
-      ) : startGame && finishGame ? (
-        /* [STATE: startGame: true, finishGame: true] */
-        <ScorePage played={true} />
-      ) : !startGame && finishGame ? (
-        /* [STATE: startGame: false, finishGame: true] */
-        <ScorePage played={false} />
-      ) : (
-        /* [STATE: startGame: false, finishGame: false] */
-        <SetupPage />
-      )}
-    </Wallpaper>
-  );
+  const pageToMount = () => {
+    // [STATE: startGame: true, finishGame: false]
+    if (startGame && !finishGame) {
+      console.log('Mount: ~GamePage');
+      return <GamePage />;
+    }
+    // [STATE: startGame: true, finishGame: true]
+    else if (startGame && finishGame) {
+      console.log('Mount: ~ScorePage');
+      return <ScorePage played={true} />;
+    }
+    // [STATE: startGame: false, finishGame: true]
+    else if (!startGame && finishGame) {
+      console.log('Mount: ~ScorePage');
+      return <ScorePage played={false} />;
+    }
+    // [STATE: startGame: false, finishGame: false]
+    else if (!startGame && !finishGame) {
+      console.log('Mount: ~SetupPage');
+      return <SetupPage />;
+    }
+  };
+
+  return <Wallpaper data={{ startGame, finishGame }}>{pageToMount()}</Wallpaper>;
 }

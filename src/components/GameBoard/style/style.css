@@ -1,0 +1,85 @@
+.sudoku-chart {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.sudoku-chart .chart-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.sudoku-chart .chart-row:nth-child(3n) {
+  border-bottom: 2px solid #24243e;
+}
+
+.sudoku-chart .chart-row:nth-last-child(3n) {
+  border-top: 2px solid #24243e;
+}
+
+.sudoku-chart .chart-row .chart-col {
+  width: 40px;
+  height: 40px;
+  color: #24243e;
+  border: 0.5px solid #24243e;
+  border-radius: 0%;
+  font-size: 16px;
+  text-align: center;
+}
+
+.sudoku-chart .chart-row .chart-col:nth-child(3n) {
+  border-right: 2px solid #24243e;
+}
+
+.sudoku-chart .chart-row .chart-col:nth-last-child(3n) {
+  border-left: 2px solid #24243e;
+}
+
+.sudoku-chart .chart-row .computed {
+  background: -webkit-gradient(linear, left top, left bottom, from(#c2a0fd), color-stop(200%, transparent));
+  background: linear-gradient(to bottom, #c2a0fd, transparent 200%);
+}
+
+.sudoku-chart .chart-row .interact {
+  background: -webkit-gradient(linear, left top, left bottom, from(#9867f0), color-stop(200%, transparent));
+  background: linear-gradient(to bottom, #9867f0, transparent 200%);
+}
+
+.sudoku-chart .chart-row .error {
+  background: -webkit-gradient(linear, left top, left bottom, from(#ff0000), color-stop(200%, transparent));
+  background: linear-gradient(to bottom, #ff0000, transparent 200%);
+}
+
+@media only screen and (min-width: 768px) {
+  .sudoku-chart .chart-row .chart-col {
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+  }
+}
+/*# sourceMappingURL=style.css.map */

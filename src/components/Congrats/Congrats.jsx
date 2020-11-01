@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { scoresUpdate } from './../../redux/actions/scoresUpdate';
-import './Congrats.css';
+import './style/style.css';
 
 class Congrats extends Component {
   componentDidMount() {

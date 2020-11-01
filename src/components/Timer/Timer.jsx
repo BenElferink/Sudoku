@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { timeIncrement } from './../../redux/actions/timeIncrement';
-import './Timer.css';
+import { timeToString } from '../../scripts/timeFunctions';
+import './style/style.css';
 
-export default function Timer() {
-  const time = useSelector((state) => state.time);
+export default function Timer({ time }) {
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -18,12 +18,4 @@ export default function Timer() {
   }, [time]);
 
   return <div className='timer'>Time elapsed: {timeToString(time)}</div>;
-}
-
-function timeToString(timeState) {
-  let minutes = timeState.minutes;
-  let seconds = timeState.seconds;
-  minutes < 10 ? (minutes = `0${minutes}`) : (minutes = `${minutes}`);
-  seconds < 10 ? (seconds = `0${seconds}`) : (seconds = `${seconds}`);
-  return `${minutes}:${seconds}`;
 }

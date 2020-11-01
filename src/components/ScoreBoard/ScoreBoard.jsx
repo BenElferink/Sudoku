@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import Record from '../Record/Record';
-import './ScoreBoard.css';
+import './style/style.css';
 
 export default function ScoreBoard() {
   const scores = useSelector((state) => state.scores);

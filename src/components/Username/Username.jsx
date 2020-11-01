@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { usernameUpdate } from './../../redux/actions/usernameUpdate';
-import './Username.css';
+import './style/style.css';
 
 export default function Username({ value }) {
   const dispatch = useDispatch();

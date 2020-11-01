@@ -6,13 +6,16 @@ import { hintsReset } from './../redux/actions/hintsReset';
 import { resetsIncrement } from './../redux/actions/resetsIncrement';
 import { matrixReset } from './../redux/actions/matrixReset';
 import Hints from '../components/Hints/Hints';
-import SudokuChart from '../components/SudokuChart/SudokuChart';
+import GameBoard from '../components/GameBoard/GameBoard';
 import Timer from '../components/Timer/Timer';
 import Button from '../components/Button/Button';
-import './style/page.css';
+import './style/style.css';
 
 export default function GamePage() {
   const difficulty = useSelector((state) => state.difficulty);
+  const time = useSelector((state) => state.time);
+  const hints = useSelector((state) => state.hints);
+  const matrix = useSelector((state) => state.matrix);
   const dispatch = useDispatch();
 
   const handleQuit = () => {
@@ -29,9 +32,9 @@ export default function GamePage() {
   return (
     <div className='page'>
       <div className='page-content'>
-        <Timer />
-        <Hints />
-        <SudokuChart />
+        <Timer time={time} />
+        <Hints hints={hints} matrix={matrix} />
+        <GameBoard matrix={matrix} />
       </div>
       <div className='btn-bar'>
         <Button text='Quit' onClick={handleQuit} />

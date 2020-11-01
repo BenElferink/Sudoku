@@ -1,0 +1,59 @@
+.title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.title h2 {
+  color: #9867f0;
+  font-size: 70px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: default;
+}
+
+.title .line {
+  width: 100%;
+  height: 3px;
+  background-color: #9867f0;
+}
+
+.title h3 {
+  color: #c2a0fd;
+  font-size: 30px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: default;
+}
+
+@media only screen and (min-width: 768px) {
+  .title h2 {
+    font-size: 80px;
+    text-shadow: -2px 2px #24243e;
+  }
+  .title .line {
+    -webkit-box-shadow: -2px 2px #24243e;
+            box-shadow: -2px 2px #24243e;
+  }
+  .title h3 {
+    font-size: 35px;
+    text-shadow: -2px 2px #24243e;
+  }
+}
+/*# sourceMappingURL=style.css.map */
