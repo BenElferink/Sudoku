@@ -5,16 +5,21 @@ export const scoresDataReducer = (
   switch (action.type) {
     case 'scores/update':
       let scoresStorage = { ...state };
-      let difficultyArray = scoresStorage[`${action.difficulty}`].slice();
-      let isRecord = checkRecords(difficultyArray, action.time);
+      let difficultyArray = scoresStorage[`${action.payload.difficulty}`].slice();
+      let isRecord = checkRecords(difficultyArray, action.payload.time);
       if (isRecord !== false) {
         difficultyArray.splice(
           isRecord,
           0,
-          constructRecord(action.username, action.time, action.hints, action.resets)
+          constructRecord(
+            action.payload.username,
+            action.payload.time,
+            action.payload.hints,
+            action.payload.resets
+          )
         );
         difficultyArray.pop();
-        scoresStorage[`${action.difficulty}`] = difficultyArray;
+        scoresStorage[`${action.payload.difficulty}`] = difficultyArray;
       }
       localStorage.setItem(
         'Sudoku_WebApp__dev_Ben_Elferink',

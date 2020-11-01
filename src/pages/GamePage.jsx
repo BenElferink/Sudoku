@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { clickQuit } from './../redux/actions/clickQuit';
 import { clickReset } from './../redux/actions/clickReset';
 import { gameComplete } from './../redux/actions/gameComplete';
-import { scoresUpdate } from './../redux/actions/scoresUpdate';
+import { changeScores } from '../redux/actions/changeScores';
 import Hints from '../components/Hints/Hints';
 import GameBoard from '../components/GameBoard/GameBoard';
 import Timer from '../components/Timer/Timer';
@@ -12,10 +12,9 @@ import './style/style.css';
 
 export default function GamePage() {
   const difficulty = useSelector((state) => state.difficulty);
-  const username = useSelector((state) => state.playerData.username);
-  const time = useSelector((state) => state.playerData.time);
-  const hints = useSelector((state) => state.playerData.hints);
-  const resets = useSelector((state) => state.playerData.resets);
+  const playerData = useSelector((state) => state.playerData);
+  const time = playerData.time;
+  const hints = playerData.hints;
   const matrix = useSelector((state) => state.matrixData);
   const dispatch = useDispatch();
 
@@ -28,7 +27,7 @@ export default function GamePage() {
   };
 
   const handleFinish = () => {
-    dispatch(scoresUpdate(username, difficulty, time, hints, resets));
+    dispatch(changeScores(playerData));
     dispatch(gameComplete());
   };
 
