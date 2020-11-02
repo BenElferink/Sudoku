@@ -8,7 +8,7 @@ import SelectDifficulty from '../SelectDifficulty/SelectDifficulty';
 import Button from '../Button/Button';
 import './style/style.css';
 
-export default function SetupPage() {
+export default function SetupPage({ style }) {
   const difficulty = useSelector((state) => state.difficulty);
   const username = useSelector((state) => state.playerData.username);
   const dispatch = useDispatch();
@@ -26,7 +26,7 @@ export default function SetupPage() {
   };
 
   return (
-    <div className='page'>
+    <div style={style} className='page'>
       <div className='page-content'>
         <Title />
         <Username value={username} />

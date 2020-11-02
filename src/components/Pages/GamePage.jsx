@@ -10,7 +10,7 @@ import Timer from '../Timer/Timer';
 import Button from '../Button/Button';
 import './style/style.css';
 
-export default function GamePage() {
+export default function GamePage({ style }) {
   const difficulty = useSelector((state) => state.difficulty);
   const playerData = useSelector((state) => state.playerData);
   const matrix = useSelector((state) => state.matrixData);
@@ -30,7 +30,7 @@ export default function GamePage() {
   };
 
   return (
-    <div className='page'>
+    <div style={style} className='page'>
       <div className='page-content'>
         <Timer time={playerData.time} />
         <Hints hints={playerData.hints} matrix={matrix} />

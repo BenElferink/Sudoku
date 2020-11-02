@@ -1,34 +1,45 @@
 import React, { useState, useEffect } from 'react';
-// import { useTransition, animated } from 'react-spring';
-import SetupPage from './..//Pages/SetupPage';
-import GamePage from './../Pages/GamePage';
-import ScorePage from './../Pages/ScorePage';
+import { Transition } from 'react-spring/renderprops';
+import SetupPage from './SetupPage';
+import GamePage from './GamePage';
+import ScorePage from './ScorePage';
 
 export default function Pages({ startGame, finishGame }) {
   const [page, setPage] = useState(null);
 
   useEffect(() => {
-    setPage(pageToMount(startGame, finishGame));
+    setPage(pageToDisplay(startGame, finishGame));
   }, [startGame, finishGame]);
 
-  // const transitions = useTransition(page, (item) => item.id, {
-  //   from: { opacity: '0' },
-  //   enter: { opacity: '1' },
-  //   leave: { opacity: '0' },
-  // });
-
-  // return transitions.map((test, key, style) => <animated.div>{test}</animated.div>);
-  return page;
+  return (
+    <Transition
+      items={page}
+      from={{ transform: 'translate(-100% ,0%)', position: 'absolute' }}
+      enter={{ transform: 'translate(0% ,0%)' }}
+      leave={{ transform: 'translate(-100% ,0%)' }}>
+      {(page) =>
+        page === 'game'
+          ? (props) => <GamePage style={props} />
+          : page === 'complete'
+          ? (props) => <ScorePage style={props} played={true} />
+          : page === 'scores'
+          ? (props) => <ScorePage style={props} played={false} />
+          : page === 'setup'
+          ? (props) => <SetupPage style={props} />
+          : null
+      }
+    </Transition>
+  );
 }
 
-const pageToMount = (start, finish) => {
+const pageToDisplay = (start, finish) => {
   if (start && !finish) {
-    return <GamePage />;
+    return 'game';
   } else if (start && finish) {
-    return <ScorePage played={true} />;
+    return 'complete';
   } else if (!start && finish) {
-    return <ScorePage played={false} />;
+    return 'scores';
   } else if (!start && !finish) {
-    return <SetupPage />;
+    return 'setup';
   }
 };

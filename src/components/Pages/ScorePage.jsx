@@ -6,7 +6,7 @@ import ScoreBoard from '../ScoreBoard/ScoreBoard';
 import Button from '../Button/Button';
 import './style/style.css';
 
-export default function ScorePage({ played }) {
+export default function ScorePage({ style, played }) {
   const dispatch = useDispatch();
 
   const handleHome = () => {
@@ -14,7 +14,7 @@ export default function ScorePage({ played }) {
   };
 
   return (
-    <div className='page'>
+    <div style={style} className='page'>
       <div className='page-content'>
         {played ? <Congrats /> : null}
         <ScoreBoard />
