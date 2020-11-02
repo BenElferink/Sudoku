@@ -39,6 +39,7 @@ export default function GameBoard({ matrix, handleFinish }) {
             onChange={(e) => {
               dispatch(changeMatrix(e.target.value, i, j));
             }}
+            maxLength='1'
           />
         ) : (
           <input
@@ -48,6 +49,7 @@ export default function GameBoard({ matrix, handleFinish }) {
             onChange={(e) => {
               dispatch(changeMatrix(e.target.value, i, j));
             }}
+            maxLength='1'
           />
         )
       )}
