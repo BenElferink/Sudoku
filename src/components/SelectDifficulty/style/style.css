@@ -1,4 +1,8 @@
 .difficulty-list {
+  padding: 30px;
+  background-color: #24243e;
+  border: 1px solid #9867f0;
+  border-radius: 1em;
   list-style-type: none;
 }
 
@@ -15,14 +19,5 @@
       -ms-user-select: none;
           user-select: none;
   cursor: pointer;
-}
-
-@media only screen and (min-width: 768px) {
-  .difficulty-list {
-    padding: 30px;
-    background-color: #24243e;
-    border: 1px solid #9867f0;
-    border-radius: 1em;
-  }
 }
 /*# sourceMappingURL=style.css.map */

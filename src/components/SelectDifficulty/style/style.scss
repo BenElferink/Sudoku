@@ -1,6 +1,10 @@
 @import './../../../style/colors';
 
 .difficulty-list {
+  padding: 30px;
+  background-color: $defaultDark;
+  border: 1px solid $purpleDark;
+  border-radius: 1em;
   list-style-type: none;
 
   li {
@@ -15,14 +19,5 @@
       user-select: none;
       cursor: pointer;
     }
-  }
-}
-
-@media only screen and(min-width: 768px) {
-  .difficulty-list {
-    padding: 30px;
-    background-color: $defaultDark;
-    border: 1px solid $purpleDark;
-    border-radius: 1em;
   }
 }

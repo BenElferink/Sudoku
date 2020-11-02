@@ -8,17 +8,16 @@
     @include flex-row;
 
     &:nth-child(3n) {
-      border-bottom: 2px solid $defaultDark;
+      border-bottom: 1px solid $defaultDark;
     }
 
     &:nth-last-child(3n) {
-      border-top: 2px solid $defaultDark;
+      border-top: 1px solid $defaultDark;
     }
 
     .chart-col {
       width: 40px;
       height: 40px;
-      // background: linear-gradient(to bottom, $purpleLight, transparent 200%);
       color: $defaultDark;
       border: 0.5px solid $defaultDark;
       border-radius: 0%;
@@ -26,11 +25,11 @@
       text-align: center;
 
       &:nth-child(3n) {
-        border-right: 2px solid $defaultDark;
+        border-right: 1px solid $defaultDark;
       }
 
       &:nth-last-child(3n) {
-        border-left: 2px solid $defaultDark;
+        border-left: 1px solid $defaultDark;
       }
     }
 

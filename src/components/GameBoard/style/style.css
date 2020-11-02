@@ -35,11 +35,11 @@
 }
 
 .sudoku-chart .chart-row:nth-child(3n) {
-  border-bottom: 2px solid #24243e;
+  border-bottom: 1px solid #24243e;
 }
 
 .sudoku-chart .chart-row:nth-last-child(3n) {
-  border-top: 2px solid #24243e;
+  border-top: 1px solid #24243e;
 }
 
 .sudoku-chart .chart-row .chart-col {
@@ -53,11 +53,11 @@
 }
 
 .sudoku-chart .chart-row .chart-col:nth-child(3n) {
-  border-right: 2px solid #24243e;
+  border-right: 1px solid #24243e;
 }
 
 .sudoku-chart .chart-row .chart-col:nth-last-child(3n) {
-  border-left: 2px solid #24243e;
+  border-left: 1px solid #24243e;
 }
 
 .sudoku-chart .chart-row .computed {
