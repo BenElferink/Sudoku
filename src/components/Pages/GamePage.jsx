@@ -31,9 +31,11 @@ export default function GamePage({ style }) {
 
   return (
     <div style={style} className='page'>
-      <div className='page-content'>
+      <div className='page-head'>
         <Timer time={playerData.time} />
         <Hints hints={playerData.hints} matrix={matrix} />
+      </div>
+      <div className='page-main'>
         <GameBoard matrix={matrix} handleFinish={handleFinish} />
       </div>
       <div className='btn-bar'>

@@ -27,8 +27,11 @@ export default function SetupPage({ style }) {
 
   return (
     <div style={style} className='page'>
-      <div className='page-content'>
-        <Title />
+      <div className='page-head'>
+        <h2>Sudoku</h2>
+        <h3>by Ben Elferink</h3>
+      </div>
+      <div className='page-main'>
         <Username value={username} />
         <SelectDifficulty value={difficulty} />
       </div>

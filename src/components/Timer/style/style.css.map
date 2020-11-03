@@ -1,6 +1,6 @@
 {
     "version": 3,
-    "mappings": "AAEA,AAAA,MAAM,CAAC;EACL,KAAK,ECAO,OAAO;EDCnB,SAAS,EAAE,IAAI;EACf,WAAW,EAAG,IAAG,CAAC,GAAG,CCLT,OAAe;CDM5B",
+    "mappings": "AAEA,AAAA,MAAM,CAAC;EACL,UAAU,EAAE,GAAG;EACf,KAAK,ECDO,OAAO;EDEnB,SAAS,EAAE,IAAI;EACf,WAAW,EAAG,IAAG,CAAC,GAAG,CCNT,OAAe;CDO5B",
     "sources": [
         "style.scss",
         "../../../style/_colors.scss"

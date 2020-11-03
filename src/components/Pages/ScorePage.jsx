@@ -15,8 +15,8 @@ export default function ScorePage({ style, played }) {
 
   return (
     <div style={style} className='page'>
-      <div className='page-content'>
-        {played ? <Congrats /> : null}
+      <div className='page-head'>{played ? <Congrats /> : null}</div>
+      <div className='page-main'>
         <ScoreBoard />
       </div>
       <div className='btn-bar'>
