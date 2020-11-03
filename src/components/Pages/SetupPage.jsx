@@ -2,7 +2,6 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { clickStart } from '../../redux/actions/clickStart';
 import { clickScores } from '../../redux/actions/clickScores';
-import Title from '../Title/Title';
 import Username from '../Username/Username';
 import SelectDifficulty from '../SelectDifficulty/SelectDifficulty';
 import Button from '../Button/Button';
