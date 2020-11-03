@@ -1,6 +1,6 @@
 {
   "short_name": "Sudoku",
-  "name": "ReactJS Sudoku",
+  "name": "Sudoku - by Ben Elferink",
   "icons": [
     {
       "src": "favicon.ico",
@@ -9,5 +9,7 @@
     }
   ],
   "start_url": ".",
-  "display": "standalone"
+  "display": "standalone",
+  "theme_color": "#c2a0fd",
+  "background_color": "#9867f0"
 }
