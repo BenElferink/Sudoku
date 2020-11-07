@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { useSpring, animated } from 'react-spring';
-import Pages from './components/Pages/Pages';
+import Pages from './components/Pages';
 import './style/style.css';
 
 export default function App() {

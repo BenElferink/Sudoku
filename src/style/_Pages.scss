@@ -1,0 +1,63 @@
+.page {
+  width: 100%;
+  height: 100vh;
+  @include flex-col;
+  justify-content: space-between;
+
+  .page-head {
+    width: 100%;
+    max-height: 20vh;
+    @include flex-col;
+
+    h2 {
+      margin-top: 0.5em;
+      color: $purpleDark;
+      font-size: 70px;
+      text-shadow: -1px 1px $defaultDark;
+      user-select: none;
+      cursor: default;
+    }
+
+    h3 {
+      color: $purpleLight;
+      font-size: 30px;
+      text-shadow: -1px 1px $defaultDark;
+      user-select: none;
+      cursor: default;
+    }
+  }
+
+  .page-main {
+    width: 100%;
+    min-height: 50vh;
+    @include flex-col;
+  }
+
+  .btn-bar {
+    width: 100%;
+    height: 10vh;
+    @include flex-row;
+  }
+}
+
+@media only screen and(min-width: 768px) {
+  .page {
+    width: 75%;
+
+    .page-head {
+      h2 {
+        font-size: 80px;
+        text-shadow: -2px 2px $defaultDark;
+      }
+
+      h3 {
+        font-size: 35px;
+        text-shadow: -2px 2px $defaultDark;
+      }
+    }
+
+    .btn-bar {
+      width: 50%;
+    }
+  }
+}

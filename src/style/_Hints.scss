@@ -1,0 +1,9 @@
+.hints {
+  @include flex-row;
+
+  svg {
+    width: 50px;
+    fill: $purpleLight;
+    filter: drop-shadow(-1px 1px $defaultDark);
+  }
+}

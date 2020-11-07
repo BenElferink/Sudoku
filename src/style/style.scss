@@ -1,3 +1,4 @@
+@import './colors';
 @import './flexbox';
 
 * {
@@ -15,3 +16,14 @@
   background: url(./../img/Wallpaper.jpg) no-repeat;
   background-size: cover;
 }
+
+@import './Pages';
+@import './Button';
+@import './Username';
+@import './SelectDifficulty';
+@import './Timer';
+@import './Hints';
+@import './GameBoard';
+@import './Congrats';
+@import './Record';
+@import './ScoreBoard';

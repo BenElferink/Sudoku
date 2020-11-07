@@ -1,0 +1,16 @@
+.congrats {
+  padding: 5px 15px;
+  color: $purpleLight;
+  text-align: center;
+  text-shadow: -1px 1px $defaultDark;
+  border-radius: 20px;
+
+  h4 {
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  p {
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,21 @@
+.difficulty-list {
+  padding: 30px;
+  background-color: $defaultDark;
+  border: 1px solid $purpleDark;
+  border-radius: 1em;
+  list-style-type: none;
+
+  li {
+    input {
+      margin: 7px 14px 7px 0;
+      cursor: pointer;
+    }
+
+    label {
+      color: $defaultLight;
+      font-size: 16px;
+      user-select: none;
+      cursor: pointer;
+    }
+  }
+}
