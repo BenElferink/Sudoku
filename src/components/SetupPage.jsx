@@ -1,8 +1,8 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { changeName } from '../redux/actions/changeName';
 import { clickStart } from '../redux/actions/clickStart';
 import { clickScores } from '../redux/actions/clickScores';
-import Username from './Username';
 import SelectDifficulty from './SelectDifficulty';
 
 export default function SetupPage({ style }) {
@@ -29,7 +29,14 @@ export default function SetupPage({ style }) {
         <h3>by Ben Elferink</h3>
       </div>
       <div className='page-main'>
-        <Username value={username} />
+        <input
+          className='username'
+          placeholder='nickname:'
+          value={username}
+          onChange={(e) => {
+            dispatch(changeName(e.target.value));
+          }}
+        />
         <SelectDifficulty value={difficulty} />
       </div>
       <div className='btn-bar'>
