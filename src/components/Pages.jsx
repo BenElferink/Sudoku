@@ -14,9 +14,9 @@ export default function Pages({ startGame, finishGame }) {
   return (
     <Transition
       items={page}
-      from={{ transform: 'translate(-100% ,0%)', position: 'absolute' }}
+      from={{ transform: 'translate(0% ,-100%)', position: 'absolute' }}
       enter={{ transform: 'translate(0% ,0%)' }}
-      leave={{ transform: 'translate(-100% ,0%)' }}>
+      leave={{ transform: 'translate(0% ,-100%)' }}>
       {(page) =>
         page === 'game'
           ? (props) => <GamePage style={props} />
