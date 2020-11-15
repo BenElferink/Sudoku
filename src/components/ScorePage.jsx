@@ -3,7 +3,6 @@ import { useDispatch } from 'react-redux';
 import { clickQuit } from '../redux/actions/clickQuit';
 import Congrats from './Congrats';
 import ScoreBoard from './ScoreBoard';
-import Button from './Button';
 
 export default function ScorePage({ style, played }) {
   const dispatch = useDispatch();
@@ -19,7 +18,9 @@ export default function ScorePage({ style, played }) {
         <ScoreBoard />
       </div>
       <div className='btn-bar'>
-        <Button text='Home' onClick={handleHome} />
+        <button className='btn' onClick={handleHome}>
+          Home
+        </button>
       </div>
     </div>
   );

@@ -2,7 +2,6 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { activateHint } from '../redux/actions/activateHint';
 import { changeMatrix } from '../redux/actions/changeMatrix';
-import Button from './Button';
 import Icon from './LightBulb-48px';
 
 export default function Hints({ hints, matrix }) {
@@ -25,7 +24,9 @@ export default function Hints({ hints, matrix }) {
 
   return (
     <div className='hints'>
-      <Button text='HINT' onClick={clickHint} />
+      <button className='btn' onClick={clickHint}>
+        HINT
+      </button>
       {hints.remaining >= 1 ? <Icon opacity='100%' /> : <Icon opacity='25%' />}
       {hints.remaining >= 2 ? <Icon opacity='100%' /> : <Icon opacity='25%' />}
       {hints.remaining >= 3 ? <Icon opacity='100%' /> : <Icon opacity='25%' />}

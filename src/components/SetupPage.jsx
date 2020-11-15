@@ -4,7 +4,6 @@ import { clickStart } from '../redux/actions/clickStart';
 import { clickScores } from '../redux/actions/clickScores';
 import Username from './Username';
 import SelectDifficulty from './SelectDifficulty';
-import Button from './Button';
 
 export default function SetupPage({ style }) {
   const difficulty = useSelector((state) => state.difficulty);
@@ -34,8 +33,12 @@ export default function SetupPage({ style }) {
         <SelectDifficulty value={difficulty} />
       </div>
       <div className='btn-bar'>
-        <Button text='Start Game!' onClick={handleStartGame} />
-        <Button text='Show Scores' onClick={handleShowScores} />
+        <button className='btn' onClick={handleStartGame}>
+          Start Game!
+        </button>
+        <button className='btn' onClick={handleShowScores}>
+          Show Scores
+        </button>
       </div>
     </div>
   );
