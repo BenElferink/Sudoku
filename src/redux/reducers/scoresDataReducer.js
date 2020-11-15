@@ -28,10 +28,7 @@ export const scoresDataReducer = (
       return scoresStorage;
 
     default:
-      localStorage.setItem(
-        'Sudoku_WebApp__dev_Ben_Elferink',
-        JSON.stringify(state)
-      );
+      localStorage.setItem('Sudoku_WebApp__dev_Ben_Elferink', JSON.stringify(state));
       return state;
   }
 };
@@ -62,14 +59,14 @@ function initializeStorage() {
   let recordStructure = {
     username: '',
     time: {
-      minutes: 0,
-      seconds: 0,
+      minutes: '',
+      seconds: '',
     },
     hints: {
-      remaining: 0,
-      used: 0,
+      remaining: '',
+      used: '',
     },
-    resets: 0,
+    resets: '',
   };
 
   fillStorageObject(storageStructure.easy, recordStructure);

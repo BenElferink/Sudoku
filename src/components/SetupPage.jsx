@@ -1,9 +1,10 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { changeName } from '../redux/actions/changeName';
 import { clickStart } from '../redux/actions/clickStart';
 import { clickScores } from '../redux/actions/clickScores';
-import { changeDifficulty } from '../redux/actions/changeDifficulty';
+import Username from './Username';
+import SelectDifficulty from './SelectDifficulty';
+import Button from './Button';
 
 export default function SetupPage({ style }) {
   const difficulty = useSelector((state) => state.difficulty);
@@ -28,70 +29,13 @@ export default function SetupPage({ style }) {
         <h2>Sudoku</h2>
         <h3>by Ben Elferink</h3>
       </div>
-
       <div className='page-main'>
-        <input
-          className='username'
-          placeholder='nickname:'
-          value={username}
-          onChange={(e) => {
-            dispatch(changeName(e.target.value));
-          }}
-        />
-
-        <ul className='difficulty-list'>
-          <li>
-            <label>
-              <input
-                type='radio'
-                name='difficulty'
-                value='easy'
-                onChange={(e) => {
-                  dispatch(changeDifficulty(e.target.value));
-                }}
-                checked={difficulty === 'easy'}
-              />
-              easy
-            </label>
-          </li>
-          <li>
-            <label>
-              <input
-                type='radio'
-                name='difficulty'
-                value='normal'
-                onChange={(e) => {
-                  dispatch(changeDifficulty(e.target.value));
-                }}
-                checked={difficulty === 'normal'}
-              />
-              normal
-            </label>
-          </li>
-          <li>
-            <label>
-              <input
-                type='radio'
-                name='difficulty'
-                value='hard'
-                onChange={(e) => {
-                  dispatch(changeDifficulty(e.target.value));
-                }}
-                checked={difficulty === 'hard'}
-              />
-              hard
-            </label>
-          </li>
-        </ul>
+        <Username value={username} />
+        <SelectDifficulty value={difficulty} />
       </div>
-
       <div className='btn-bar'>
-        <button className='btn' onClick={handleStartGame}>
-          Start Game!
-        </button>
-        <button className='btn' onClick={handleShowScores}>
-          Show Scores
-        </button>
+        <Button text='Start Game!' onClick={handleStartGame} />
+        <Button text='Show Scores' onClick={handleShowScores} />
       </div>
     </div>
   );

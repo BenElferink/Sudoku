@@ -20,42 +20,40 @@ export default function GameBoard({ matrix, handleFinish }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [matrix.played]);
 
-  return (
-    <div className='sudoku-chart'>
-      {matrix.played.map((row, i) => (
-        <div className='chart-row' key={i}>
-          {row.map((col, j) =>
-            col === matrix.original[i][j] ? (
-              <input
-                className='chart-col computed'
-                key={`${i}, ${j}`}
-                defaultValue={col}
-                readOnly
-              />
-            ) : col === '' ? (
-              <input
-                className='chart-col interact'
-                key={`${i}, ${j}`}
-                value={col}
-                onChange={(e) => {
-                  dispatch(changeMatrix(e.target.value, i, j));
-                }}
-                maxLength='1'
-              />
-            ) : (
-              <input
-                className='chart-col error'
-                key={`${i}, ${j}`}
-                value={col}
-                onChange={(e) => {
-                  dispatch(changeMatrix(e.target.value, i, j));
-                }}
-                maxLength='1'
-              />
-            )
-          )}
-        </div>
-      ))}
+  const chartToDisplay = matrix.played.map((row, i) => (
+    <div className='chart-row' key={i}>
+      {row.map((col, j) =>
+        col === matrix.original[i][j] ? (
+          <input
+            className='chart-col computed'
+            key={`${i}, ${j}`}
+            defaultValue={col}
+            readOnly
+          />
+        ) : col === '' ? (
+          <input
+            className='chart-col interact'
+            key={`${i}, ${j}`}
+            value={col}
+            onChange={(e) => {
+              dispatch(changeMatrix(e.target.value, i, j));
+            }}
+            maxLength='1'
+          />
+        ) : (
+          <input
+            className='chart-col error'
+            key={`${i}, ${j}`}
+            value={col}
+            onChange={(e) => {
+              dispatch(changeMatrix(e.target.value, i, j));
+            }}
+            maxLength='1'
+          />
+        )
+      )}
     </div>
-  );
+  ));
+
+  return <div className='sudoku-chart'>{chartToDisplay}</div>;
 }

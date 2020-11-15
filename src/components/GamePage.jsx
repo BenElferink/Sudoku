@@ -7,6 +7,7 @@ import { changeScores } from '../redux/actions/changeScores';
 import Hints from './Hints';
 import GameBoard from './GameBoard';
 import Timer from './Timer';
+import Button from './Button';
 
 export default function GamePage({ style }) {
   const difficulty = useSelector((state) => state.difficulty);
@@ -37,12 +38,8 @@ export default function GamePage({ style }) {
         <GameBoard matrix={matrix} handleFinish={handleFinish} />
       </div>
       <div className='btn-bar'>
-        <button className='btn' onClick={handleQuit}>
-          Quit
-        </button>
-        <button className='btn' onClick={handleReset}>
-          Reset
-        </button>
+        <Button text='Quit' onClick={handleQuit} />
+        <Button text='Reset' onClick={handleReset} />
       </div>
     </div>
   );
