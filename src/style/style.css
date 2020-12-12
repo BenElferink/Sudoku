@@ -1,401 +1,210 @@
 * {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  box-sizing: border-box;
 }
 
-.wallpaper {
+.SUDOKU {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   width: 100%;
-  height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  min-height: 100vh;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  background: url(./../img/Wallpaper.jpg) no-repeat;
-  background-size: cover;
-}
-
-.page {
-  width: 100%;
-  height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.page .page-head {
-  width: 100%;
-  max-height: 20vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-}
-
-.page .page-head h2 {
-  margin-top: 0.5em;
-  color: #9867f0;
-  font-size: 70px;
-  text-shadow: -1px 1px #24243e;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  cursor: default;
-}
-
-.page .page-head h3 {
-  color: #c2a0fd;
-  font-size: 30px;
-  text-shadow: -1px 1px #24243e;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  cursor: default;
-}
-
-.page .page-main {
-  width: 100%;
-  min-height: 50vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-}
-
-.page .btn-bar {
-  width: 100%;
-  height: 10vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-}
-
-@media only screen and (min-width: 768px) {
-  .page {
-    width: 75%;
-  }
-  .page .page-head h2 {
-    font-size: 80px;
-    text-shadow: -2px 2px #24243e;
-  }
-  .page .page-head h3 {
-    font-size: 35px;
-    text-shadow: -2px 2px #24243e;
-  }
-  .page .btn-bar {
-    width: 50%;
-  }
-}
-
-.btn {
-  min-width: 120px;
-  padding: 7px 15px;
-  background-color: #24243e;
-  color: #808898;
-  font-size: 16px;
-  font-weight: 300;
-  border: 1px solid #9867f0;
-  border-radius: 20px;
-  -webkit-box-shadow: 0 0 5px 1px #9867f0 inset;
-          box-shadow: 0 0 5px 1px #9867f0 inset;
-  outline: none;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  cursor: pointer;
-}
-
-.btn:hover {
-  border: 1px solid #c2a0fd;
-  -webkit-box-shadow: 0 0 5px 1px #c2a0fd inset;
-          box-shadow: 0 0 5px 1px #c2a0fd inset;
-}
-
-@media only screen and (min-width: 768px) {
-  .btn {
-    padding: 10px 20px;
-  }
-}
-
-.username {
-  padding: 7px 15px;
-  background-color: #24243e;
-  color: #808898;
-  font-size: 16px;
-  border: 1px solid #9867f0;
-  border-radius: 10px;
-  cursor: text;
-}
-
-.difficulty-list {
-  padding: 30px;
-  background-color: #24243e;
-  border: 1px solid #9867f0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #252848;
+  box-shadow: 0 0 1em #000 inset;
   border-radius: 1em;
-  list-style-type: none;
 }
 
-.difficulty-list li input {
-  margin: 7px 14px 7px 0;
-  cursor: pointer;
-}
-
-.difficulty-list li label {
-  color: #808898;
-  font-size: 16px;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  cursor: pointer;
-}
-
-.timer {
-  margin-top: 1em;
-  color: #c2a0fd;
-  font-size: 28px;
-  text-shadow: -1px 1px #24243e;
-}
-
-.hints {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-}
-
-.hints svg {
-  width: 50px;
-  fill: #c2a0fd;
-  -webkit-filter: drop-shadow(-1px 1px #24243e);
-          filter: drop-shadow(-1px 1px #24243e);
-}
-
-.sudoku-chart {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-}
-
-.sudoku-chart .chart-row {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-}
-
-.sudoku-chart .chart-row:nth-child(3n) {
-  border-bottom: 1px solid #24243e;
-}
-
-.sudoku-chart .chart-row:nth-last-child(3n) {
-  border-top: 1px solid #24243e;
-}
-
-.sudoku-chart .chart-row .chart-col {
-  width: 40px;
-  height: 40px;
-  color: #24243e;
-  border: 0.5px solid #24243e;
-  border-radius: 0%;
-  font-size: 16px;
-  text-align: center;
-}
-
-.sudoku-chart .chart-row .chart-col:nth-child(3n) {
-  border-right: 1px solid #24243e;
-}
-
-.sudoku-chart .chart-row .chart-col:nth-last-child(3n) {
-  border-left: 1px solid #24243e;
-}
-
-.sudoku-chart .chart-row .computed {
-  background: -webkit-gradient(linear, left top, left bottom, from(#c2a0fd), color-stop(200%, transparent));
-  background: linear-gradient(to bottom, #c2a0fd, transparent 200%);
-}
-
-.sudoku-chart .chart-row .interact {
-  background: -webkit-gradient(linear, left top, left bottom, from(#9867f0), color-stop(200%, transparent));
-  background: linear-gradient(to bottom, #9867f0, transparent 200%);
-}
-
-.sudoku-chart .chart-row .error {
-  background: -webkit-gradient(linear, left top, left bottom, from(#ff0000), color-stop(200%, transparent));
-  background: linear-gradient(to bottom, #ff0000, transparent 200%);
-}
-
-@media only screen and (min-width: 768px) {
-  .sudoku-chart .chart-row .chart-col {
-    width: 50px;
-    height: 50px;
-    font-size: 18px;
-  }
-}
-
-.congrats {
-  padding: 5px 15px;
-  color: #c2a0fd;
-  text-align: center;
-  text-shadow: -1px 1px #24243e;
-  border-radius: 20px;
-}
-
-.congrats h4 {
-  font-size: 20px;
-  font-weight: 600;
-}
-
-.congrats p {
-  font-size: 12px;
-}
-
-.record {
-  margin-bottom: 5px;
-  padding: 10px;
-  width: 95%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(-10%, #9867f0), color-stop(20%, transparent), color-stop(110%, #9867f0));
-  background: linear-gradient(to top, #9867f0 -10%, transparent 20%, #9867f0 110%);
-  color: #c2a0fd;
+.SUDOKU button {
+  padding: 12px 28px;
+  background-color: transparent;
+  border: 1px solid #5778f2;
+  border-radius: 10px;
+  color: #e7e8ea;
   font-size: 14px;
-  text-shadow: -1px 1px #24243e;
-  border-radius: 2em;
+  cursor: pointer;
 }
 
-.record span {
-  font-size: 26px;
+.SUDOKU button:hover, .SUDOKU button:active {
+  background-color: #2e3157;
 }
 
-.score-board {
+.SUDOKU .start-group {
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  height: 100%;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  text-shadow: 0 0 3px #000;
+}
+
+.SUDOKU .start-group button {
+  width: 250px;
+  margin-top: 10px;
+  background-color: #5778f2;
+  color: #e7e8ea;
+}
+
+.SUDOKU .start-group button:hover, .SUDOKU .start-group button:active {
+  background-color: #202340;
+}
+
+.SUDOKU .start-group .difficulty {
+  margin-top: 50px;
+  display: flex;
+}
+
+.SUDOKU .start-group .difficulty .radio-group {
+  margin: 3px 10px;
+  display: flex;
+  align-items: center;
+}
+
+.SUDOKU .start-group .difficulty .radio-group input {
+  margin-right: 7px;
+  cursor: pointer;
+}
+
+.SUDOKU .start-group .difficulty .radio-group label {
+  color: #e7e8ea;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.SUDOKU .start-group .personal-best {
+  color: #858ab5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.SUDOKU .start-group .personal-best p {
+  margin: 0 20px;
+  text-align: center;
+}
+
+.SUDOKU .start-group .personal-best table th,
+.SUDOKU .start-group .personal-best table td {
+  padding: 0 7px;
+  text-align: center;
+}
+
+.SUDOKU .start-group .personal-best table .diff {
+  text-align: left;
+}
+
+.SUDOKU .game-page {
+  position: relative;
+}
+
+.SUDOKU .game-page .timer {
+  margin-bottom: 5px;
+  color: #e7e8ea;
+  font-size: 20px;
+  text-align: center;
+}
+
+.SUDOKU .game-page .hints {
+  width: 300px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.SUDOKU .game-page .hints svg {
+  width: 50px;
+  height: 50px;
+  fill: #5778f2;
+}
+
+.SUDOKU .game-page .game-table {
+  border-collapse: collapse;
+  background-color: #2e3157;
+}
+
+.SUDOKU .game-page .game-table tr:nth-child(3n) {
+  border-bottom: 1.5px solid #000;
+}
+
+.SUDOKU .game-page .game-table tr:nth-last-child(3n) {
+  border-top: 1.5px solid #000;
+}
+
+.SUDOKU .game-page .game-table tr td {
+  width: 50px;
+  height: 50px;
+  border: 0.5px solid #000;
+  color: #858ab5;
+  text-align: center;
+  cursor: pointer;
+}
+
+.SUDOKU .game-page .game-table tr td:nth-child(3n) {
+  border-right: 1.5px solid #000;
+}
+
+.SUDOKU .game-page .game-table tr td:nth-last-child(3n) {
+  border-left: 1.5px solid #000;
+}
+
+.SUDOKU .game-page .game-table tr td:hover, .SUDOKU .game-page .game-table tr td:active {
+  background-color: #5778f2;
+  color: #202340;
+}
+
+.SUDOKU .game-page .game-table tr .computed {
+  background-color: rgba(0, 0, 0, 0.2);
+  cursor: not-allowed;
+}
+
+.SUDOKU .game-page .game-table tr .computed:hover, .SUDOKU .game-page .game-table tr .computed:active {
+  background-color: rgba(0, 0, 0, 0.2);
+  color: #858ab5;
+}
+
+.SUDOKU .game-page .controls {
+  width: 400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.SUDOKU .num-widget {
+  width: 70px;
+  height: 70px;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+  background-color: #555a85;
+  border: 0.5px solid #e7e8ea;
+  border-radius: 10px;
+  transform: translate(-50%, -50%);
+}
+
+.SUDOKU .num-widget .num {
+  flex-basis: 33%;
+  color: #e7e8ea;
+  font-size: 14px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.SUDOKU .num-widget .num:hover, .SUDOKU .num-widget .num:active {
+  transform: scale(1.5);
+  color: #fff;
 }
 /*# sourceMappingURL=style.css.map */

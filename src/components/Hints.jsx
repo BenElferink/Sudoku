@@ -1,34 +1,43 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
-import { activateHint } from '../redux/actions/activateHint';
-import { changeMatrix } from '../redux/actions/changeMatrix';
-import Button from './Button';
-import Icon from './LightBulb-48px';
+import Icon from './../icons/LightBulb';
+import { duplicateMatrix } from './../js/matrixFunctions';
 
-export default function Hints({ hints, matrix }) {
-  const dispatch = useDispatch();
-
+function Hints({ hints, dispMatrix, rawMatrix, updateStates }) {
   const clickHint = () => {
-    if (hints.remaining > 0) {
-      while (true) {
+    if (hints > 0) {
+      // allow the 'while' loop only if game-board is NOT complete
+      let runLoop = false;
+      dispMatrix.forEach((row) => {
+        row.forEach((col) => {
+          if (col === '') {
+            runLoop = true;
+          }
+        });
+      });
+
+      // target random cell from displayed matrix, and if it's empty reveal it's number according to raw matrix.
+      while (runLoop) {
         let i = Math.floor(Math.random() * 9);
         let j = Math.floor(Math.random() * 9);
-        if (matrix.played[i][j] === '') {
-          let revealNumber = matrix.original[i][j];
-          dispatch(changeMatrix(revealNumber, i, j));
+        if (dispMatrix[i][j] === '') {
+          let revealNumber = rawMatrix[i][j];
+          let copyOfDisplayedMatrix = duplicateMatrix(dispMatrix);
+          copyOfDisplayedMatrix[i][j] = revealNumber;
+          updateStates(copyOfDisplayedMatrix);
           break;
         }
       }
-      dispatch(activateHint());
     }
   };
 
   return (
     <div className='hints'>
-      <Button text='HINT' onClick={clickHint} />
-      {hints.remaining >= 1 ? <Icon opacity='100%' /> : <Icon opacity='25%' />}
-      {hints.remaining >= 2 ? <Icon opacity='100%' /> : <Icon opacity='25%' />}
-      {hints.remaining >= 3 ? <Icon opacity='100%' /> : <Icon opacity='25%' />}
+      <button onClick={clickHint}>Hint</button>
+      {hints >= 1 ? <Icon opacity='100%' /> : <Icon opacity='25%' />}
+      {hints >= 2 ? <Icon opacity='100%' /> : <Icon opacity='25%' />}
+      {hints >= 3 ? <Icon opacity='100%' /> : <Icon opacity='25%' />}
     </div>
   );
 }
+
+export default Hints;

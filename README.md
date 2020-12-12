@@ -1,15 +1,7 @@
-# Sudoku by Ben elferink
+# Sudoku
 
-### Open app: [https://belferink1996.github.io/sudoku/](https://belferink1996.github.io/sudoku/)
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Mobile preview:
-<br />
-<img src="./_docs/screenshot-mobile-setup.png" alt="mobile screenshot" width="250" />
-<img src="./_docs/screenshot-mobile-game.png" alt="mobile screenshot" width="250" />
-<img src="./_docs/screenshot-mobile-scores.png" alt="mobile screenshot" width="250" />
+## Preview:
 
-Desktop preview:
-<br />
-<img src="./_docs/screenshot-desktop-setup.png" alt="desktop screenshot" width="500" />
-<img src="./_docs/screenshot-desktop-game.png" alt="desktop screenshot" width="500" />
-<img src="./_docs/screenshot-desktop-scores.png" alt="desktop screenshot" width="500" />
+<img src="./src/screenshot.png" alt="screenshot" width="300" />

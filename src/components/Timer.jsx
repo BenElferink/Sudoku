@@ -1,20 +1,27 @@
 import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { incrementTime } from '../redux/actions/incrementTime';
-import { timeToString } from '../scripts/timeFunctions';
 
-export default function Timer({ time }) {
-  const dispatch = useDispatch();
-
+export default function Timer({ value, setValue }) {
   useEffect(() => {
     const interval = setInterval(() => {
-      dispatch(incrementTime());
+      if (value.seconds < 59) {
+        setValue({ minutes: value.minutes, seconds: value.seconds + 1 });
+      } else {
+        setValue({ minutes: value.minutes + 1, seconds: 0 });
+      }
     }, 1000);
+
     return () => {
       clearInterval(interval);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [time]);
+  });
 
-  return <div className='timer'>Time elapsed: {timeToString(time)}</div>;
+  return <p className='timer'>Time elapsed: {timeToString(value)}</p>;
 }
+
+const timeToString = (timeState) => {
+  let minutes = timeState.minutes;
+  let seconds = timeState.seconds;
+  minutes < 10 ? (minutes = `0${minutes}`) : (minutes = `${minutes}`);
+  seconds < 10 ? (seconds = `0${seconds}`) : (seconds = `${seconds}`);
+  return `${minutes}:${seconds}`;
+};
