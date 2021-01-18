@@ -23,7 +23,6 @@
   text-align: center;
   cursor: pointer;
 }
-
 .table td:hover,
 .table td:active {
   background-color: #5778f2;
@@ -31,11 +30,11 @@
 }
 
 .computed {
-  background-color: rgba(0, 0, 0, 0.2);
-  cursor: not-allowed;
+  background-color: rgba(0, 0, 0, 0.2) !important;
+  cursor: not-allowed !important;
 }
 .computed:hover,
 .computed:active {
-  background-color: rgba(0, 0, 0, 0.2);
-  color: #858ab5;
+  background-color: rgba(0, 0, 0, 0.2) !important;
+  color: #858ab5 !important;
 }
