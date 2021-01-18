@@ -1,66 +1,66 @@
-import React from 'react';
+import styles from './style/NumberWidget.module.css';
 
 function NumberWidget({ setNum, style }) {
   return (
-    <div className='num-widget' style={style}>
+    <div className={styles.component} style={style}>
       <div
-        className='num'
+        className={styles.num}
         onClick={() => {
           setNum(1);
         }}>
         1
       </div>
       <div
-        className='num'
+        className={styles.num}
         onClick={() => {
           setNum(2);
         }}>
         2
       </div>
       <div
-        className='num'
+        className={styles.num}
         onClick={() => {
           setNum(3);
         }}>
         3
       </div>
       <div
-        className='num'
+        className={styles.num}
         onClick={() => {
           setNum(4);
         }}>
         4
       </div>
       <div
-        className='num'
+        className={styles.num}
         onClick={() => {
           setNum(5);
         }}>
         5
       </div>
       <div
-        className='num'
+        className={styles.num}
         onClick={() => {
           setNum(6);
         }}>
         6
       </div>
       <div
-        className='num'
+        className={styles.num}
         onClick={() => {
           setNum(7);
         }}>
         7
       </div>
       <div
-        className='num'
+        className={styles.num}
         onClick={() => {
           setNum(8);
         }}>
         8
       </div>
       <div
-        className='num'
+        className={styles.num}
         onClick={() => {
           setNum(9);
         }}>

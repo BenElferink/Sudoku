@@ -1,6 +1,6 @@
-import React from 'react';
+import styles from './style/Introduction.module.css';
 
-function PersonalBest({ sudokuData, difficulty }) {
+function PersonalBest({ gameRecords, difficulty }) {
   const displayBestTime = (storedRecords) => {
     let copyStoredRecords = [...storedRecords],
       possibleRecord = copyStoredRecords[0]; // variable with the updated 'best record' after each loop
@@ -24,11 +24,12 @@ function PersonalBest({ sudokuData, difficulty }) {
     return possibleRecord;
   };
 
-  let record = displayBestTime(sudokuData[`${difficulty}`]);
+  const record = displayBestTime(gameRecords[`${difficulty}`]);
 
   return (
-    <>
+    <div className={styles.introduction}>
       <h4>Your record playing '{difficulty}' is:</h4>
+
       <p>
         {record.timer.minutes} minutes, and {record.timer.seconds} seconds!
         <br />
@@ -40,7 +41,7 @@ function PersonalBest({ sudokuData, difficulty }) {
           ? `You used ${record.resetCount} resets, without any hints.`
           : `You used ${record.hintsUsed} hints, and reset ${record.resetCount} times.`}
       </p>
-    </>
+    </div>
   );
 }
 

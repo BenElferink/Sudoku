@@ -4,22 +4,39 @@
   box-sizing: border-box;
 }
 
-.SUDOKU {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
+    'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
   width: 100%;
   min-height: 100vh;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
   background-color: #252848;
   box-shadow: 0 0 1em #000 inset;
   border-radius: 1em;
 }
 
-.SUDOKU button {
+.app {
+  position: relative;
+}
+
+.controls {
+  width: 400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+/* target all buttons */
+button {
   padding: 12px 28px;
   background-color: transparent;
   border: 1px solid #5778f2;
@@ -28,12 +45,12 @@
   font-size: 14px;
   cursor: pointer;
 }
-
-.SUDOKU button:hover, .SUDOKU button:active {
+button:hover,
+button:active {
   background-color: #2e3157;
 }
 
-.SUDOKU .start-group {
+.startGroup {
   width: 100%;
   height: 100%;
   display: flex;
@@ -48,163 +65,14 @@
   text-shadow: 0 0 3px #000;
 }
 
-.SUDOKU .start-group button {
+/* override startgroup button */
+.startGroup > button {
   width: 250px;
   margin-top: 10px;
   background-color: #5778f2;
   color: #e7e8ea;
 }
-
-.SUDOKU .start-group button:hover, .SUDOKU .start-group button:active {
+.startGroup > button:hover,
+.startGroup > button:active {
   background-color: #202340;
 }
-
-.SUDOKU .start-group .difficulty {
-  margin-top: 50px;
-  display: flex;
-}
-
-.SUDOKU .start-group .difficulty .radio-group {
-  margin: 3px 10px;
-  display: flex;
-  align-items: center;
-}
-
-.SUDOKU .start-group .difficulty .radio-group input {
-  margin-right: 7px;
-  cursor: pointer;
-}
-
-.SUDOKU .start-group .difficulty .radio-group label {
-  color: #e7e8ea;
-  font-size: 14px;
-  font-weight: 500;
-  cursor: pointer;
-}
-
-.SUDOKU .start-group .personal-best {
-  color: #858ab5;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.SUDOKU .start-group .personal-best p {
-  margin: 0 20px;
-  text-align: center;
-}
-
-.SUDOKU .start-group .personal-best table th,
-.SUDOKU .start-group .personal-best table td {
-  padding: 0 7px;
-  text-align: center;
-}
-
-.SUDOKU .start-group .personal-best table .diff {
-  text-align: left;
-}
-
-.SUDOKU .game-page {
-  position: relative;
-}
-
-.SUDOKU .game-page .timer {
-  margin-bottom: 5px;
-  color: #e7e8ea;
-  font-size: 20px;
-  text-align: center;
-}
-
-.SUDOKU .game-page .hints {
-  width: 300px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-}
-
-.SUDOKU .game-page .hints svg {
-  width: 50px;
-  height: 50px;
-  fill: #5778f2;
-}
-
-.SUDOKU .game-page .game-table {
-  border-collapse: collapse;
-  background-color: #2e3157;
-}
-
-.SUDOKU .game-page .game-table tr:nth-child(3n) {
-  border-bottom: 1.5px solid #000;
-}
-
-.SUDOKU .game-page .game-table tr:nth-last-child(3n) {
-  border-top: 1.5px solid #000;
-}
-
-.SUDOKU .game-page .game-table tr td {
-  width: 50px;
-  height: 50px;
-  border: 0.5px solid #000;
-  color: #858ab5;
-  text-align: center;
-  cursor: pointer;
-}
-
-.SUDOKU .game-page .game-table tr td:nth-child(3n) {
-  border-right: 1.5px solid #000;
-}
-
-.SUDOKU .game-page .game-table tr td:nth-last-child(3n) {
-  border-left: 1.5px solid #000;
-}
-
-.SUDOKU .game-page .game-table tr td:hover, .SUDOKU .game-page .game-table tr td:active {
-  background-color: #5778f2;
-  color: #202340;
-}
-
-.SUDOKU .game-page .game-table tr .computed {
-  background-color: rgba(0, 0, 0, 0.2);
-  cursor: not-allowed;
-}
-
-.SUDOKU .game-page .game-table tr .computed:hover, .SUDOKU .game-page .game-table tr .computed:active {
-  background-color: rgba(0, 0, 0, 0.2);
-  color: #858ab5;
-}
-
-.SUDOKU .game-page .controls {
-  width: 400px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-}
-
-.SUDOKU .num-widget {
-  width: 70px;
-  height: 70px;
-  display: flex;
-  flex-flow: row wrap;
-  align-items: center;
-  justify-content: center;
-  background-color: #555a85;
-  border: 0.5px solid #e7e8ea;
-  border-radius: 10px;
-  transform: translate(-50%, -50%);
-}
-
-.SUDOKU .num-widget .num {
-  flex-basis: 33%;
-  color: #e7e8ea;
-  font-size: 14px;
-  text-align: center;
-  cursor: pointer;
-}
-
-.SUDOKU .num-widget .num:hover, .SUDOKU .num-widget .num:active {
-  transform: scale(1.5);
-  color: #fff;
-}
-/*# sourceMappingURL=style.css.map */

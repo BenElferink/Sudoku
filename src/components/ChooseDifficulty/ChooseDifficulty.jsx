@@ -1,13 +1,13 @@
-import React from 'react';
+import styles from './style/ChooseDifficulty.module.css';
 
-function Difficulty({ value, setValue }) {
+function ChooseDifficulty({ value, setValue }) {
   return (
-    <div className='difficulty'>
-      <div className='radio-group'>
+    <div className={styles.component}>
+      <div className={styles.inpGroup}>
         <input
-          type='radio'
           name='diff'
           id='diff_easy'
+          type='radio'
           value='easy'
           onChange={(e) => {
             setValue(e.target.value);
@@ -17,11 +17,11 @@ function Difficulty({ value, setValue }) {
         <label htmlFor='diff_easy'>Easy</label>
       </div>
 
-      <div className='radio-group'>
+      <div className={styles.inpGroup}>
         <input
-          type='radio'
           name='diff'
           id='diff_normal'
+          type='radio'
           value='normal'
           onChange={(e) => {
             setValue(e.target.value);
@@ -31,11 +31,11 @@ function Difficulty({ value, setValue }) {
         <label htmlFor='diff_normal'>Normal</label>
       </div>
 
-      <div className='radio-group'>
+      <div className={styles.inpGroup}>
         <input
-          type='radio'
           name='diff'
           id='diff_hard'
+          type='radio'
           value='hard'
           onChange={(e) => {
             setValue(e.target.value);
@@ -48,4 +48,4 @@ function Difficulty({ value, setValue }) {
   );
 }
 
-export default Difficulty;
+export default ChooseDifficulty;
