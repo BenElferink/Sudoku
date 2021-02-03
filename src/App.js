@@ -3,13 +3,13 @@ import { getStorage, setStorage } from './js/localStorage';
 import { MatrixContext } from './js/matrixContextAPI';
 import { duplicateMatrix } from './js/matrixFunctions';
 import './style/style.css';
-import Introduction from './components/Introduction/Introduction';
-import ChooseDifficulty from './components/ChooseDifficulty/ChooseDifficulty';
-import Timer from './components/Timer/Timer';
-import Hints from './components/Hints/Hints';
-import SudokuTable from './components/SudokuTable/SudokuTable';
+import Introduction from './components/Introduction';
+import ChooseDifficulty from './components/ChooseDifficulty';
+import Timer from './components/Timer';
+import Hints from './components/Hints';
+import SudokuTable from './components/SudokuTable';
 
-function App() {
+export default function App() {
   // gameRecords holds an object with 3 keys: 'easy', 'normal', 'hard',
   // each lkey has an array of game data, which can be used to show personal best or even create a leaderboard.
   const [gameRecords, setGameRecords] = useState(
@@ -157,5 +157,3 @@ function App() {
     );
   }
 }
-
-export default App;

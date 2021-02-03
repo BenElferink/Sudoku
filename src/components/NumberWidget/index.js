@@ -1,6 +1,6 @@
 import styles from './style/NumberWidget.module.css';
 
-function NumberWidget({ setNum, style }) {
+export default function NumberWidget({ setNum, style }) {
   return (
     <div className={styles.component} style={style}>
       <div
@@ -69,5 +69,3 @@ function NumberWidget({ setNum, style }) {
     </div>
   );
 }
-
-export default NumberWidget;

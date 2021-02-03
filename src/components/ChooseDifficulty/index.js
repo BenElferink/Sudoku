@@ -1,6 +1,6 @@
 import styles from './style/ChooseDifficulty.module.css';
 
-function ChooseDifficulty({ value, setValue }) {
+export default function ChooseDifficulty({ value, setValue }) {
   return (
     <div className={styles.component}>
       <div className={styles.inpGroup}>
@@ -47,5 +47,3 @@ function ChooseDifficulty({ value, setValue }) {
     </div>
   );
 }
-
-export default ChooseDifficulty;

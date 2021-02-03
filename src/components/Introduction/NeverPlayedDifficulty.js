@@ -1,6 +1,6 @@
 import styles from './style/Introduction.module.css';
 
-function NeverPlayedDifficulty({ difficulty }) {
+export default function NeverPlayedDifficulty({ difficulty }) {
   return (
     <div className={styles.introduction}>
       <p>
@@ -17,5 +17,3 @@ function NeverPlayedDifficulty({ difficulty }) {
     </div>
   );
 }
-
-export default NeverPlayedDifficulty;

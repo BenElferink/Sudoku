@@ -2,9 +2,9 @@ import { useState, useContext } from 'react';
 import { MatrixContext } from '../../js/matrixContextAPI';
 import { duplicateMatrix } from '../../js/matrixFunctions';
 import styles from './style/SudokuTable.module.css';
-import NumberWidget from '../NumberWidget/NumberWidget';
+import NumberWidget from '../NumberWidget';
 
-function SudokuTable({ startGame }) {
+export default function SudokuTable({ startGame }) {
   const { matrixes, setMatrixes } = useContext(MatrixContext);
   const [isSetNumMode, setIsSetNumMode] = useState(false); // reveals NumberWidget
   const [clickedCell, setClickedCell] = useState({ i: null, j: null }); // cell cordinates for NumberWidget value
@@ -70,5 +70,3 @@ function SudokuTable({ startGame }) {
     </>
   );
 }
-
-export default SudokuTable;

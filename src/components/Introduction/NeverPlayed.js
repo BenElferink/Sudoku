@@ -1,6 +1,6 @@
 import styles from './style/Introduction.module.css';
 
-function NeverPlayed() {
+export default function NeverPlayed() {
   return (
     <div className={styles.introduction}>
       <p>
@@ -42,5 +42,3 @@ function NeverPlayed() {
     </div>
   );
 }
-
-export default NeverPlayed;

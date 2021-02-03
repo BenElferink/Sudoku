@@ -1,6 +1,6 @@
 import styles from './style/Introduction.module.css';
 
-function PersonalBest({ gameRecords, difficulty }) {
+export default function PersonalBest({ gameRecords, difficulty }) {
   const displayBestTime = (storedRecords) => {
     let copyStoredRecords = [...storedRecords],
       possibleRecord = copyStoredRecords[0]; // variable with the updated 'best record' after each loop
@@ -44,5 +44,3 @@ function PersonalBest({ gameRecords, difficulty }) {
     </div>
   );
 }
-
-export default PersonalBest;

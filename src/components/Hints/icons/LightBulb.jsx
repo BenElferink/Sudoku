@@ -1,6 +1,4 @@
-import React from 'react';
-
-function LightBulb({ opacity }) {
+export default function LightBulb({ opacity }) {
   return (
     <svg style={{ opacity: opacity }} viewBox='0 0 48 48' xmlns='http://www.w3.org/2000/svg'>
       <g>
@@ -9,5 +7,3 @@ function LightBulb({ opacity }) {
     </svg>
   );
 }
-
-export default LightBulb;

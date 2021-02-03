@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import styles from './style/Timer.module.css';
 
-function Timer({ value, setValue }) {
+export default function Timer({ value, setValue }) {
   // this useEffect handles an interval, which adds +1 to the timer every second,
   // the interval also increments the minutes (when the timer is at 59 seconds)
   useEffect(() => {
@@ -31,5 +31,3 @@ function Timer({ value, setValue }) {
 
   return <div className={styles.component}>Time elapsed: {timeToString(value)}</div>;
 }
-
-export default Timer;

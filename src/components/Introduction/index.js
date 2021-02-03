@@ -3,7 +3,7 @@ import NeverPlayed from './NeverPlayed';
 import NeverPlayedDifficulty from './NeverPlayedDifficulty';
 import PersonalBest from './PersonalBest';
 
-function Introduction({ gameRecords, difficulty }) {
+export default function Introduction({ gameRecords, difficulty }) {
   if (
     gameRecords.easy.length === 0 &&
     gameRecords.normal.length === 0 &&
@@ -20,5 +20,3 @@ function Introduction({ gameRecords, difficulty }) {
     return <PersonalBest gameRecords={gameRecords} difficulty={difficulty} />;
   }
 }
-
-export default Introduction;

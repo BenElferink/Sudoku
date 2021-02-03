@@ -2,9 +2,9 @@ import { useContext } from 'react';
 import { MatrixContext } from '../../js/matrixContextAPI';
 import { duplicateMatrix } from '../../js/matrixFunctions';
 import styles from './style/Hints.module.css';
-import Icon from '../../icons/LightBulb';
+import Icon from './icons/LightBulb';
 
-function Hints({ value, setValue, setHintsUsed }) {
+export default function Hints({ value, setValue, setHintsUsed }) {
   const { matrixes, setMatrixes } = useContext(MatrixContext);
 
   const clickHint = () => {
@@ -47,5 +47,3 @@ function Hints({ value, setValue, setHintsUsed }) {
     </div>
   );
 }
-
-export default Hints;
