@@ -22,6 +22,10 @@
   color: #858ab5;
   text-align: center;
   cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 .table td:hover,
 .table td:active {
@@ -31,7 +35,7 @@
 
 .computed {
   background-color: rgba(0, 0, 0, 0.2) !important;
-  cursor: not-allowed !important;
+  cursor: default !important;
 }
 .computed:hover,
 .computed:active {
