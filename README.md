@@ -1,5 +1,5 @@
 # Sudoku JavaScript game
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Visit the [App](https://benelferink.github.io/Sudoku).
 
 <img src="./screenshot.png" alt="screenshot" width="550" />
